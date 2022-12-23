@@ -1,1 +1,18 @@
 van felix
+<script>
+    function haalBestellingOp(){
+        fetch('http://localhost:8080/bestellingen')
+        .then(r => r.json())
+        .then(d => toonBestelling(d))
+
+
+    }
+    function toonBestelling(bestelling){
+        for(var x =0 ; x < bestelling.length; x++){
+            document.getElementById("bestellingen").innerHTML += "<h1>"+bestelling[x].klantnaam+"</h1>";
+        }
+    }
+</script>
+
+<button onclick="haalBestellingOp()">Haal Bestelling op</button>
+<div id="bestellingen"></div>
