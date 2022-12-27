@@ -23,35 +23,37 @@
 
     <div class="container">
         <div class="row" id="product"></div>
+    </div>
 
-        <script>
+    <script>
 
-            let product = document.getElementById('product')
+        let producten = document.getElementById('product');
 
-            fetch('http://localhost:8080/producten').then(response => response.json()).then(lijst => {
-                console.log(lijst);
+        function haalProductenOp() {
+            fetch('http://localhost:8080/producten')
+                .then(response => response.json())
+                .then(lijst => {
 
-                for (let d of lijst.data) {
-                    product.innerHTML += "<div class='col-12 col-md-4'><div class='card'><div class='card-body'>" + d.naam + "</div></div></div>"
-                }
-            })
+                    for (let d of lijst) {
+                        console.log(d);
+                        producten.innerHTML += `
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card body">
+                                    <h5 class="card-title">
+                                    ${d.naam}            
+                                    </h5>
+                                    <p class="card-text">
+                                    ${d.beschrijving}
+                                    </p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>`
+                    }
+                })
+        }
 
-            // let producten = document.getElementById('product');
-            // function handleResponse(response) { };
 
-            // function haalProductenOp() {
-            //     fetch('http://localhost:8080/producten')
-            //         .then(response => response.json())
-            //         .then(lijst => {
-
-            //             for (let d of lijst.data) {
-            //                 producten.innerHTML += "<div class='card' style='width: 18rem;> <img src='...' class='card-img-top' alt='...'><div class='card body'><h5 class='card-title'>" + d.naam + "</h5> <p class='card-text'>" + d.beschrijving + "</p> <a href='#' class='btn btn-primmary'> Go somewhere</a></div></div>"
-
-            //             }
-            //         })
-            //         .then(d => console.log(d))
-            //         .then(toonProduct);
-            // }
 
                 // function toonProduct(product) {
                     // for (var x = 0; x < product.length; x++) {
@@ -60,7 +62,7 @@
                     // }
                 // }
 
-        </script>
+    </script>
 
 </body>
 
