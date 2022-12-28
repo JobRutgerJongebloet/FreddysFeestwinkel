@@ -22,7 +22,8 @@
     </div>
 
     <div class="container">
-        <div class="row" id="product"></div>
+        <div class="row  position-absolute bottom-0 start-0" id="product"></div>
+        <!-- <div class="col" id="product"></div> -->
     </div>
 
     <script>
@@ -37,18 +38,26 @@
                     for (let d of lijst) {
                         console.log(d);
                         producten.innerHTML += `
+                        <div class="col">
                                 <div class="card" style="width: 18rem;">
-                                    <img src="..." class="card-img-top" alt="...">
+                                    <img src="https://www.feestkleding.nl/media/catalog/product/cache/c9804476f3bdaad700372bd35abce089/fk/g/r/grote-clownsneuzen-rood-12x-0.jpg" class="card-img-top" translate-middle alt="...">
                                     <div class="card body">
-                                    <h5 class="card-title">
-                                    ${d.naam}            
+                                    <h5 class="card-title text-center">
+                                     ${d.naam}            
                                     </h5>
                                     <p class="card-text">
-                                    ${d.beschrijving}
+                                     ${d.beschrijving}
                                     </p>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Categorie: ${d.categorie}</li>
+                                        <li class="list-group-item">Voorraad: ${d.voorraad}</li>
+                                    </ul>
+                                    <div class="card body">
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                     </div>
-                                </div>`
+                                </div>
+                        </div>`
                     }
                 })
         }
