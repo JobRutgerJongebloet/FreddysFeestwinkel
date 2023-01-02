@@ -1,18 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freddys Feestwinkel</title>
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
-      <script type="module" src="./js/index.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    <div class="main-container">
+        <div class="main">
+            <div class="container">
+                <!-- Start of Navbar -->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="img/icon.png" class="christmas-tree" alt="christmas-tree">
+                            <b class="christmas-gold">Freddys</b>
+                            <b class="christmas-title">Feestwinkel</b>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link title active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link title" href="view/product.html">Producten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link title" href="view/contact.html">Over ons</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex search" role="search">
+                                <input class="form-control me-2 search-title search-input" type="search">
+                                <button class="btn btn-success" type="submit">Zoek</button>
+                            </form>
+                            <div class="d-flex">
+                                <a href="view/inloggen.html">
+                                    <button type="button" class="btn button-title">Login</button>
+                                </a>
+                                <a href="view/registreer.html">
+                                    <button type="button" class="btn btn-success button-title-white">
+                                        Account aanmaken
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End of Navbar -->
+                <br><br><br>
+                <!-- Start of Banner -->
+                <div class="container fluid">
+                    <div class="banner row">
+                        <div class="col">
+                            <div class="banner-santa-text">
+                                <div class="banner-santa-text-box-title">
+                                    Scoor nu snel je kerstoutfit!
+                                </div>
+                                <div class="banner-santa-text-box-description">
+                                    Bij FreddysFeestwinkel ben je aan het juiste adres voor dé beste kerstoutfits,
+                                    kijk gerust even rond.
+                                </div>
+                                <div class="banner-santa-text-box-button">
+                                    <a href="view/product.html">
+                                        <button type="button" class="btn btn-success button-title-white">
+                                            Naar de kerstafdeling
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="banner-santa-img-box">
+                                <div class="banner-santa-img-pink-box">
+                                    <div class="santa"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Banner -->
+
+            </div>
+        </div>
+        <div class="filters">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="mt-4 filter-title christmas-red">
+                        Onze feestartikelen op een rijtje
+                    </div>
+                    <div class="filter-text">
+                        Filter op feestdagen:
+                    </div>
+                    <div class="filter-cards-descriptions row">
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/ghost.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Halloween</div>
+                        </div>
+                        <div class="filter-card-box christmas-theme col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/santa-hat.png" class="card-icon christmas-theme-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Kerstmis</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/flag.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Koningsdag</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/cake.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Moederdag</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/fireworks.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Oud & Nieuw</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/easter-egg.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Pasen</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/saint-nicholas.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Sinterklaas</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/sweets.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Sint Maarten</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/gulab-jamun.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Suikerfeest</div>
+                        </div>
+                        <div class="filter-card-box col-3 p-1 m-1 row">
+                            <div class="filter-card-icon col-1">
+                                <img src="img/filter-icons/heart.png" class="card-icon p-1" alt="santa-hat">
+                            </div>
+                            <div class="filter-card-text col-7">Valentijnsdag</div>
+                        </div>
+                    </div>
+                    <div class="filter-cards">
+                        <div class="filter-card">
+                            <div class="filter-card-img">
+                                <div class="filter-card-heart"></div>
+                            </div>
+                            <div class="filter-card-title"></div>
+                            <div class="filter-card-price"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script type="module" src="./js/index.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
