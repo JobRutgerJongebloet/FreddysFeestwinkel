@@ -25,7 +25,7 @@ function haalProductenOp() {
                                         <li class="list-group-item">Voorraad: ${d.voorraad}</li>
                                     </ul>
                                     <div class="card body">
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <a href="#" class="btn btn-primary">Toevoegen aan winkelwagen</a>
                                     </div>
                                 </div>
                         </div>`
