@@ -2,7 +2,7 @@
 let producten = document.getElementById('product');
 
 function haalProductenOp() {
-    fetch('http://localhost:8080/producten')
+    fetch(baseURL + 'producten')
         .then(response => response.json())
         .then(lijst => {
 
