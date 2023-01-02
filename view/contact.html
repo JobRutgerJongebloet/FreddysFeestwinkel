@@ -1,19 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Contact Form</title>
-  <!-- Import the contact.js file and the style.css file -->
-  <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/contact.js"></script>
-</head>
-<body>
-  <h1>Freddy</h1>
-  <!-- Use the figure element to group the image and its caption -->
-  <figure>
-    <img src="../img/FB2B56A1-C3F5-4704-A119-8B068647C994.jpg" alt="A photo of Freddy">
-    <figcaption>Freddy</figcaption>
-  </figure>
+<html lang="en">
 
-  <!-- Other HTML content goes here -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContactPage</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+</head>
+
+<body> 
+  <form id="contact-form">
+    <div class="form-group">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="inputSubject">Subject</label>
+      <input type="text" class="form-control" id="inputSubject" placeholder="Enter the subject of your message">
+    </div>
+    <div class="form-group">
+      <label for="inputMessage">Message</label>
+      <textarea class="form-control" id="inputMessage" rows="3" placeholder="Enter your message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+  <script type="module" src="../controller/contactController.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
