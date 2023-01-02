@@ -41,7 +41,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-              <form class="row g-3 needs-validation" novalidate id="product-form"
+              <form action="product.html" class="row g-3 needs-validation" novalidate id="product-form"
                 onsubmit="maakProductAan(event);return false">
                 <div class="col-md-12">
                   <label for="productNaam" class="form-label">ProductNaam</label>
@@ -67,25 +67,26 @@
                     <option value="KA">Kerstartikelen</option>
                     <option value="PR">Pruiken</option>
                   </select>
-              </div>
-                  <br>
-                  <div class="col-md-12">
-                    <label for="productKosten" class="form-label">ProductKosten</label>
-                    <input type="text" class="form-control" name="kosten" id="productKosten" required="true">
-                    <div class="invalid-feedback">
-                      Voeg ProductKosten toe.
-                    </div>
+                </div>
+                <br>
+                <div class="col-md-12">
+                  <label for="productKosten" class="form-label">ProductKosten</label>
+                  <input type="text" class="form-control" name="kosten" id="productKosten" required="true">
+                  <div class="invalid-feedback">
+                    Voeg ProductKosten toe.
                   </div>
-                  <br>
-                  <div class="col-6">
-                    <button class="btn btn-primary" type="submit">Aanmaken</button>
-                  </div>
+                </div>
+                <br>
+                <div class="col-6">
+                  <button class="btn btn-primary" type="submit">Aanmaken</button>
+                </div>
               </form>
             </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Verwijderen</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                onclick="naarAnderePagina()">Verwijderen</button>
             </div>
 
           </div>
