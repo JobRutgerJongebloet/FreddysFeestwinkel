@@ -7,39 +7,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ContactPage</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="../css/contact.css" />-->
 </head>
 
-</head>
+<body>
+  <nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/view/contact.html">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href=" /view/product.html">product</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" >contact</a></li>
+              <li><a class="dropdown-item" >Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" >Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 
-<body> 
   <form id="contact-form">
+    <h1 class="text-center">Neem contact op</h1>
     <div class="form-group">
-      <label for="inputName">Name</label>
-      <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+      <label for="inputName">Naam</label>
+      <input type="text" class="form-control" id="inputName" placeholder="Vul uw naam in">
     </div>
     <div class="form-group">
       <label for="inputEmail">Email address</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Vul uw email in">
     </div>
     <div class="form-group">
-      <label for="inputSubject">Subject</label>
-      <input type="text" class="form-control" id="inputSubject" placeholder="Enter the subject of your message">
+      <label>Onderwerp</label>
+      <input type="text" class="form-control" id="inputSubject" placeholder="Vul uw onderwerp in">
     </div>
     <div class="form-group">
-      <label for="inputMessage">Message</label>
-      <textarea class="form-control" id="inputMessage" rows="3" placeholder="Enter your message"></textarea>
+      <label for="inputMessage">Bericht</label>
+      <textarea class="form-control" id="inputMessage" rows="5" placeholder="Vul uw bericht in"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary">Verstuur</button>
   </form>
+
+  <h2>Onze vestiging</h2>
+
+  <div class="vestiging">
+    <h6>Hoofd vestiging - <a class="anchor anchor-small map-link" target="_blank"
+        href="https://www.google.nl/maps/dir//Maps,+Oudezijds+Achterburgwal+78,+1012+DR+Amsterdam/@52.3733121,4.8282607,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47c6092ad5f59839:0x4ae3332df49c737b!2m2!1d4.8984701!2d52.3732286">KAART</a>
+    </h6>
+    <p>Achterburgwal 2<br>1012 DR Amsterdam<br></p>
+  </div>
+
   <script type="module" src="../controller/contactController.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
