@@ -1,0 +1,229 @@
+/* Main Container */
+.main-container {
+  background: rgba(37, 93, 0, 0.4);
+  backdrop-filter: blur(7px);
+}
+
+/* Section 1: Main */
+.main {
+  height: 100vh;
+  background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 0px;
+}
+
+/* Container Fluid */
+.container-fluid {
+  overflow: hidden;
+}
+
+.christmas-title {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  color: #00873e;
+}
+
+.nav-title {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+}
+
+.christmas-tree {
+  float: left;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.search {
+  margin-right: 2em;
+}
+
+.search-title {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+}
+
+.search-input {
+  border-radius: 5px;
+  width: 200px;
+}
+
+.title {
+  font-weight: 600;
+  color: black;
+}
+
+.button-title {
+  font-weight: 600;
+  color: black;
+}
+
+.button-title-white {
+  font-weight: 600;
+  color: white;
+}
+
+.login {
+  color: black;
+  border: none;
+  outline: none;
+  background: none;
+  text-decoration: none;
+}
+
+/* Banner Santa Text*/
+.banner-santa-text {
+  height: 500px;
+  background-color: transparent;
+  overflow: hidden;
+  margin: 100px auto;
+}
+
+.banner-santa-text-box-title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 75px;
+  line-height: 87px;
+
+  /* Christmas gold */
+  color: #ffeb3b;
+}
+
+.banner-santa-text-box-description {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 34px;
+  /* or 155% */
+  color: black;
+}
+
+.banner-santa-text-box-button {
+  border-radius: 15px;
+  line-height: 87px;
+}
+
+/* Banner Santa Image */
+.banner-santa-img-box {
+  height: 500px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.banner-santa-img-pink-box {
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  margin: 0px auto;
+  background-color: transparent;
+  background-image: url("../img/round-white-blue-medium.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.santa {
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  margin: -20px auto;
+  background-color: transparent;
+  background-image: url("../img/santa.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Section 2: Filters */
+.filters {
+  height: 100vh;
+  background: rgb(168, 190, 153);
+  border-radius: 0px 0px 25px 25px;
+}
+
+/* Filter: Title */
+.filter-title {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 39px;
+}
+
+/* Filter: Text */
+.filter-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 34px;
+  /* or 155% */
+  color: black;
+}
+
+/* Filter: Card descriptions */
+.filter-cards-descriptions {
+  justify-content: start;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.filter-card-box {
+  width: 15em;
+  justify-content: center;
+  justify-items: stretch;
+  align-items: center;
+  background: #fefefe;
+  border-radius: 10px;
+  /* border: 1px solid blue; */
+}
+.card-icon {
+  float: right;
+  background: #ffffff;
+  border-radius: 10px;
+  /* border: 1px solid green; */
+}
+.filter-card-text {
+  float: left;
+}
+
+/* Holidays Themes */
+.christmas-theme:hover {
+  background-color: #218c74;
+}
+.christmas-theme-icon:hover {
+  background-color: #e55039;
+}
+
+/* Filter: Cards */
+.filter-cards {
+}
+.filter-card {
+}
+.filter-card-img {
+}
+.filter-card-heart {
+}
+.filter-card-title {
+}
+.filter-card-price {
+}
+
+/** Custom Fonts */
+.christmas-gold {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  color: #ffeb3b;
+}
+
+.christmas-red {
+  color: #f4511e;
+}
