@@ -58,6 +58,10 @@
                         </div>
                     </div>
                 </nav>
+
+                <!-- Removes the container -->
+                <!-- <script type="module" src="./js/index.js"></script> -->
+
                 <!-- End of Navbar -->
                 <br><br><br>
                 <!-- Start of Banner -->
@@ -178,60 +182,7 @@
                     </div>
 
                     <!-- Items -->
-                    <div class="filter-cards mt-4 row">
-                        <div class="filter-card col mb-3">
-                            <div class="filter-card-item p-4 bg-light">
-                                <div class="filter-card-img">
-                                    <img src="img/items/christmas-sweater.jpg" class="item-img" alt="">
-                                    <div class="filter-card-heart">
-                                        <img src="img/filter-icons/favourite.png" alt="favourite">
-                                    </div>
-                                </div>
-                                <div class="filter-card-title">Foute kersttruien</div>
-                                <div class="filter-card-description">Rood met rendier</div>
-                                <div class="filter-card-price">€ 25</div>
-                            </div>
-                        </div>
-                        <div class="filter-card col mb-3">
-                            <div class="filter-card-item p-4 bg-light">
-                                <div class="filter-card-img">
-                                    <img src="img/items/christmas-socks.jpg" class="item-img" alt="">
-                                    <div class="filter-card-heart">
-                                        <img src="img/filter-icons/favourite.png" alt="favourite">
-                                    </div>
-                                </div>
-                                <div class="filter-card-title">Kerstsokken</div>
-                                <div class="filter-card-description">Familie kerstsokken</div>
-                                <div class="filter-card-price">€ 15</div>
-                            </div>
-                        </div>
-                        <div class="filter-card col mb-3">
-                            <div class="filter-card-item p-4 bg-light">
-                                <div class="filter-card-img">
-                                    <img src="img/items/christmas-sweater.jpg" class="item-img" alt="">
-                                    <div class="filter-card-heart">
-                                        <img src="img/filter-icons/favourite.png" alt="favourite">
-                                    </div>
-                                </div>
-                                <div class="filter-card-title">Foute kersttrui</div>
-                                <div class="filter-card-description">Rood met rendier</div>
-                                <div class="filter-card-price">€ 25</div>
-                            </div>
-                        </div>
-                        <div class="filter-card col mb-3">
-                            <div class="filter-card-item p-4 bg-light">
-                                <div class="filter-card-img">
-                                    <img src="img/items/christmas-sweater.jpg" class="item-img" alt="">
-                                    <div class="filter-card-heart">
-                                        <img src="img/filter-icons/favourite.png" alt="favourite">
-                                    </div>
-                                </div>
-                                <div class="filter-card-title">Foute kersttrui</div>
-                                <div class="filter-card-description">Rood met rendier</div>
-                                <div class="filter-card-price">€ 25</div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="filter-cards mt-4 row products mb-4" id="products"></div>
 
                     <!-- Pagination  -->
 
@@ -265,6 +216,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
+
+    <!-- Fetching products from the API -->
+    <script src="js/settings.js"></script>
+    <script src="js/fetchProducts.js"></script>
 </body>
 
 </html>

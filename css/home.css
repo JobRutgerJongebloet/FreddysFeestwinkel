@@ -307,7 +307,7 @@
 .filter-card-heart {
   position: relative;
   top: -210px;
-  right: -225px;
+  right: -150px;
   height: 33px;
   width: 33px;
 }
@@ -341,6 +341,9 @@
 }
 .christmas-red {
   color: #f4511e;
+}
+.christmas-bg-red {
+  background-color: #f4511e;
 }
 
 /* Footer */
