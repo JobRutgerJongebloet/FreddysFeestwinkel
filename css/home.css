@@ -285,7 +285,6 @@
 .filter-cards {
   display: flex;
   overflow-y: hidden;
-  border: 1px solid red;
 }
 .filter-card-item {
   width: 250px;
@@ -294,10 +293,8 @@
   justify-content: space-between;
   align-items: start;
   flex-direction: column;
-  border: 1px solid red;
 }
 .filter-card-img {
-  border: 1px solid red;
   overflow: hidden;
   height: 225px;
   width: 200px;
