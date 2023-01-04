@@ -157,10 +157,10 @@
 
 /* Section 2: Filters */
 .filters {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: rgb(168, 190, 153);
   border-radius: 0px 0px 25px 25px;
-  overflow-y: hidden;
 }
 
 /* Filter: Title */
@@ -186,7 +186,6 @@
 .filter-cards-descriptions {
   justify-content: start;
   align-items: center;
-  /* border: 1px solid red; */
 }
 .filter-card-box {
   width: 15em;
@@ -195,13 +194,11 @@
   align-items: center;
   background: #fefefe;
   border-radius: 10px;
-  /* border: 1px solid blue; */
 }
 .card-icon {
   float: right;
   background: #ffffff;
   border-radius: 10px;
-  /* border: 1px solid green; */
 }
 .filter-card-text {
   float: left;
@@ -290,36 +287,53 @@
   overflow-y: hidden;
   border: 1px solid red;
 }
-.filter-card {
-  width: 331px;
-  border: 1px solid red;
-}
 .filter-card-item {
-  /* width: 100%;
+  width: 250px;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: start;
   flex-direction: column;
-  border: 1px solid red; */
+  border: 1px solid red;
 }
 .filter-card-img {
-  /* border: 1px solid red; */
+  border: 1px solid red;
+  overflow: hidden;
+  height: 225px;
+  width: 200px;
+}
+.item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 .filter-card-heart {
-  /* border: 1px solid red; */
+  position: relative;
+  top: -210px;
+  right: -225px;
+  height: 33px;
+  width: 33px;
 }
 .filter-card-title {
-  /* border: 1px solid red; */
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1d1e20;
 }
 .filter-card-description {
-  /* border: 1px solid red; */
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1d1e20;
 }
 .filter-card-price {
-  /* border: 1px solid red; */
+  margin-left: 167px;
 }
 
-/* margin-bottom: 20px; */
 /** Custom Fonts */
 .christmas-gold {
   font-family: "DM Sans";
@@ -328,7 +342,13 @@
   font-size: 22px;
   color: #ffeb3b;
 }
-
 .christmas-red {
   color: #f4511e;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  height: auto;
+  clear: both;
 }
