@@ -1,6 +1,6 @@
 export class Email {
-    constructor(from, to, subject, message) {
-        this.from = from;
+    constructor(name, to, subject, message) {
+        this.name = name;
         this.to = to;
         this.subject = subject;
         this.message = message;
