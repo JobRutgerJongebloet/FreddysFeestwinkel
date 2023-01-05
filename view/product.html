@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <script>console.log("test")</script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,14 +18,16 @@
 </head>
 
 <body>
-    <div class="position-absolute top-50 start-50 translate-middle">
+    <div class="position start-50">
         <button onclick="haalProductenOp()" type="button" class="btn btn-primary">Haal alle producten op</button>
     </div>
 
     <div class="container">
-        <div class="row  position-absolute bottom-0 start-0" id="product"></div>
+        <div class="row  position-absolute bottom-0" id="product"></div>
     </div>
+    <script src="../js/settings.js"></script>
     <script src="../js/ophalenProducten.js"></script>
 </body>
 
 </html>
+
