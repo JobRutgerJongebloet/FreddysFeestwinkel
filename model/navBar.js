@@ -12,6 +12,9 @@ export class NavBar {
             <a class="nav-link active" aria-current="page" href="/view/product.html">product</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/view/producttoevoegen.html">Product toevoegen</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/view/contact.html">contact</a>
           </li>
           <li class="nav-item">
