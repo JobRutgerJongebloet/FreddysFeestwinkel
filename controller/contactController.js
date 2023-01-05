@@ -2,14 +2,12 @@
 import { Bootstrap } from '../model/bootstrap.js';
 import { Favicon } from '../model/favicon.js';
 import { NavBar } from '../model/navBar.js'
-import { JQuery } from '../model/jQuery.js'
 import { Font } from '../model/font.js';
 import { Email } from '../model/email.js';
 
 class ContactController {
 
     constructor() {
-        this.jQuery = new JQuery();
         this.initForm();
         this.bootstrap = new Bootstrap();
         this.navbar = new NavBar();
@@ -19,12 +17,6 @@ class ContactController {
     }
     
     initForm() {
-        window.onload = function () {
-            $('.js-tilt').tilt({
-                scale: 1.1
-            });
-        }
-
         var name = document.querySelector('.validate-input input[name="name"]');
         var email = document.querySelector('.validate-input input[name="email"]');
         var subject = document.querySelector('.validate-input input[name="subject"]');
