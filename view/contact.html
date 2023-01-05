@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ContactPage</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <!--<link rel="stylesheet" href="../css/contact.css" />-->
+	<title>Freddy Contact</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/contact.css">
 </head>
-
 <body>
-
-  
-  <form id="contact-form">
-    <h1 class="text-center">Neem contact op</h1>
-    <div class="form-group">
-      <label for="inputName">Naam</label>
-      <input type="text" class="form-control" id="inputName" placeholder="Vul uw naam in">
-    </div>
-    <div class="form-group">
-      <label for="inputEmail">Email address</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="Vul uw email in">
-    </div>
-    <div class="form-group">
-      <label>Onderwerp</label>
-      <input type="text" class="form-control" id="inputSubject" placeholder="Vul uw onderwerp in">
-    </div>
-    <div class="form-group">
-      <label for="inputMessage">Bericht</label>
-      <textarea class="form-control" id="inputMessage" rows="5" placeholder="Vul uw bericht in"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Verstuur</button>
-  </form>
-
-  <h2>Onze vestiging</h2>
-
-  <div class="vestiging">
-    <h6>Hoofd vestiging - <a class="anchor anchor-small map-link" target="_blank"
-        href="https://www.google.nl/maps/dir//Maps,+Oudezijds+Achterburgwal+78,+1012+DR+Amsterdam/@52.3733121,4.8282607,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47c6092ad5f59839:0x4ae3332df49c737b!2m2!1d4.8984701!2d52.3732286">KAART</a>
-    </h6>
-    <p>Achterburgwal 2<br>1012 DR Amsterdam<br></p>
-  </div>
-
-  <script type="module" src="../controller/contactController.js"></script>
+	<div class="contact">
+		<div class="container-contact">
+			<div class="contact-pic js-tilt">
+				<img src="/img/img-01.png" alt="IMG">
+			</div>
+			<form class="contact-form validate-form">
+				<span class="contact-form-title">
+					Contacteer ons
+				</span>
+				<div class="wrap-input validate-input" data-validate="Naam is een requirement">
+					<input class="input" type="text" name="name" placeholder="Naam">
+					<span class="shadow-input"></span>
+				</div>
+				<div class="wrap-input validate-input" data-validate="Valid email is required: abc@abc.com">
+					<input class="input" type="text" name="email" placeholder="Email">
+					<span class="shadow-input"></span>
+				</div>
+				<div class="wrap-input validate-input" data-validate="Onderwerp is een requirement">
+					<input class="input" type="text" name="subject" placeholder="Onderwerp">
+					<span class="shadow-input"></span>
+				</div>
+				<div class="wrap-input validate-input" data-validate="Bericht is een requirement">
+					<textarea class="input" name="message" placeholder="Bericht"></textarea>
+					<span class="shadow-input"></span>
+				</div>
+				<div class="container-contact-form-btn bounce">
+					<button class="contact-form-btn">
+						<span>
+							Verstuur email
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="module" src="/controller/contactController.js"></script>
 </body>
-
 </html>
