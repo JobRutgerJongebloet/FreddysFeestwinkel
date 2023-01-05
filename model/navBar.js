@@ -37,7 +37,6 @@ export class NavBar {
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
-    </div>
   </nav>`;
 
   constructor() {
@@ -52,6 +51,7 @@ export class NavBar {
     const navbar = document.createElement('div');
 
     // Get the first child of the body element
+    //! Creates a new div as the first child of the body element, but skips then the whole layout
     const firstChild = document.body.firstChild;
 
     // Insert the navbar div as the first child of the body element
