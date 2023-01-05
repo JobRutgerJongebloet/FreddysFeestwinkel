@@ -1,7 +1,7 @@
 "use strict";
 import { Bootstrap } from '../model/bootstrap.js';
 import { Favicon } from '../model/favicon.js';
-import { NavBar } from '../model/navBar.js'
+// import { NavBar } from '../model/navBar.js'
 import { JQuery } from '../model/jQuery.js'
 import { Font } from '../model/font.js';
 import { Email } from '../model/email.js';
@@ -12,7 +12,7 @@ class ContactController {
         this.jQuery = new JQuery();
         this.initForm();
         this.bootstrap = new Bootstrap();
-        this.navbar = new NavBar();
+        // this.navbar = new NavBar();
         this.favicon = new Favicon();
         this.font = new Font();
         console.log("hoi");
