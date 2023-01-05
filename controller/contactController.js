@@ -7,7 +7,7 @@ class ContactController {
     constructor() {
         this.bootstrap = new Bootstrap();
         this.navbar = new NavBar();
-        this.initForm();
+        //this.initForm();
         //this.renderTodos();
     }
 
