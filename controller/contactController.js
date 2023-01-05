@@ -19,12 +19,6 @@ class ContactController {
     }
     
     initForm() {
-        window.onload = function () {
-            $('.js-tilt').tilt({
-                scale: 1.1
-            });
-        }
-
         var name = document.querySelector('.validate-input input[name="name"]');
         var email = document.querySelector('.validate-input input[name="email"]');
         var subject = document.querySelector('.validate-input input[name="subject"]');
