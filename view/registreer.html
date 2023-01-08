@@ -62,36 +62,58 @@
         <div class="container-fluid" style="height: 600px;">
           <div class="wrapper">
             <div class="form">
-              <h1 class="title text-center">Account aanmaken</h1>
+              <h2 class="title text-center">Account aanmaken</h2>
 
-              <form class="registerForm" id="registerForm">
-                <div class="full-width">
-                  <label for="adres">Adres *</label>
-                  <input type="text" id="adres" value="">
-                </div>
-                <div class="control-from">
-                  <label for="geboortedatum">Geboortedatum *</label>
-                  <input type="date" id="geboortedatum" value="">
-                </div>
-                <div class="control-from">
-                  <label for="telefoonnummer">Telefoonnummer</label>
-                  <input type="phone" id="telefoonnummer" value="">
-                </div>
+              <form action="inloggen.html" method="POST" class="registerForm needs-validation" id="registerForm"
+                onsubmit="registerUser(event);return false">
                 <div class="control-from">
                   <label for="naam">Naam *</label>
                   <input type="text" id="naam" required>
+                  <div class="invalid-feedback">
+                    Voer een naam in.
+                  </div>
                 </div>
                 <div class="control-from">
                   <label for="email">Email *</label>
                   <input type="email" id="email" required>
+                  <div class="invalid-feedback">
+                    Voer een email in.
+                  </div>
+                </div>
+                <div class="full-width">
+                  <label for="adres">Adres *</label>
+                  <input type="text" id="adres">
+                  <div class="invalid-feedback">
+                    Voer een adres in.
+                  </div>
+                </div>
+                <div class="control-from">
+                  <label for="geboortedatum">Geboortedatum *</label>
+                  <input type="date" id="geboortedatum">
+                  <div class="invalid-feedback">
+                    Voer een geboortedatum in.
+                  </div>
+                </div>
+                <div class="control-from">
+                  <label for="telefoonnummer">Telefoonnummer *</label>
+                  <input type="phone" id="telefoonnummer">
+                  <div class="invalid-feedback">
+                    Voer een telefoonnummer in.
+                  </div>
                 </div>
                 <div class="control-from">
                   <label for="wachtwoord">Wachtwoord *</label>
                   <input type="password" id="wachtwoord" required>
+                  <div class="invalid-feedback">
+                    Voer een wachtwoord in.
+                  </div>
                 </div>
                 <div class="control-from">
                   <label for="bevestigWachtwoord">Bevestig wachtwoord *</label>
                   <input type="password" id="bevestigWachtwoord" required>
+                  <div class="invalid-feedback">
+                    Voer een wachtwoord in.
+                  </div>
                 </div>
                 <div class="button">
                   <button type="submit" id="register">Registreren</button>
@@ -104,30 +126,7 @@
     </div>
   </div>
 
-  <!-- <script>
-    const naam = document.getElementById('naam');
-    const email = document.getElementById('email');
-    const wachtwoord = document.getElementById('wachtwoord');
-    const bevestigWachtwoord = document.getElementById('bevestigWachtwoord');
-
-    const naamValue = naam.value.trim();
-    const emailValue = email.value.trim();
-    const wachtwoordValue = wachtwoord.value.trim();
-    const bevestigWachtwoordValue = bevestigWachtwoord.value.trim();
-
-    data = `{ "naam": ${naamValue}, "email": ${emailValue}, "password": ${wachtwoordValue} }`;
-    params = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: data
-    }
-    fetch("http://localhost:8080/klant/registreren", params)
-      .then(response => response.json())
-      .then((data) => console.log(data))
-      .catch(error => console.log("Run Eclipse. " + error))
-  </script> -->
+  <script src="../model/Klant.js"></script>
 
 </body>
 
