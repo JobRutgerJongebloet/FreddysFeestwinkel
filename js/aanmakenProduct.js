@@ -46,18 +46,18 @@ function maakProductAan(evt) {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.succes === true){
-          alert ('Het is goed gegaan')
+        if (data.succes === true) {
+          alert('Het is goed gegaan')
         }
         else {
-          alert ('Er is iets fout gegaan')
+          alert('Er is iets fout gegaan')
         }
-        
+
       });
   }
 }
 // functie brengt gebruiker weer naar de productpagina
-function naarAnderePagina(){
-  document.location.href="product.html";
-}
+// function naarAnderePagina() {
+//   document.location.href = "index.html";
+// }
 
