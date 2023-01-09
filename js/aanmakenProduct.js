@@ -9,7 +9,7 @@ function maakProductAan(evt) {
     evt.stopPropagation()
   }
   formulier.classList.add('was-validated')
-  
+
   if (formulier.classList.contains('was-validated')) {
 
     // Formulier uitlezen
@@ -45,8 +45,8 @@ function maakProductAan(evt) {
       });
   }
 }
-// functie brengt gebruiker weer naar de productpagina
-// function naarAnderePagina() {
-//   document.location.href = "index.html";
-// }
+//functie brengt gebruiker weer naar de productpagina
+function naarAnderePagina() {
+  document.location.href = "product.html";
+}
 
