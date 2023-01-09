@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Product
         for (let i = 0; i < response.length; i++) {
             products.innerHTML += `
-                <div class="filter-card col mb-3">
+                <div class="filter-card col mb-3 all ${response[i].categorie}">
                     <div class="filter-card-item p-4 bg-light rounded">
                         <div class="filter-card-img rounded">
                             <img src="img/items/christmas-sweater.jpg" class="item-img" alt="">
