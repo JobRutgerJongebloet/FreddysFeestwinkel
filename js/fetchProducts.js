@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                         <div class="filter-card-title">${response[i].naam}</div>
-                        <div class="filter-card-description">${response[i].omschrijving}</div>
+                        <div class="filter-card-description">${response[i].beschrijving}</div>
                         <div class="filter-card-price">€ 25</div>
                     </div>
                 </div>`;
