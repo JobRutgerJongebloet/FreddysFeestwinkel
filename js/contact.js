@@ -90,16 +90,14 @@ function sendEMail(EmailDTO) {
         redirect: 'follow'
     };
     fetch("http://localhost:8080/email/send", requestOptions)
-        .then(response => response.text())
-        .then(result => {
+        .then(r => r.json())
+        .then(r => { 
 
-            let response = JSON.parse(result);
-
-            if (response.succes) {
+            if (r.succes) {
                 document.getElementById('header').innerHTML = "Email verzonden!"
                 document.getElementById('formbutton').innerHTML = "Verstuur nog een email"
             } else {
-                console.log(response.validaties);
+                console.log(r.validaties);
                 alert("Email verzenden mislukt")
             }
         })
