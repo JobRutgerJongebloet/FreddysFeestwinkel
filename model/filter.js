@@ -1,13 +1,17 @@
 // Document.querySelectorAll()
 const theme = document.querySelectorAll('.theme');
-const allThemes = document.querySelectorAll('.all');
 
-for (let i = 0; i < theme.length; i++) {
-    theme[i].addEventListener('click', filterThemes.bind(this, theme[i]));
+window.onload = function () {
+    for (let i = 0; i < theme.length; i++) {
+        theme[i].addEventListener('click', filterThemes.bind(this, theme[i]));
+    }
 }
 
-function filterThemes(item) {
+async function filterThemes(item) {
     changeActivePosition(item);
+
+    const allThemes = document.querySelectorAll('.all');
+
     for (let i = 0; i < allThemes.length; i++) {
         if (allThemes[i].classList.contains(item.attributes.id.value)) {
             allThemes[i].style.display = "block";
@@ -17,15 +21,14 @@ function filterThemes(item) {
     }
 }
 
-function changeActivePosition(activeItem) {
-    console.log(activeItem);
+async function changeActivePosition(activeItem) {
     // Remove active attribute from the selected input
     for (let i = 0; i < theme.length; i++) {
-        theme[i].classList.remove('active');
+        await theme[i].classList.remove('active');
     }
 
     // Add active attribute to the selected input
-    activeItem.classList.add('active');
+    await activeItem.classList.add('active');
 
     // Getting attributes from the active input
     const active = activeItem;
@@ -47,5 +50,4 @@ function changeActivePosition(activeItem) {
 
     // Convert an Array to a String
     var convertSelectedTheme = validateTheme.toString();
-    console.log(convertSelectedTheme);
-};
+}
