@@ -12,6 +12,9 @@ export class NavBar {
             <a class="nav-link active" aria-current="page" href="/view/product.html">product</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/view/producttoevoegen.html">Product toevoegen</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/view/contact.html">contact</a>
           </li>
           <li class="nav-item">
@@ -37,7 +40,6 @@ export class NavBar {
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
-    </div>
   </nav>`;
 
   constructor() {
@@ -47,7 +49,6 @@ export class NavBar {
       // If a navbar element already exists, don't create a new one
       return;
     }
-
     // Create the navbar div
     const navbar = document.createElement('div');
 

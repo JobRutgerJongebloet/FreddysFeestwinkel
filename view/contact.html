@@ -1,68 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-	<title>Freddy Contact</title>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/css/contact.css">
+	<title>Freddy Contact</title>
+	<link rel="stylesheet" href="/css/contact.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/d7325308b1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<div class="contact">
-		<div class="container-contact">
-			<div class="contact-pic js-tilt">
-				<img src="/img/img-01.png" alt="IMG">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4 p-5 order-lg-2 column-right shadow">
+				<h5 class="color--white">Openingstijden</h5>
+				<table class="openingstijden-table mb-3">
+					<tbody>
+						<tr>
+							<td class="dagenWeek">Maandag</td>
+							<td>9:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td class="dagenWeek">Dinsdag</td>
+							<td>9:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td class="dagenWeek">Woensdag</td>
+							<td>9:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td class="dagenWeek">Donderdag</td>
+							<td>9:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td class="dagenWeek">Frijdag</td>
+							<td>9:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td>Zaterdag</td>
+							<td>9:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td>Zondag</td>
+							<td>Gesloten</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul class="contact-info_list position-relative">
+					<li class="mb-4 pl-4">
+						<span class="position-absolute"><i class="fas fa-envelope"></i></span>
+						<a href="mailto:info.freddyfeestwinkel@gmail.com">info.freddyfeestwinkel@gmail.com</a>
+					</li>
+					<li class="mb-4 pl-4">
+						<span class="position-absolute"><i class="fas fa-phone"></i></span>
+						<a href="tel:0206626145">020 662 6145</a>
+					</li>
+					<li class="mb-4 pl-4">
+						<span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span>
+						FreddysFeestwinkel B.V.
+						<br> Ferdinand Bolstraat 22
+						<br> 1072 LJ Amsterdam
+						<div class="mt-3">
+							<a href="https://www.google.nl/maps/dir//Ferdinand+Bolstraat+22,+1072+LJ+Amsterdam/@52.3569035,4.888306,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47c609ed6f78d949:0xc44276be2e6b3b5d!2m2!1d4.8904947!2d52.3569002"
+								target="_blank" class="text-link link--right-icon text-white">Google map route
+								<i class="link__icon fa fa-directions"></i></a>
+						</div>
+					</li>
+				</ul>
 			</div>
-			<form class="contact-form validate-form">
-				<span class="contact-form-title">
-					Contacteer ons
-				</span>
-				<div class="wrap-input validate-input" data-validate="Naam is een requirement">
-					<input class="input" type="text" name="name" placeholder="Naam">
-					<span class="shadow-input"></span>
-				</div>
-				<div class="wrap-input validate-input" data-validate="Valid email is required: abc@abc.com">
-					<input class="input" type="text" name="email" placeholder="Email">
-					<span class="shadow-input"></span>
-				</div>
-				<div class="wrap-input validate-input" data-validate="Onderwerp is een requirement">
-					<input class="input" type="text" name="subject" placeholder="Onderwerp">
-					<span class="shadow-input"></span>
-				</div>
-				<div class="wrap-input validate-input" data-validate="Bericht is een requirement">
-					<textarea class="input" name="message" placeholder="Bericht"></textarea>
-					<span class="shadow-input"></span>
-				</div>
-				<div class="container-contact-form-btn bounce">
-					<button class="contact-form-btn">
-						<span>
-							Verstuur email
-							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-						</span>
-					</button>
-				</div>
-			</form>
+			<div class="col-lg-6 p-5 order-lg-1 column-left shadow">
+				<form class="contact-form" id="form">
+					<div class="row">
+						<h4 class="mb-2" id="header">Vragenformulier</h4>
+						<div class="col-sm-6 mb-3">
+							<div class="form-group">
+								<label for="voornaam">Voornaam</label>
+								<input type="text" class="form-control" id="voornaam" name="voornaam"
+									placeholder="Voornaam" autofocus>
+								<div class="invalid-feedback"></div>
+							</div>
+						</div>
+						<div class="col-sm-6 mb-3">
+							<div class="form-group">
+								<label for="achternaam">Achternaam</label>
+								<input type="text" class="form-control" id="achternaam" name="achternaam"
+									placeholder="Achternaam">
+								<div class="invalid-feedback"></div>
+							</div>
+						</div>
+						<div class="col-sm-8 mb-3">
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" class="form-control" id="email" name="email"
+									placeholder="jouwemail@gmail.com" autofocus>
+								<div class="invalid-feedback"></div>
+							</div>
+						</div>
+						<div class="col-sm-4 mb-3">
+							<div class="form-group">
+								<label for="telefoonnummer">Telefoonnummer</label>
+								<input type="tel" class="form-control" id="telefoonnummer" name="telefoonnummer"
+									placeholder="0638769076">
+								<div class="invalid-feedback">Telefoonnummer is verplicht</div>
+							</div>
+						</div>
+						<div class="col-sm-12 mb-3">
+							<div class="form-group">
+								<label for="onderwerp">Onderwerp</label>
+								<input type="text" class="form-control" id="onderwerp" name="onderwerp"
+									placeholder="Productvraag">
+								<div class="invalid-feedback"> Onderwerp is verplicht</div>
+							</div>
+						</div>
+						<div class="col-sm-12 mb-3">
+							<div class="form-group">
+								<label for="message">Hoe kunnen we u helpen?</label>
+								<textarea class="form-control" id="message" name="message" rows="4"
+									placeholder="Hallo Freddy, Ik heb een vraag over....."></textarea>
+								<div class="invalid-feedback">Bericht is verplicht</div>
+							</div>
+						</div>
+						<div class="col-sm-12 mb-3">
+							<button type="submit" name="submit" class="btn btn-success"
+								id="formbutton">Versturen</button>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-	<script type="module" src="/controller/contactController.js"></script>
 </body>
+<script type="module" src="/js/contact.js"></script>
 
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-		integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"
-		integrity="sha512-u1L7Dp3BKUP3gijgSRoMTNxmDl/5o+XOHupwwa7jsI1rMzHrllSLKsGOfqjYl8vrEG+8ghnRPNA/SCltmJCZpQ=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		});
-	</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js"
-	integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ=="
-	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>$('.js-tilt').tilt({
-		scale: 1.1
-	});</script>
