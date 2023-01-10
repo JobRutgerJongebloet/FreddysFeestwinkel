@@ -1,6 +1,7 @@
 // Document.querySelectorAll()
 const theme = document.querySelectorAll('.theme');
 
+// Load events after the element has finished loading
 window.onload = function () {
     for (let i = 0; i < theme.length; i++) {
         theme[i].addEventListener('click', filterThemes.bind(this, theme[i]));
