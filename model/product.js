@@ -24,8 +24,6 @@ function createProduct(evt) {
 
     if (productForm.classList.contains('was-validated')) {
 
-        console.log("test");
-
         // Getting the values from the inputs
         let invoerNaam = document.getElementById('naam').value;
         let invoerCategorie = document.getElementById('categorie').value;
