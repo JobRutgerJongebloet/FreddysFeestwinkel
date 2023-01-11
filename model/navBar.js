@@ -49,12 +49,10 @@ export class NavBar {
       // If a navbar element already exists, don't create a new one
       return;
     }
-
     // Create the navbar div
     const navbar = document.createElement('div');
 
     // Get the first child of the body element
-    //! Creates a new div as the first child of the body element, but skips then the whole layout
     const firstChild = document.body.firstChild;
 
     // Insert the navbar div as the first child of the body element

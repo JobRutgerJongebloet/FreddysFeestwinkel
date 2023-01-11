@@ -2,6 +2,7 @@ let winkelwagen = {};
 let winkelwagenProucten = [];
 let totalPrice = 0;
 
+
 haalProductenOp();
 function haalProductenOp() {
     fetch(baseURL + 'producten')
@@ -137,5 +138,3 @@ function verwijderenUitWinkelwagen(productid) {
 // }
 // inhoudww.innerHTML = winkelwagenInhoud;
 // }
-
-
