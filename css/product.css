@@ -1,0 +1,115 @@
+.wrapper {
+    width: 100%;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .05);
+    overflow: hidden;
+}
+
+h2.title {
+    padding: 5px 0;
+    font-weight: normal;
+    color: black;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.form {
+    width: 100%;
+}
+
+.addProductForm {
+    background: #F4F5F7;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.addProductForm label {
+    display: block;
+    color: #000;
+    font-weight: bold;
+    font-size: .8rem;
+    margin-bottom: 10px;
+}
+
+.addProductForm input {
+    border: 0;
+    outline: 0;
+    height: 50px;
+    background: #FFF;
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+    font-weight: 700;
+    font-size: .9rem;
+    text-indent: 15px;
+    border: 2px solid transparent;
+    transition: border 250ms;
+}
+
+.addProductForm select {
+    border: 0;
+    outline: 0;
+    height: 50px;
+    background: #FFF;
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+    font-weight: 700;
+    font-size: .9rem;
+    text-indent: 15px;
+    border: 2px solid transparent;
+    transition: border 250ms;
+}
+
+.addProductForm .image-upload {
+    border: 0;
+    outline: 0;
+    height: 50px;
+    background: #FFF;
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+    font-weight: 700;
+    font-size: .9rem;
+    text-indent: 15px;
+    border: 2px solid transparent;
+    transition: border 250ms;
+    margin-top: 2%;
+}
+
+.addProductForm .image-upload .actual-btn {
+    margin-top: 2.5%;
+}
+
+.full-width {
+    grid-column: -1 / 1
+}
+
+.button {
+    grid-column: -1 / 1;
+    display: flex;
+    justify-content: center;
+}
+
+.button button {
+    border: 0;
+    outline: 0;
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #198754;
+}
+
+.button button:hover {
+    color: #fff;
+    background-color: #157347;
+    border-color: #146c43;
+}
