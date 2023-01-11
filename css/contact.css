@@ -264,28 +264,10 @@ textarea.input + .shadow-input {
   font-size: 15px;
   line-height: 1.5;
   color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 25px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
-.contact-form-btn i {
-  margin-left: 7px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
+.column-left {
+  background: white;
 }
 
 .contact-form-btn:hover {
@@ -409,30 +391,22 @@ textarea.input + .shadow-input {
 }
 
 .shadow {
-  animation-name: shadow;
+  box-shadow: 0 0 10px 5px #f00 !important;
 }
 
-@keyframes shadow {
-  to {
-    box-shadow: 0px 0px 80px 30px;
-    opacity: 0;
-  }
+.form-control:focus {
+  border-color: #198754 !important;
+  box-shadow: inset 0 1px 1px #4ca57c, 0 0 8px #198754 !important;
 }
 
-.fade-in {
-  transition: opacity 0.5s linear;
-  opacity: 0;
+.contact-info_list span.position-absolute {
+  left: 0
 }
 
-.fade-in.show {
-  opacity: 1;
+.contact-info_list li {
+  list-style: none;
 }
 
-.fade-out {
-  transition: opacity 0.5s linear;
-  opacity: 1;
-}
-
-.fade-out.hide {
-  opacity: 0;
+.dagenWeek{
+  padding-right: 4rem;
 }

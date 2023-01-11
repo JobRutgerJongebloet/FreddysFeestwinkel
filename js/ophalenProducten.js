@@ -1,34 +1,68 @@
 
-let producten = document.getElementById('product');
 
-function haalProductenOp() {
-    fetch(baseURL + 'producten')
-        .then(response => response.json())
-        .then(lijst => {
+// toevoegen van een nieuw product
 
-            for (let d of lijst) {
-                console.log(d);
-                producten.innerHTML += `
-                        <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="https://www.feestkleding.nl/media/catalog/product/cache/c9804476f3bdaad700372bd35abce089/fk/g/r/grote-clownsneuzen-rood-12x-0.jpg" class="card-img-top" translate-middle alt="...">
-                                    <div class="card body">
-                                    <h5 class="card-title text-center">
-                                     ${d.naam}            
-                                    </h5>
-                                    <p class="card-text">
-                                     ${d.beschrijving}
-                                    </p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Categorie: ${d.categorie}</li>
-                                        <li class="list-group-item">Voorraad: ${d.voorraad}</li>
-                                    </ul>
-                                    <div class="card body">
-                                    <a href="#" class="btn btn-primary">Toevoegen aan winkelwagen</a>
-                                    </div>
-                                </div>
-                        </div>`
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
             }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+// functie aanmaken 
+function maakProductAan(evt) {
+    evt.preventDefault();
+    let formulier = document.getElementById("product-form")
+    if (formulier.classList.contains('was-validated')) {
+
+        // Formulier uitlezen
+        let NaamInvoer = document.getElementById('productNaam').value;
+        let BeschrijvingInvoer = document.getElementById('productBeschrijving').value;
+        let CategorieInvoer = document.getElementById('productCategorie').value;
+        let PrijsInvoer = document.getElementById('productKosten').value;
+
+        // Javascript object
+        let nieuwProduct = {
+            naam: NaamInvoer,
+            beschrijving: BeschrijvingInvoer,
+            categorie: CategorieInvoer,
+            kosten: PrijsInvoer
+        }
+
+        fetch(baseURL + "product/aanmaken", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(nieuwProduct)
         })
+            .then(response => response.json())
+            .then(data => {
+                if (data.succes === true) {
+                    alert('Het is goed gegaan')
+                }
+                else {
+                    alert('Er is iets fout gegaan')
+                }
+
+            });
+    }
 }
+// functie brengt gebruiker weer naar de productpagina
+function naarAnderePagina() {
+    document.location.href = "product.html";
+}
+
