@@ -3,97 +3,142 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Freddy's Feestwinkel</title>
-
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/product.css">
 </head>
 
 <body>
-
-  <div class="row">
-    <br>
-    <br>
-    <div class="col-12 col-md-4"> <!-- Button to Open the Modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-        Product toevoegen
-      </button>
-
-      <!-- The Modal -->
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">ProductAanmaakFormulier</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+  <div class="main-container">
+    <div class="main">
+      <div class="container">
+        <!-- Start of Navbar -->
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+              <img src="../img/icon.png" class="christmas-tree" alt="christmas-tree">
+              <b class="christmas-gold">Freddys</b>
+              <b class="christmas-title">Feestwinkel</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link title active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link title" href="product.html">Producten</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link title" href="contact.html">Over ons</a>
+                </li>
+              </ul>
+              <form class="d-flex search" role="search">
+                <input class="form-control me-2 search-title search-input" type="search">
+                <button class="btn btn-success" type="submit">Zoek</button>
+              </form>
+              <div class="d-flex">
+                <a href="inloggen.html">
+                  <button type="button" class="btn button-title remove-button-effects">Login</button>
+                </a>
+                <a href="registreer.html">
+                  <button type="button" class="btn btn-success button-title-white">
+                    Account aanmaken
+                  </button>
+                </a>
+              </div>
             </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container">
+        <div class="container-fluid" style="height: 600px;">
+          <div class="wrapper">
+            <div class="form">
+              <h2 class="title text-center">Producten aanmaak formulier</h2>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-              <form action="product.html" class="row g-3 needs-validation" novalidate id="product-form"
-                onsubmit="maakProductAan(event);return false">
-                <div class="col-md-12">
-                  <label for="productNaam" class="form-label">ProductNaam</label>
-                  <input type="text" class="form-control" name="name" id="productNaam" required="true">
+              <form action="product.html" method="POST" class="addProductForm needs-validation" id="addProductForm"
+                name="addProductForm" onsubmit="createProduct(event);return false" enctype="multipart/form-data">
+                <div class="control-from">
+                  <label for="naam">Naam *</label>
+                  <input type="text" id="naam" required>
                   <div class="invalid-feedback">
-                    Voer een ProductNaam in.
+                    Voer een naam in.
                   </div>
                 </div>
-                <div class="col-md-12">
-                  <label for="productBeschrijving" class="form-label">ProductBeschrijving</label>
-                  <input type="text" class="form-control" name="beschrijving" id="productBeschrijving" required="true">
-                  <div class="invalid-feedback">
-                    Voeg een ProductBeschrijving toe.
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <label for="productCategorie" class="form-label">ProductCategorie</label>
-                  <select class="form-select" name="categorie" id="productCategorie" required="true">
+                <div class="control-from">
+                  <label for="beschrijving">Categorie *</label>
+                  <select name="categorie" id="categorie" required>
                     <option selected disabled value="">Kies...</option>
-                    <option value="FK">Feestkleding</option>
-                    <option value="FA">Feestaccesoires</option>
-                    <option value="SS">Schmink spullen</option>
-                    <option value="KA">Kerstartikelen</option>
-                    <option value="PR">Pruiken</option>
+                    <option value="halloween">Halloween</option>
+                    <option value="christmas">Kerstmis</option>
+                    <option value="kingsday">Koningsdag</option>
+                    <option value="motherday">Moederdag</option>
+                    <option value="newyear">Oud & Nieuw</option>
+                    <option value="easter">Pasen</option>
+                    <option value="saint-nicholas">Sinterklaas</option>
+                    <option value="sint-maarte">Sint Maarten</option>
+                    <option value="sugar-feast">Suikerfeest</option>
+                    <option value="valentine">Valentijnsdag</option>
                   </select>
                 </div>
-                <br>
-                <div class="col-md-12">
-                  <label for="productKosten" class="form-label">ProductKosten</label>
-                  <input type="text" class="form-control" name="kosten" id="productKosten" required="true">
+                <div class="full-width">
+                  <label for="beschrijving">Beschrijving *</label>
+                  <input type="text" id="beschrijving" required>
                   <div class="invalid-feedback">
-                    Voeg ProductKosten toe.
+                    Voer een beschrijving in.
                   </div>
                 </div>
-                <br>
-                <div class="col-6">
-                  <button class="btn btn-primary" type="submit">Aanmaken</button>
+                <div class="control-from">
+                  <label for="foto">Foto *</label>
+                  <input type="file" id="actual-btn" class="foto" accept="items/png, items/jpg" hidden />
+                  <div class="image-upload">
+                    <label class="actual-btn" for="actual-btn">Uploaden</label>
+                  </div>
+                  <div class="invalid-feedback">
+                    Voer een foto in.
+                  </div>
+                </div>
+                <div class="control-from">
+                  <label for="voorraad">Voorraad *</label>
+                  <input type="number" id="voorraad" min="0" placeholder="0" step="10" required>
+                  <div class="invalid-feedback">
+                    Voer een voorraad in.
+                  </div>
+                </div>
+                <div class="control-from">
+                  <label for="kosten">Kosten *</label>
+                  <input type="number" id="kosten" min="0.99" placeholder="0.00" step="any" required>
+                  <div class="invalid-feedback">
+                    Voer een kosten in.
+                  </div>
+                </div>
+                <div class="control-from">
+                  <label for="subtotaal">Subtotaal *</label>
+                  <input type="number" id="subtotaal" min="0.99" placeholder="0.00" step="any" required>
+                  <div class="invalid-feedback">
+                    Voer een subtotaal in.
+                  </div>
+                </div>
+                <div class="button">
+                  <button type="submit" id="create">Aanmaken</button>
                 </div>
               </form>
             </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
-                onclick="naarAnderePagina()">Verwijderen</button>
-            </div>
-
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <script type="module" src="../js/aanmakenProduct.js"></script>
+  <script src="../model/product.js"></script>
 
 </body>
 
