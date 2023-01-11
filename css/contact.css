@@ -1,6 +1,4 @@
 
-
-/* Section 1: Main */
 body {
   backdrop-filter: blur(7px);
   height: 100vh;
@@ -54,9 +52,29 @@ body {
   padding-right: 4rem;
 }
 
-.form-control:focus {
-  border-color: #f00;
-  /* red color */
-  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
-  /* red shadow */
+/* navbar */
+.navbar-transparent {
+    background: transparent
 }
+
+.navbar-nav li a {
+    color: #fff
+}
+
+.navbar-nav li:hover {
+    border-bottom: 1px solid rgb(134, 28, 28)
+}
+
+.navbar-nav .active {
+    border-bottom: 1px solid rgb(21, 180, 0)
+}
+
+.navbar-brand {
+    color: #83ff00 !important
+}
+
+.navbar-brand:hover {
+    color: #fff !important
+}
+
+

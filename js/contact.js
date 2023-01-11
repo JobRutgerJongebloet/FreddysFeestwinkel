@@ -4,9 +4,14 @@ import { NavBar } from '../model/navBar.js'
 import { Email } from '../model/email.js';
 import { Favicon } from '../model/favicon.js';
 
-var navbar = new NavBar();
+// navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
+
+
+
+//let username = "tim"
+//navbar.showUsername(username);
 
 const formElement = document.getElementById('form');
 // button is ook een tag en die willen we niet

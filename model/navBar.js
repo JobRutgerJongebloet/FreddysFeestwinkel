@@ -42,6 +42,27 @@ export class NavBar {
       </div>
   </nav>`;
 
+  showUsername(username) {
+    // Get the element where the username will be displayed
+    const usernameElement = document.querySelector('.navbar-username');
+    if (usernameElement) {
+      // If a username element already exists, update it
+      usernameElement.innerHTML = username;
+    } else {
+      // If a username element doesn't exist, create one
+      const newUsernameElement = document.createElement('div');
+      newUsernameElement.classList.add('navbar-username');
+      newUsernameElement.innerHTML = username;
+
+      // Find the navbar element
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        // Append the new username element to the navbar
+        navbar.appendChild(newUsernameElement);
+      }
+    }
+  }
+
   constructor() {
     // Check if a navbar element already exists
     const existingNavbar = document.querySelector('.navbar');
