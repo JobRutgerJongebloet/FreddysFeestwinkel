@@ -25,7 +25,7 @@ function maakProductAan(evt) {
       kosten: PrijsInvoer
     }
 
-    fetch(baseURL + "producten/aanmaken", {
+    fetch("http://localhost:8080/product/aanmaken", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
