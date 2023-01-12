@@ -4,7 +4,7 @@ import { NavBar } from '../model/navBar.js'
 import { Email } from '../model/email.js';
 import { Favicon } from '../model/favicon.js';
 
-//var navbar = new NavBar();
+var navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
 
