@@ -3,7 +3,8 @@ export class NavBar {
     `	<nav class="navbar navbar-expand-lg bg-light">
 		<div class="container-fluid">
 			<img src="/img/icon.png" class="christmas-tree" alt="christmas-tree">
-			<b>FreddysFeestwinkel</b>
+			<b class="gold">Freddys</b>
+      <b class="green">Feestwinkel</b>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 				aria-label="Toggle navigation">
@@ -17,6 +18,9 @@ export class NavBar {
 					<li class="nav-item">
 						<a class="nav-link title" href="/view/product.html">Producten</a>
 					</li>
+          <li class="nav-item">
+          <a class="nav-link title" href="/view/producttoevoegen.html">Product toevoegen</a>
+        </li>
 					<li class="nav-item">
 						<a class="nav-link title" href="/view/contact.html">Contact</a>
 					</li>

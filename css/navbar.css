@@ -15,6 +15,14 @@
   width: 400px;
 }
 
+.gold {
+  color: #ffeb3b !important;
+}
+
+.green {
+  color: #198754;
+}
+
 .title {
   font-family: "DM Sans";
   font-style: normal;
