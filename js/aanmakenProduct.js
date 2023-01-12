@@ -1,4 +1,3 @@
-
 // functie aanmaken 
 function maakProductAan(evt) {
   evt.preventDefault();
@@ -49,4 +48,3 @@ function maakProductAan(evt) {
 function naarAnderePagina() {
   document.location.href = "product.html";
 }
-

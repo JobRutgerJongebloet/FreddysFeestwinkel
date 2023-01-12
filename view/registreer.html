@@ -23,44 +23,39 @@
 
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Inlogpagina</h4>
+          <h4 class="modal-title">Inloggen</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
         <!-- Modal body -->
         <div class="modal-body">
           <form class="row g-3 needs-validation" novalidate id="product-form1">
+            <p>Om in te loggen heeft u uw gebruikersnaam en wachtwoord nodig. Uw gebruikersnaam is uw e-mailadres.</p>
             <div class="col-md-12">
-              <label for="productNaam" class="form-label">Usernaam</label>
-              <input type="text" class="form-control" name="usernaam" placeholder="usernaam" id="usernaam"
+              <label for="gebruikersnaam" class="form-label">Gebruikersnaam</label>
+              <input type="test" class="form-control" name="gebruikersnaam" placeholder="Vul uw gebruikersnaam in" id="gebruikersnaam"
                 required="true">
               <div class="invalid-feedback">
-                Voer een usernaam in.
+                Voer een Gebruikersnaam in.
               </div>
             </div>
             <div class="col-md-12">
               <label for="productBeschrijving" class="form-label">Wachtwoord</label>
-              <input type="password" class="form-control" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord"
-                required="true">
+              <input type="password" class="form-control" name="wachtwoord" placeholder="Vul uw wachtwoord in"
+                id="wachtwoord" required="true">
               <div class="invalid-feedback">
                 Voer een wachtwoord in.
               </div>
             </div>
-              <br>
-              <div class="col-6">
-                <button class="btn btn-primary" type="submit">Inloggen</button>
-              </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sluit</button>
+            <br>
+            <div class="col-6">
+              <button class="btn btn-primary" type="submit">Inloggen</button>
+            </div>
         </div>
-
       </div>
     </div>
-  </div>
 
-  <script src="../js/haalUsernaamOp.js"></script>
+    <script src="../js/haalUsernaamOp.js"></script>
 
 
 </body>
