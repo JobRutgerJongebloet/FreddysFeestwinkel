@@ -1,5 +1,6 @@
 import { NavBar } from '../model/navBar.js'
 var navbar = new NavBar();
+console.log("hoi");
 
 // Ophalen van producten met gebruik van een API
 let producten = document.getElementById('product');
