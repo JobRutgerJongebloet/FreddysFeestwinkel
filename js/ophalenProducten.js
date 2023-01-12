@@ -88,9 +88,6 @@ function toevoegenAanWinkelwagen(productid) {
         })
 }
 
-
-
-
 function verwijderenUitWinkelwagen(productid) {
     fetch(baseURL + 'product/' + productid)
         .then(response => response.json())

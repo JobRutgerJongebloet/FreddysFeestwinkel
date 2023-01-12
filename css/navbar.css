@@ -1,0 +1,55 @@
+.navbar {
+  background-color: transparent !important;
+}
+
+.christmas-tree {
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.search-input {
+  border-radius: 4px;
+  width: 400px;
+}
+
+.title {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  color: #000000;
+}
+
+.title:hover {
+  color: #198754;
+  box-shadow: inset 0 -2px 0px 0px #198754;
+}
+
+/* Remove underline from links */
+a {
+  text-decoration: none;
+}
+
+/* Make icons white */
+.icon {
+  color: white !important;
+  margin-left: 1rem;
+}
+
+.inloggen {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 1230px) {
+  .link__icon, .inloggen, .account-aanmaken {
+    display: none;
+  }
+}
+
+
+
+
+
