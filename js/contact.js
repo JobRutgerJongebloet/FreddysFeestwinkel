@@ -8,8 +8,8 @@ var navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
 
-//let username = "Arjan"
-//navbar.showUsername(username);
+let username = "Arjan"
+navbar.showUsername(username);
 
 const formElement = document.getElementById('form');
 // button is ook een tag en die willen we niet
