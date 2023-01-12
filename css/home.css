@@ -204,83 +204,6 @@
   float: left;
 }
 
-/* Holidays Themes */
-.halloween-theme:hover {
-  background-color: #3c6382;
-}
-.halloween-theme-icon:hover {
-  background-color: #9b59b6;
-}
-.christmas-theme:hover {
-  background-color: #218c74;
-}
-.christmas-theme-icon:hover {
-  background-color: #e55039;
-}
-.kingsday-theme:hover {
-  background-color: #e67e22;
-}
-.kingsday-theme-icon:hover {
-  /* Dutch Flag */
-  background-image: linear-gradient(
-    to bottom,
-    red,
-    red,
-    red,
-    red,
-    white,
-    white,
-    white,
-    white,
-    mediumblue,
-    mediumblue,
-    mediumblue,
-    mediumblue
-  );
-}
-.motherday-theme:hover {
-  background-color: #fd79a8;
-}
-.motherday-theme-icon:hover {
-  background-color: #a29bfe;
-}
-.newyear-theme:hover {
-  background-color: #0fb9b1;
-}
-.newyear-theme-icon:hover {
-  background-color: #f7d794;
-}
-.easter-theme:hover {
-  background-color: #f8a5c2;
-}
-.easter-theme-icon:hover {
-  background-color: #c4e538;
-}
-.saint-nicholas-theme:hover {
-  background-color: #ff5e57;
-}
-.saint-nicholas-theme-icon:hover {
-  background-color: white;
-}
-.sint-maarten-theme:hover {
-  background-color: #00d8d6;
-}
-.sint-maarten-theme-icon:hover {
-  background-color: #fda7df;
-}
-.sugar-feast-theme:hover {
-  background-color: #9980fa;
-}
-.sugar-feast-theme-icon:hover {
-  background-color: #d980fa;
-}
-.valentine-theme:hover {
-  background-color: #f8a5c2;
-}
-.valentine-theme-icon:hover {
-  background-color: #ef5777;
-}
-
 /* Filter: Cards */
 .filter-cards {
   display: flex;
@@ -328,7 +251,7 @@
   color: #1d1e20;
 }
 .filter-card-price {
-  margin-left: 167px;
+  margin-left: 70%;
 }
 
 /** Custom Fonts */

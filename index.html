@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/filter.css">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link title active" aria-current="page" href="index.html">Home</a>
+                                    <a class="nav-link title" aria-current="page" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link title" href="view/product.html">Producten</a>
@@ -109,73 +110,73 @@
                         Filter op feestdagen:
                     </div>
                     <div class="filter-cards-descriptions row">
-                        <div class="filter-card-box halloween-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme halloween-theme" id="halloween">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/ghost.png" class="card-icon halloween-theme-icon p-1"
-                                    alt="halloween">
+                                <img src="img/filter-icons/ghost.png"
+                                    class="card-icon theme-icon halloween-theme-icon p-1" alt="halloween">
                             </div>
                             <div class="filter-card-text col-7">Halloween</div>
                         </div>
-                        <div class="filter-card-box christmas-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme christmas-theme active" id="christmas">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/santa-hat.png" class="card-icon christmas-theme-icon p-1"
-                                    alt="christmas">
+                                <img src="img/filter-icons/santa-hat.png"
+                                    class="card-icon theme-icon christmas-theme-icon p-1" alt="christmas">
                             </div>
                             <div class="filter-card-text col-7">Kerstmis</div>
                         </div>
-                        <div class="filter-card-box kingsday-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme kingsday-theme" id="kingsday">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/flag.png" class="card-icon kingsday-theme-icon p-1"
-                                    alt="kingsday">
+                                <img src="img/filter-icons/flag.png"
+                                    class="card-icon theme-icon kingsday-theme-icon p-1" alt="kingsday">
                             </div>
                             <div class="filter-card-text col-7">Koningsdag</div>
                         </div>
-                        <div class="filter-card-box motherday-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme motherday-theme" id="motherday">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/cake.png" class="card-icon motherday-theme-icon p-1"
-                                    alt="motherday">
+                                <img src="img/filter-icons/cake.png"
+                                    class="card-icon theme-icon motherday-theme-icon p-1" alt="motherday">
                             </div>
                             <div class="filter-card-text col-7">Moederdag</div>
                         </div>
-                        <div class="filter-card-box newyear-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme newyear-theme" id="newyear">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/fireworks.png" class="card-icon newyear-theme-icon p-1"
-                                    alt="newyear">
+                                <img src="img/filter-icons/fireworks.png"
+                                    class="card-icon theme-icon newyear-theme-icon p-1" alt="newyear">
                             </div>
                             <div class="filter-card-text col-7">Oud & Nieuw</div>
                         </div>
-                        <div class="filter-card-box easter-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme easter-theme" id="easter">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/easter-egg.png" class="card-icon easter-theme-icon p-1"
-                                    alt="easter">
+                                <img src="img/filter-icons/easter-egg.png"
+                                    class="card-icon theme-icon easter-theme-icon p-1" alt="easter">
                             </div>
                             <div class="filter-card-text col-7">Pasen</div>
                         </div>
-                        <div class="filter-card-box saint-nicholas-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme saint-nicholas-theme" id="saint-nicholas">
                             <div class="filter-card-icon col-1">
                                 <img src="img/filter-icons/saint-nicholas.png"
-                                    class="card-icon saint-nicholas-theme-icon p-1" alt="saint-nicholas">
+                                    class="card-icon theme-icon saint-nicholas-theme-icon p-1" alt="saint-nicholas">
                             </div>
                             <div class="filter-card-text col-7">Sinterklaas</div>
                         </div>
-                        <div class="filter-card-box sint-maarten-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme sint-maarten-theme" id="sint-maarten">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/sweets.png" class="card-icon sint-maarten-theme-icon p-1"
-                                    alt="sint-maarten">
+                                <img src="img/filter-icons/sweets.png"
+                                    class="card-icon theme-icon sint-maarten-theme-icon p-1" alt="sint-maarten">
                             </div>
                             <div class="filter-card-text col-7">Sint Maarten</div>
                         </div>
-                        <div class="filter-card-box sugar-feast-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme sugar-feast-theme" id="sugar-feast">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/gulab-jamun.png" class="card-icon sugar-feast-theme-icon p-1"
-                                    alt="sugar-feast">
+                                <img src="img/filter-icons/gulab-jamun.png"
+                                    class="card-icon theme-icon sugar-feast-theme-icon p-1" alt="sugar-feast">
                             </div>
                             <div class="filter-card-text col-7">Suikerfeest</div>
                         </div>
-                        <div class="filter-card-box valentine-theme col-3 p-1 m-1 row">
+                        <div class="filter-card-box col-3 p-1 m-1 row theme valentine-theme" id="valentine">
                             <div class="filter-card-icon col-1">
-                                <img src="img/filter-icons/heart.png" class="card-icon valentine-theme-icon p-1"
-                                    alt="valentine">
+                                <img src="img/filter-icons/heart.png"
+                                    class="card-icon  theme-icon valentine-theme-icon p-1" alt="valentine">
                             </div>
                             <div class="filter-card-text col-7">Valentijnsdag</div>
                         </div>
@@ -220,6 +221,7 @@
     <!-- Fetching products from the API -->
     <script src="js/settings.js"></script>
     <script src="js/fetchProducts.js"></script>
+    <script src="model/filter.js"></script>
 </body>
 
 </html>
