@@ -4,12 +4,12 @@ import { NavBar } from '../model/navBar.js'
 import { Email } from '../model/email.js';
 import { Favicon } from '../model/favicon.js';
 
-//var navbar = new NavBar();
+var navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
 
-//let username = "Arjan"
-//navbar.showUsername(username);
+let username = "Job Jongebloet"
+navbar.showUsername(username);
 
 const formElement = document.getElementById('form');
 // button is ook een tag en die willen we niet

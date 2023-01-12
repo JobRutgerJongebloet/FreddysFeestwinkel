@@ -44,7 +44,7 @@ a {
 }
 
 @media (max-width: 1230px) {
-  .link__icon, .inloggen, .account-aanmaken {
+  .fa-heart, .fa-shopping-cart, .inloggen, .account-aanmaken {
     display: none;
   }
 }

@@ -39,23 +39,15 @@ export class NavBar {
 	</nav>`;
 
   showUsername(username) {
-    // Get the element where the username will be displayed
-    const usernameElement = document.querySelector('.navbar-username');
-    if (usernameElement) {
-      // If a username element already exists, update it
-      usernameElement.innerHTML = username;
-    } else {
-      // If a username element doesn't exist, create one
-      const newUsernameElement = document.createElement('div');
-      newUsernameElement.classList.add('navbar-username');
-      newUsernameElement.innerHTML = username;
 
-      // Find the navbar element
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        // Append the new username element to the navbar
-        navbar.appendChild(newUsernameElement);
-      }
+    const usernameElement = document.querySelector('.navbar-username');
+    if (!usernameElement) {
+      // Update the text of the "Inloggen" link to the passed in username
+      var test = document.querySelector('.title.inloggen');
+      console.log(test);
+      test.innerHTML = username;
+      // Remove the "Account aanmaken" button
+      document.querySelector('.account-aanmaken').remove();
     }
   }
 
