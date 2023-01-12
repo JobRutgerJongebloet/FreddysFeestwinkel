@@ -8,7 +8,7 @@ var navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
 
-let username = "Arjan"
+let username = "Job Jongebloet"
 navbar.showUsername(username);
 
 const formElement = document.getElementById('form');
