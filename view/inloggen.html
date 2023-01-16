@@ -19,34 +19,31 @@
 
 <body>
 
-                            <div class="container p-4">
-                                <div class="row justify-content-center">
-                                    <div class="col-6 text-center">
+    <form class="inlog-form" id="form" novalidate>
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
 
-                                        <p>Om in te loggen heeft u uw gebruikersnaam en wachtwoord nodig. Uw
-                                            gebruikersnaam is uw e-mailadres.</p>
-                                        <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="gebruikersnaam"
-                                                placeholder="Vul uw gebruikersnaam in">
-                                            <label for="floatingInput" required>Gebruikersnaam</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input type="password" class="form-control" id="wachtwoord"
-                                                placeholder="Vul uw wachtwoord in">
-                                            <label for="floatingPassword" required>Wachtwoord</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <input type="password" class="form-control" id="hhwachtwoord"
-                                                placeholder="Herhaal uw wachtwoord">
-                                            <label for="floatingPassword" required>Herhaal wachtwoord</label>
-                                        </div>
-                                        <button onclick="maakAccountAan()" type="button"
-                                            class="btn btn-primary">Inloggen</button>
-                                    </div>
-                                </div>
-                            </div>
+                <p>Om in te loggen heeft u uw gebruikersnaam en wachtwoord nodig. Uw
+                    gebruikersnaam is uw e-mailadres.</p>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="gebruikersnaam" placeholder="Vul uw gebruikersnaam in">
+                    <label for="floatingInput" required>Gebruikersnaam</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="wachtwoord" placeholder="Vul uw wachtwoord in">
+                    <label for="floatingPassword" required>Wachtwoord</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="hhwachtwoord" placeholder="Herhaal uw wachtwoord">
+                    <label for="floatingPassword" required>Herhaal wachtwoord</label>
+                </div>
+                <button type="submit" name="submit" class="btn btn-success" id="formbutton">Inloggen</button>
+            </div>
+        </div>
+        </div>
 
-                            <script src="../js/haalUsernaamOp.js"></script>
-                        </body>
+        <script type="module" src="../js/inloggen.js"></script>
+</body>
+
 
 </html>
