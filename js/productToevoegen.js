@@ -1,8 +1,9 @@
 import { Bootstrap } from '../model/bootstrap.js';
 import { NavBar } from '../model/navBar.js'
 
-if (JSON.parse(localStorage.getItem("response")) != null) {
-    if (JSON.parse(localStorage.getItem("response")).role != "WINKELIER") {
+if (localStorage.getItem("response") != null) {
+    let response = JSON.parse(localStorage.getItem("response"));
+    if (response.role != "WINKELIER") {
         document.location.href = "/index.html";}
 }
 
