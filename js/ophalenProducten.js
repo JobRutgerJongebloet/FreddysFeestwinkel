@@ -1,5 +1,5 @@
 let winkelwagen = {};
-let winkelwagenProducten = [];
+let winkelwagenProucten = [];
 
 
 haalProductenOp();
@@ -103,7 +103,7 @@ function toevoegenProductnaarWinkelwagenProduct(productId) {
     fetch(baseURL + 'winkelwagen/product', {
         method: 'POST',
         body: JSON.stringify(aanmakenDTO),
-        headers: {'Content-Type': 'application/json' }
+        headers: {'Content-Type': 'application/json', 'Authentication': JSON.parse(localStorage.getItem("response")).randomstring}
     })
     .then(()=>{
         alert('product is toegevoegd aan winkelwagen')
