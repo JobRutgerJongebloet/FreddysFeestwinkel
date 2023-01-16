@@ -49,9 +49,8 @@ export class NavBar {
     const usernameElement = document.querySelector('.navbar-username');
     if (!usernameElement) {
       // Update the text of the "Inloggen" link to the passed in username
-      var test = document.querySelector('.title.inloggen');
-      console.log(test);
-      test.innerHTML = response.naam;
+      var inloggenHTML = document.querySelector('.title.inloggen');
+      inloggenHTML.innerHTML = response.naam;
       // Remove the "Account aanmaken" button
       document.querySelector('.account-aanmaken').remove();
     }

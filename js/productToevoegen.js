@@ -4,7 +4,11 @@ import { NavBar } from '../model/navBar.js'
 if (localStorage.getItem("response") != null) {
     let response = JSON.parse(localStorage.getItem("response"));
     if (response.role != "WINKELIER") {
-        document.location.href = "/index.html";}
+        document.location.href = "/index.html";
+    }
+}
+else {
+    document.location.href = "/index.html";
 }
 
 const navbar = new NavBar();
