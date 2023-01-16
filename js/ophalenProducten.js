@@ -1,6 +1,5 @@
 let winkelwagen = {};
-let winkelwagenProucten = [];
-let totalPrice = 0;
+let winkelwagenProducten = [];
 
 
 haalProductenOp();
@@ -32,7 +31,7 @@ function haalProductenOp() {
                                         <li class="list-group-item">Prijs per stuk €${d.subtotal}</li>
                                     </ul>
                                     <div class="card body">
-            <a data-param="${d.id}" id="addtocart" class="btn btn-primary">Toevoegen aan winkelwagen</a>
+            <a data-param="${d.id}" id="addtocart"  onclick="toevoegenProductnaarWinkelwagenProduct(${d.id})" class="btn btn-primary">Toevoegen aan winkelwagen</a>
             <a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
             <span class="cart-quantity" id="quantity-${d.id}"></span>
         </div>
@@ -57,6 +56,10 @@ function haalProductenOp() {
             });
         });
 }
+
+
+
+
 
 function toevoegenAanWinkelwagen(productid) {
     fetch(baseURL + 'product/' + productid)
@@ -85,8 +88,28 @@ function toevoegenAanWinkelwagen(productid) {
             totaalElement.innerHTML = `Totale prijs: € ${totaalprijs}`;
             let quantityElement = document.getElementById("quantity-" + productid);
             quantityElement.innerHTML = winkelwagen[product.naam].aantal;
+            
+            
+            
         })
 }
+
+function toevoegenProductnaarWinkelwagenProduct(productId) {
+    let hoeveelheid = 1; //haal actuele hoevelheid op
+    let aanmakenDTO = {
+        productId: productId,
+        hoeveelheid: hoeveelheid
+    }
+    fetch(baseURL + 'winkelwagen/product', {
+        method: 'POST',
+        body: JSON.stringify(aanmakenDTO),
+        headers: {'Content-Type': 'application/json' }
+    })
+    .then(()=>{
+        alert('product is toegevoegd aan winkelwagen')
+    })
+}
+
 
 function verwijderenUitWinkelwagen(productid) {
     fetch(baseURL + 'product/' + productid)
