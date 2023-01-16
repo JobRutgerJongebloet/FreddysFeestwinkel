@@ -38,11 +38,11 @@ function maakAccountAan() {
         .then(r => {
 
             if (r.validaties == null) {
-                console.log("U bent ingelogd!")
+                alert("U bent ingelogd!")
                 localStorage.setItem("response", JSON.stringify(r));
                 navbar.showUsername();
             } else {
-                console.log("Gebruikersnaam of password is incorrect!");
+                alert("Gebruikersnaam of password is incorrect!");
                 r.validaties.forEach(validatie => {
                     alert(validatie);
                 });
