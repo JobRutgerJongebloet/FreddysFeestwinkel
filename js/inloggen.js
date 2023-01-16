@@ -22,7 +22,7 @@ function maakAccountAan() {
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
-        email: username,
+        username: username,
         password: password
     });
 
