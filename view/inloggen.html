@@ -19,15 +19,10 @@
 
 <body>
 
-    <div class="container p-4">
+    <form class="inlog-form" id="form" novalidate>
         <div class="row justify-content-center">
             <div class="col-6 text-center">
 
-
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="voorNaam" placeholder="Voornaam">
-                    <label for="floatingInput">Voornaam</label>
-                </div>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" placeholder="name@example.com">
                     <label for="floatingInput">E-mail adres</label>
@@ -36,22 +31,16 @@
                     <input type="password" class="form-control" id="wachtwoord" placeholder="Password">
                     <label for="floatingPassword">Wachtwoord</label>
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="herhaalWachtwoord" placeholder="Password">
-                    <label for="floatingPassword">Herhaal wachtwoord</label>
+                <div>
+                    <button type="submit" name="submit" class="btn btn-success" id="formbutton">Inloggen</button>
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="telefoonNummer" placeholder="Telefoonnummer">
-                    <label for="floatingPassword">Telefoonnummer</label>
-                </div>
-                <button onclick="maakAccountAan()" type="button" class="btn btn-primary">Maak account aan</button>
+
 
             </div>
         </div>
-    </div>
+    </form>
 
-
-    <script src="../js/inloggen.js"></script>
+    <script type="module" src="/js/inloggen.js"></script>
 </body>
 
 </html>

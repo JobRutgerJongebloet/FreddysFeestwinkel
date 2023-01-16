@@ -8,8 +8,10 @@ var navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
 
-let username = "Job Jongebloet"
-navbar.showUsername(username);
+let response = JSON.parse(localStorage.getItem("response"));
+if(response != null){
+    navbar.showUsername();
+}
 
 const formElement = document.getElementById('form');
 // button is ook een tag en die willen we niet
