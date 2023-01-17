@@ -24,6 +24,8 @@ const textAreaElements = formElement.getElementsByTagName('textarea');
 const selectElements = formElement.getElementsByTagName('select');
 const formElements = [...inputElements, ...textAreaElements, ...selectElements];
 
+document.getElementById("productnaam").focus();
+
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
