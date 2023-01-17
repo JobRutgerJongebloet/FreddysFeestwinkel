@@ -1,5 +1,5 @@
-import { Bootstrap } from '../model/bootstrap.js';
 import { NavBar } from '../model/navBar.js'
+import { Favicon } from '../model/favicon.js';
 
 if (localStorage.getItem("response") != null) {
     let response = JSON.parse(localStorage.getItem("response"));
@@ -12,68 +12,108 @@ else {
 }
 
 const navbar = new NavBar();
-const boostrap = new Bootstrap();
+const favicon = new Favicon();
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-    'use strict'
+const formElement = document.getElementById('form');
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
+var formIsValid = false;
 
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-            form.classList.add('was-validated')
-        }, false)
-    })
-})()
+// button is ook een tag en die willen we niet
+const inputElements = formElement.getElementsByTagName('input');
+const textAreaElements = formElement.getElementsByTagName('textarea');
+const selectElements = formElement.getElementsByTagName('select');
+const formElements = [...inputElements, ...textAreaElements, ...selectElements];
 
-// functie aanmaken 
-function maakProductAan(evt) {
+formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    let formulier = document.getElementById("product-form")
-    if (formulier.classList.contains('was-validated')) {
 
-        // Formulier uitlezen
-        let NaamInvoer = document.getElementById('productNaam').value;
-        let BeschrijvingInvoer = document.getElementById('productBeschrijving').value;
-        let CategorieInvoer = document.getElementById('productCategorie').value;
-        let PrijsInvoer = document.getElementById('productKosten').value;
+    formElements.forEach(element => {
+        checkValidity(element);
+    });
 
-        // Javascript object
+    if (formIsValid) {
         let nieuwProduct = {
-            naam: NaamInvoer,
-            beschrijving: BeschrijvingInvoer,
-            categorie: CategorieInvoer,
-            kosten: PrijsInvoer
+            naam: document.getElementById('productnaam').value,
+            beschrijving: document.getElementById('productbeschrijving').value,
+            categorie: document.getElementById('productcategorie').value,
+            // Maakt van 100,00 -> 100 en van 80,34 -> 80.34
+            kosten: parseFloat(document.getElementById('productkosten').value.replace(',', '.'))
         }
 
-        fetch(baseURL + "producten/aanmaken", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(nieuwProduct)
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.succes === true) {
-                    alert('Het is goed gegaan')
-                }
-                else {
-                    alert('Er is iets fout gegaan')
-                }
+        maakProductAan(nieuwProduct);
+    }
 
-            });
+});
+
+formElements.forEach(element => {
+    element.addEventListener("focus", () => removeValidity(element)); // wanneer het element gefocused wordt
+    element.addEventListener("blur", () => checkValidity(element)); // wanneer het element uit focus gaat
+});
+// functie aanmaken 
+function maakProductAan(nieuwProduct) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify(nieuwProduct);
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+    fetch("http://localhost:8080/product/aanmaken", requestOptions)
+        .then(response => response.json())
+        .then(r => {
+
+            console.log(r);
+            if (r.succes) {
+                alert("product is toegevoegd!");
+                document.location.href = "product.html";
+            } else {
+                console.log(r.validaties);
+                alert("Mislukt want " + r.validaties)
+            }
+        }
+
+        )
+        .catch(error => console.log('error', error));
+}
+
+function removeValidity(element) {
+    if (element.classList.contains('is-invalid')) {
+        element.classList.remove('is-invalid');
+    }
+    if (element.classList.contains('is-valid')) {
+        element.classList.remove('is-valid');
     }
 }
-// functie brengt gebruiker weer naar de productpagina
-function naarAnderePagina() {
-    document.location.href = "product.html";
+
+function checkValidity(element) {
+    if (element.name === "kosten") {
+        if (!element.value.match(/^\d+(\.\d+)?$/)) {
+            var text = element.name.replace(/^\w/, c => c.toUpperCase()) + " moet uit alleen cijfers bestaan";
+            document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+            element.classList.add('is-invalid');
+            formIsValid = false;
+        }
+
+        if (element.value > 10000) {
+            var text = element.name.replace(/^\w/, c => c.toUpperCase()) + " moet kleiner zijn dan 10000";
+            document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+            element.classList.add('is-invalid');
+            formIsValid = false;
+
+            element.value.split()
+        }
+    }
+
+    if (element.value.trim() === "") {
+        var text = element.name.replace(/^\w/, c => c.toUpperCase()) + " is een verplicht veld";
+        document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+        element.classList.add('is-invalid');
+        formIsValid = false;
+    } else {
+        element.classList.add('is-valid');
+        formIsValid = true;
+    }
 }
 
