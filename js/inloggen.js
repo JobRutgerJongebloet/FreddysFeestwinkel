@@ -38,9 +38,9 @@ function maakAccountAan() {
         .then(r => {
 
             if (r.validaties == null) {
-                alert("U bent ingelogd!")
+                console.log("U bent ingelogd!")
                 localStorage.setItem("response", JSON.stringify(r));
-                navbar.showUsername();
+                navbar.showusername();
             } else {
                 alert("Gebruikersnaam of password is incorrect!");
                 r.validaties.forEach(validatie => {
