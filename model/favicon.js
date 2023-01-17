@@ -1,6 +1,6 @@
 export class Favicon {
 
-    iconUrl = '/img/icons/faviconFeesthoed.ico'
+    iconUrl = '/img/icons/favicon.ico'
 
     constructor() {
         // Create a new link element

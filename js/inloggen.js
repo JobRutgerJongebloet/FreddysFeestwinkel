@@ -2,7 +2,11 @@ import { NavBar } from '../model/navBar.js'
 
 var navbar = new NavBar();
 const formElement = document.getElementById('form');
+<<<<<<< HEAD
 // console.log(formElement);
+=======
+console.log(formElement);
+>>>>>>> main
 
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -15,7 +19,11 @@ formElement.addEventListener('submit', (evt) => {
 });
 
 function maakAccountAan() {
+<<<<<<< HEAD
     var username = document.getElementById('gebruikersnaam').value;
+=======
+    var username = document.getElementById('email').value;
+>>>>>>> main
     var password = document.getElementById('wachtwoord').value;
 
     var myHeaders = new Headers();
@@ -38,11 +46,19 @@ function maakAccountAan() {
         .then(r => {
 
             if (r.validaties == null) {
+<<<<<<< HEAD
                 console.log("U bent ingelogd!")
                 localStorage.setItem("response", JSON.stringify(r));
                 navbar.showusername();
             } else {
                 alert("Gebruikersnaam of password is incorrect!");
+=======
+                console.log("ingelogd!")
+                localStorage.setItem("response", JSON.stringify(r));
+                navbar.showUsername();
+            } else {
+                console.log("else");
+>>>>>>> main
                 r.validaties.forEach(validatie => {
                     alert(validatie);
                 });
