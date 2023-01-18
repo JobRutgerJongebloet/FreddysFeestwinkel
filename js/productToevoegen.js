@@ -14,17 +14,16 @@ else {
 const navbar = new NavBar();
 const favicon = new Favicon();
 
+fetchCategorieen();
+
 const formElement = document.getElementById('form');
 
 var formIsValid = false;
 
-// button is ook een tag en die willen we niet
 const inputElements = formElement.getElementsByTagName('input');
 const textAreaElements = formElement.getElementsByTagName('textarea');
 const selectElements = formElement.getElementsByTagName('select');
 const formElements = [...inputElements, ...textAreaElements, ...selectElements];
-
-document.getElementById("productnaam").focus();
 
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -51,6 +50,7 @@ formElements.forEach(element => {
     element.addEventListener("focus", () => removeValidity(element)); // wanneer het element gefocused wordt
     element.addEventListener("blur", () => checkValidity(element)); // wanneer het element uit focus gaat
 });
+
 // functie aanmaken 
 function maakProductAan(nieuwProduct) {
     var myHeaders = new Headers();
@@ -79,6 +79,25 @@ function maakProductAan(nieuwProduct) {
         )
         .catch(error => console.log('error', error));
 }
+
+async function fetchCategorieen() {
+    try {
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        const response = await fetch("http://localhost:8080/product/categorieen", requestOptions);
+        const result = await response.json();
+        var select = document.getElementById("productcategorie");
+        result.forEach(element => {
+            select.options.add(new Option(element, element));
+        });
+    } catch (error) {
+        console.log('error', error);
+    }
+}
+
 
 function removeValidity(element) {
     if (element.classList.contains('is-invalid')) {
