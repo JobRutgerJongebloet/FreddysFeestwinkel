@@ -1,5 +1,7 @@
+// Document.querySelectorAll()
 const theme = document.querySelectorAll('.theme');
 
+// Load events after the element has finished loading
 window.onload = function () {
     for (let i = 0; i < theme.length; i++) {
         theme[i].addEventListener('click', filterThemes.bind(this, theme[i]));
@@ -7,11 +9,10 @@ window.onload = function () {
 }
 
 async function filterThemes(item) {
-
     changeActivePosition(item);
 
     const allThemes = document.querySelectorAll('.all');
-    console.log(item);
+
     for (let i = 0; i < allThemes.length; i++) {
         if (allThemes[i].classList.contains(item.attributes.id.value)) {
             allThemes[i].style.display = "block";

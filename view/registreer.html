@@ -1,54 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Inlogpagina Freddy's feestwinkel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/css/registreren.css">
-    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/register.css">
   </head>
-        <div class="container-fluid">
+  <div class="main-container">
+    <div class="main">
+      <div class="container">
+        <!-- Start of Navbar -->
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+              <img src="../img/icon.png" class="christmas-tree" alt="christmas-tree">
+              <b class="christmas-gold">Freddys</b>
+              <b class="christmas-title">Feestwinkel</b>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link title active" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link title" href="product.html">Producten</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link title" href="contact.html">Over ons</a>
+                </li>
+              </ul>
+              <form class="d-flex search" role="search">
+                <input class="form-control me-2 search-title search-input" type="search">
+                <button class="btn btn-success" type="submit">Zoek</button>
+              </form>
+              <div class="d-flex">
+                <a href="inloggen.html">
+                  <button type="button" class="btn button-title remove-button-effects">Login</button>
+                </a>
+                <a href="registreer.html">
+                  <button type="button" class="btn btn-success button-title-white">
+                    Account aanmaken
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container">
+        <div class="container-fluid" style="height: 600px;">
           <div class="wrapper">
             <div class="form">
               <h2 class="title text-center">Account aanmaken</h2>
 
-              <form class="registerForm" id="registerForm">
+              <form action="inloggen.html" method="POST" class="registerForm needs-validation" id="registerForm"
+                onsubmit="registerUser(event);return false">
                 <div class="control-from">
                   <label for="naam">Naam *</label>
-                  <input type="text" id="naam" name="naam">
-                  <div class="invalid-feedback"></div>
+                  <input type="text" id="naam" required>
+                  <div class="invalid-feedback">
+                    Voer een naam in.
+                  </div>
                 </div>
-                <div class="form-control">
+                <div class="control-from">
                   <label for="email">Email *</label>
-                  <input type="email" id="email" name="email">
-                  <div class="invalid-feedback"></div>
+                  <input type="email" id="email" required>
+                  <div class="invalid-feedback">
+                    Voer een email in.
+                  </div>
                 </div>
-                <div class="form-control">
+                <div class="full-width">
                   <label for="adres">Adres *</label>
                   <input type="text" id="adres">
-                  <div class="invalid-feedback"></div>
+                  <div class="invalid-feedback">
+                    Voer een adres in.
+                  </div>
                 </div>
-                <div class="form-control">
+                <div class="control-from">
                   <label for="geboortedatum">Geboortedatum *</label>
-                  <input type="date" id="geboortedatum" name="geboortedatum">
-                  <div class="invalid-feedback"></div>
+                  <input type="date" id="geboortedatum">
+                  <div class="invalid-feedback">
+                    Voer een geboortedatum in.
+                  </div>
                 </div>
-                <div class="form-control">
+                <div class="control-from">
                   <label for="telefoonnummer">Telefoonnummer *</label>
-                  <input type="phone" id="telefoonnummer" name="telefoonnummer">
-                  <div class="invalid-feedback"></div>
+                  <input type="phone" id="telefoonnummer">
+                  <div class="invalid-feedback">
+                    Voer een telefoonnummer in.
+                  </div>
                 </div>
-                <div class="form-control">
+                <div class="control-from">
                   <label for="wachtwoord">Wachtwoord *</label>
-                  <input type="password" id="wachtwoord" name="wachtwoord">
-                  <div class="invalid-feedback"></div>
+                  <input type="password" id="wachtwoord" required>
+                  <div class="invalid-feedback">
+                    Voer een wachtwoord in.
+                  </div>
                 </div>
-                <div class="form-control">
+                <div class="control-from">
                   <label for="bevestigWachtwoord">Bevestig wachtwoord *</label>
-                  <input type="password" id="bevestigWachtwoord" name="bevestigwachtwoord">
-                  <div class="invalid-feedback"></div>
+                  <input type="password" id="bevestigWachtwoord" required>
+                  <div class="invalid-feedback">
+                    Voer een wachtwoord in.
+                  </div>
                 </div>
                 <div class="button">
                   <button type="submit" id="register">Registreren</button>
@@ -57,7 +120,11 @@
             </div>
           </div>
         </div>
-  <script type="module" src="/js/registreren.js"></script>
+      </div>
+    </div>
+
+
+  <script src="../model/Klant.js"></script>
 
 </body>
 
