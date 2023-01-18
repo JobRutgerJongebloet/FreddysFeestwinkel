@@ -1,8 +1,21 @@
+import { NavBar } from '../model/navBar.js'
+import { Favicon } from '../model/favicon.js';
+
+var navbar = new NavBar();
+var favicon = new Favicon();
+
+let response = JSON.parse(localStorage.getItem("response"));
+if (response != null) {
+    navbar.showUsername();
+    navbar.showRole();
+}
+
 let winkelwagen = {};
 let winkelwagenProucten = [];
 
 
 haalProductenOp();
+
 function haalProductenOp() {
     fetch(baseURL + 'producten')
         .then(response => response.json())
@@ -14,29 +27,26 @@ function haalProductenOp() {
                 if (winkelwagen.hasOwnProperty(d.naam)) {
                     quantity = winkelwagen[d.naam];
                 }
-                producten.innerHTML += `
-                        <div class="col">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="https://www.feestkleding.nl/media/catalog/product/cache/c9804476f3bdaad700372bd35abce089/fk/g/r/grote-clownsneuzen-rood-12x-0.jpg" class="card-img-top" translate-middle alt="...">
-                                    <div class="card body">
-                                    <h5 class="card-title text-center">
-                                     ${d.naam}            
-                                    </h5>
-                                    <p class="card-text">
-                                     ${d.omschrijving}
-                                    </p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Categorie: ${d.categorie}</li>
-                                        <li class="list-group-item">Prijs per stuk €${d.subtotal}</li>
-                                    </ul>
-                                    <div class="card body">
-            <a data-param="${d.id}" id="addtocart"  onclick="toevoegenProductnaarWinkelwagenProduct(${d.id})" class="btn btn-primary">Toevoegen aan winkelwagen</a>
-            <a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
-            <span class="cart-quantity" id="quantity-${d.id}"></span>
-        </div>
-                                </div>
-                        </div>`
+                let img = "https://www.feestkleding.nl/media/catalog/product/cache/c9804476f3bdaad700372bd35abce089/fk/g/r/grote-clownsneuzen-rood-12x-0.jpg";
+                producten.innerHTML +=
+                    `
+            <div class="col-sm-3 mt-3">
+                <div class="card">
+                    <img src=${img} class="card-img-top" translate-middle alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${d.naam}</h5>
+                        <p class="card-text">${d.omschrijving}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Categorie: ${d.categorie}</li>
+                        <li class="list-group-item">Prijs per stuk €${d.kosten}</li>
+                    </ul>
+                    <a data-param="${d.id}" id="addtocart" onclick="toevoegenProductnaarWinkelwagenProduct(${d.id})"class="btn btn-success">Toevoegen aan winkelwagen</a>
+                    <a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+                    <span class="cart-quantity" id="quantity-${d.id}"></span>
+                </div>
+            </div>
+                    `
             }
             const addLinks = document.querySelectorAll("#addtocart");
             addLinks.forEach(function (addLink) {
@@ -56,10 +66,6 @@ function haalProductenOp() {
             });
         });
 }
-
-
-
-
 
 function toevoegenAanWinkelwagen(productid) {
     fetch(baseURL + 'product/' + productid)
@@ -88,9 +94,9 @@ function toevoegenAanWinkelwagen(productid) {
             totaalElement.innerHTML = `Totale prijs: € ${totaalprijs}`;
             let quantityElement = document.getElementById("quantity-" + productid);
             quantityElement.innerHTML = winkelwagen[product.naam].aantal;
-            
-            
-            
+
+
+
         })
 }
 
@@ -103,13 +109,12 @@ function toevoegenProductnaarWinkelwagenProduct(productId) {
     fetch(baseURL + 'winkelwagen/product', {
         method: 'POST',
         body: JSON.stringify(aanmakenDTO),
-        headers: {'Content-Type': 'application/json', 'Authentication': JSON.parse(localStorage.getItem("response")).randomstring}
+        headers: { 'Content-Type': 'application/json', 'Authentication': JSON.parse(localStorage.getItem("response")).randomstring }
     })
-    .then(()=>{
-        alert('product is toegevoegd aan winkelwagen')
-    })
+        .then(() => {
+            alert('product is toegevoegd aan winkelwagen')
+        })
 }
-
 
 function verwijderenUitWinkelwagen(productid) {
     fetch(baseURL + 'product/' + productid)
@@ -143,12 +148,6 @@ function verwijderenUitWinkelwagen(productid) {
             }
         })
 }
-
-
-
-
-
-
 
 // function updateWinkelwagenInhoud() {
 // let inhoudww = document.getElementById("inhoudww");

@@ -9,12 +9,12 @@ var emailDTO = new Email();
 var favicon = new Favicon();
 
 let response = JSON.parse(localStorage.getItem("response"));
-if(response != null){
+if (response != null) {
     navbar.showUsername();
+    navbar.showRole();
 }
 
 const formElement = document.getElementById('form');
-// button is ook een tag en die willen we niet
 const inputElements = formElement.getElementsByTagName('input');
 const textAreaElements = formElement.getElementsByTagName('textarea');
 const formElements = [...inputElements, ...textAreaElements];
@@ -84,7 +84,7 @@ function checkValidity(element) {
     }
 }
 
-function sendEMail(EmailDTO) {
+async function sendEMail(EmailDTO) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var raw = JSON.stringify(EmailDTO);
@@ -94,18 +94,19 @@ function sendEMail(EmailDTO) {
         body: raw,
         redirect: 'follow'
     };
-    fetch("http://localhost:8080/email/send", requestOptions)
-        .then(r => r.json())
-        .then(r => { 
-
-            if (r.succes) {
-                document.getElementById('header').innerHTML = "Email verzonden!"
-                document.getElementById('formbutton').innerHTML = "Verstuur nog een email"
-            } else {
-                console.log(r.validaties);
-                alert("Email verzenden mislukt")
-            }
-        })
-        .catch(error => console.log('error', error));
+    try {
+        const response = await fetch("http://localhost:8080/email/send", requestOptions);
+        const result = await response.json();
+        if (result.succes) {
+            document.getElementById('header').innerHTML = "Email verzonden!";
+            document.getElementById('formbutton').innerHTML = "Verstuur nog een email";
+        } else {
+            console.log(result.validaties);
+            alert("Email verzenden mislukt");
+        }
+    } catch (error) {
+        console.log('error', error);
+    }
 }
+
 

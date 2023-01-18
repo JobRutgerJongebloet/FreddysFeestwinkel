@@ -5,72 +5,33 @@ const navbar = new NavBar();
 const favicon = new Favicon();
 
 let response = JSON.parse(localStorage.getItem("response"));
-if(response != null){
+if (response != null) {
     navbar.showUsername();
     navbar.showRole();
 }
 
-const formElement = document.getElementById('form');
+const formElement = document.getElementById('registerForm');
 const inputElements = formElement.getElementsByTagName('input');
 const formElements = [...inputElements];
-console.log(formElements);
 
-let formIsValid = false;
+let formIsValid = true;
 
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
     formElements.forEach(element => {
         checkValidity(element);
-    });  
+    });
 
-    if(formIsValid){
-        maakAccountAan()
-    } 
+    if (formIsValid) {
+        registerUser();
+    }
 });
 
 formElements.forEach(element => {
     element.addEventListener("focus", () => removeValidity(element)); // wanneer het element gefocused wordt
     element.addEventListener("blur", () => checkValidity(element)); // wanneer het element uit focus gaat
 });
-
-function maakAccountAan() {
-    var username = document.getElementById('email').value;
-    var password = document.getElementById('wachtwoord').value;
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-        username: username,
-        password: password
-    });
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    fetch("http://localhost:8080/klanten/inloggen", requestOptions)
-        .then(response => response.json())
-        .then(r => {
-
-            if (r.validaties == null) {
-                alert("ingelogd!")
-                localStorage.setItem("response", JSON.stringify(r));
-                navbar.showUsername();
-                navbar.showRole();
-            } else {
-                console.log("else");
-                r.validaties.forEach(validatie => {
-                    alert(validatie);
-                });
-            }
-        })
-        .catch(error => console.log('error', error));
-}
 
 function removeValidity(element) {
     if (element.classList.contains('is-invalid')) {
@@ -92,6 +53,18 @@ function checkValidity(element) {
             formIsValid = false;
         }
     }
+    // Validate if "invoerWachtwoord" & "invoerBevestigWachtwoord" are the same
+    if (element.name === "wachtwoord") {
+        var bevestigingswachtwoord = document.getElementById('bevestigWachtwoord').value
+        if (element.value == bevestigingswachtwoord.value) {
+            var text = "Wachtwoord gelijk zijn";
+            document.querySelector(`#${bevestigingswachtwoord.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+            document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+            bevestigingswachtwoord.classList.add('is-invalid');
+            element.classList.add('is-invalid');
+            formIsValid = false;
+        }
+    }
     if (element.value.trim() === "") {
         var text = element.name.replace(/^\w/, c => c.toUpperCase()) + " is een verplicht veld";
         document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
@@ -103,3 +76,36 @@ function checkValidity(element) {
     }
 }
 
+let register = document.getElementById("registerForm");
+
+function registerUser() {
+
+    // Getting the values from the inputs
+    let invoerNaam = document.getElementById('naam').value;
+    let invoerEmail = document.getElementById('email').value;
+    let invoerWachtwoord = document.getElementById('wachtwoord').value;
+    let invoerBevestigWachtwoord = document.getElementById('bevestigWachtwoord').value;
+
+    // New object
+    let nieuweKlant = {
+        naam: invoerNaam,
+        email: invoerEmail,
+        password: wachtwoordValideerd,
+    }
+
+    // Converting an object to JSON
+    data = JSON.stringify(nieuweKlant);
+    params = {
+        method: 'POST',
+        headers: {
+            accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: data
+    }
+
+    // HTTP POST request
+    fetch("http://localhost:8080/klant/registreren", params)
+        .then((data) => console.log(data))
+
+}

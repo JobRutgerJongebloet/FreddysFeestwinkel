@@ -1,0 +1,8 @@
+.modal-content {
+    background-image: -webkit-linear-gradient(0deg, #4ca57c 0%, #198754 100%);
+    background-image: -ms-linear-gradient(0deg, #4ca57c 0%, #198754 100%);
+}
+
+.invalid-feedback {
+    color: wheat !important;
+}
