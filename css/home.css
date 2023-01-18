@@ -1,21 +1,17 @@
 /* Main Container */
-.main-container {
+html {
   background: rgba(37, 93, 0, 0.4);
   backdrop-filter: blur(7px);
 }
 
 /* Section 1: Main */
-.main {
-  height: 100vh;
+body {
+  min-height: 90vh;
+  height: auto;
   background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
   border-radius: 0px;
 }
 
-.main {
-  height: 100vh;
-  background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 0px;
-}
 
 /* Container Fluid */
 .container-fluid {
