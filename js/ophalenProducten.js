@@ -149,6 +149,33 @@ function verwijderenUitWinkelwagen(productid) {
         })
 }
 
+document.getElementById('bestelbutton').addEventListener('click', (evt) => {
+    bestel();
+});
+
+function bestel() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authentication", "Kd83c2gOh86vFEy6r6Pj");
+
+    var raw = JSON.stringify({
+        "username": "test@test.com",
+        "password": "test123"
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("http://localhost:8080/winkelwagen/bestellen", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
+
 // function updateWinkelwagenInhoud() {
 // let inhoudww = document.getElementById("inhoudww");
 // let winkelwagenInhoud = '';
