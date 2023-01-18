@@ -36,7 +36,7 @@
 }
 
 .title:hover {
-  color: #198754;
+  color: #ffeb3b;
   box-shadow: inset 0 -2px 0px 0px #198754;
 }
 
@@ -54,6 +54,7 @@ a {
 .inloggen {
   margin-left: 1rem;
   margin-right: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 @media (max-width: 1230px) {
