@@ -1,103 +1,3 @@
-/* Main Container */
-.main-container {
-  background: rgba(37, 93, 0, 0.4);
-  backdrop-filter: blur(7px);
-}
-
-/* Section 1: Main */
-.main {
-  height: 100vh;
-  background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 0px;
-}
-
-.main {
-  height: 100vh;
-  background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 0px;
-}
-
-/* Container Fluid */
-.container-fluid {
-  overflow: hidden;
-}
-
-/* Navbar: Components */
-.christmas-title {
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 700;
-  color: #00873e;
-}
-
-.nav-title {
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 700;
-  color: black;
-}
-
-.christmas-tree {
-  float: left;
-  height: 30px;
-  width: 30px;
-  background-color: white;
-  border-radius: 50%;
-  margin-right: 0.5em;
-}
-
-.search {
-  margin-right: 2em;
-}
-
-.search-title {
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 700;
-  color: black;
-}
-
-.search-input {
-  border-radius: 5px;
-  width: 200px;
-}
-
-.title {
-  font-weight: 600;
-  color: black;
-}
-
-.button-title {
-  font-weight: 600;
-  color: black;
-}
-
-.button-title-white {
-  font-weight: 600;
-  color: white;
-}
-
-.remove-button-effects {
-  color: black;
-  border: none;
-  outline: none;
-  background: none;
-  text-decoration: none;
-}
-
-.remove-button-effects:hover {
-  color: black;
-}
-
-.login {
-  color: black;
-  border: none;
-  outline: none;
-  background: none;
-  text-decoration: none;
-}
-
-/* Banner Santa Text*/
 .banner-santa-text {
   height: 500px;
   background-color: transparent;
@@ -111,8 +11,6 @@
   font-weight: 400;
   font-size: 75px;
   line-height: 87px;
-
-  /* Christmas gold */
   color: #ffeb3b;
 }
 
@@ -121,7 +19,6 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 34px;
-  /* or 155% */
   color: black;
 }
 
@@ -130,7 +27,6 @@
   line-height: 87px;
 }
 
-/* Banner Santa Image */
 .banner-santa-img-box {
   height: 500px;
   background-color: transparent;
@@ -161,38 +57,28 @@
   background-size: contain;
 }
 
-/* Section 2: Filters */
-.filters {
-  min-height: 100vh;
-  height: auto;
-  background: rgb(168, 190, 153);
-  border-radius: 0px 0px 25px 25px;
-}
-
-/* Filter: Title */
 .filter-title {
   font-family: "Yeseva One";
   font-style: normal;
   font-weight: 400;
   font-size: 34px;
   line-height: 39px;
+  background-color: darkgreen;
 }
 
-/* Filter: Text */
 .filter-text {
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 34px;
-  /* or 155% */
   color: black;
 }
 
-/* Filter: Card descriptions */
 .filter-cards-descriptions {
   justify-content: start;
   align-items: center;
 }
+
 .filter-card-box {
   width: 15em;
   justify-content: center;
@@ -210,7 +96,6 @@
   float: left;
 }
 
-/* Filter: Cards */
 .filter-cards {
   display: flex;
   overflow-y: hidden;
@@ -260,7 +145,6 @@
   margin-left: 70%;
 }
 
-/** Custom Fonts */
 .christmas-gold {
   font-family: "DM Sans";
   font-style: normal;
@@ -275,7 +159,6 @@
   background-color: #f4511e;
 }
 
-/* Footer */
 .footer {
   position: relative;
   height: auto;

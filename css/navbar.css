@@ -12,7 +12,12 @@
 
 .search-input {
   border-radius: 4px;
-  width: 400px;
+  width: 300px;
+  margin-left: 1rem;
+}
+
+.navbar-toggler{
+  margin-left: 1rem;
 }
 
 .gold {

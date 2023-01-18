@@ -1,21 +1,5 @@
-
-
-/* Section 1: Main */
-body {
-  backdrop-filter: blur(7px);
-  height: 100vh;
-  background: linear-gradient(180deg, #f4511e 55%, rgba(37, 93, 0, 0.4) 100%);
-  border-radius: 0px;
-}
-
-.container-fluid {
-  display: grid;
-  place-items: center;
-  height: 90%;
-  box-shadow: #198754;
-}
-
-.row {
+.content {
+  margin-top: 5rem !important;
   justify-content: center;
 }
 
@@ -25,16 +9,12 @@ body {
   color: #fff;
 }
 
-.column-left {
-  background: white;
-}
-
 .column-right a {
   color: white !important;
 }
 
-.shadow {
-  box-shadow: 0 0 10px 5px #f00 !important;
+.column-left {
+  background: white;
 }
 
 .form-control:focus {
@@ -52,13 +32,6 @@ body {
 
 .dagenWeek{
   padding-right: 4rem;
-}
-
-.form-control:focus {
-  border-color: #f00;
-  /* red color */
-  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
-  /* red shadow */
 }
 
 
