@@ -15,7 +15,7 @@ const inputElements = formElement.getElementsByTagName('input');
 const formElements = [...inputElements];
 console.log(formElements);
 
-let formIsValid = true;
+let formIsValid = false;
 
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -58,9 +58,10 @@ function maakAccountAan() {
         .then(r => {
 
             if (r.validaties == null) {
-                console.log("ingelogd!")
+                alert("ingelogd!")
                 localStorage.setItem("response", JSON.stringify(r));
                 navbar.showUsername();
+                navbar.showRole();
             } else {
                 console.log("else");
                 r.validaties.forEach(validatie => {
@@ -86,14 +87,6 @@ function checkValidity(element) {
             /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/
         ) == null) {
             var text = "Email moet abc@abc.com zijn";
-            document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
-            element.classList.add('is-invalid');
-            formIsValid = false;
-        }
-    }
-    if (element.name === "wachtwoord") {
-        if (element.value.length < 8) {
-            var text = "wachtwoord moet uit minimaal 8 characters bestaan";
             document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
             element.classList.add('is-invalid');
             formIsValid = false;

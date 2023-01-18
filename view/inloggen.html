@@ -20,30 +20,33 @@
 
 <body>
 
-    <form class="inlog-form" id="form" novalidate>
-        <div class="row justify-content-center">
-            <div class="col-6 text-center">
-
-                <div class="form-floating mb-3">
-                    <label for="email">E-mail adres</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                    <div class="invalid-feedback"></div>
+    <div class="container-fluid">
+        <form class="inlog-form" id="form" novalidate>
+            <div class="row justify-content-center">
+                <div class="col-6 text-center">
+    
+                    <div class="form-group mb-3">
+                        <label for="email">E-mail adres</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="password">Wachtwoord</label>
+                        <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord"> 
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" name="submit" class="btn btn-success" id="formbutton">Inloggen</button>
+                    </div>
+    
+    
                 </div>
-                
-                <div class="form-floating mb-3">
-                    <label for="password">Wachtwoord</label>
-                    <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" placeholder="Wachtwoord"> 
-                    <div class="invalid-feedback"></div>
-                </div>
-                
-                <div>
-                    <button type="submit" name="submit" class="btn btn-success" id="formbutton">Inloggen</button>
-                </div>
-
-
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    
 
     <script type="module" src="/js/inloggen.js"></script>
 

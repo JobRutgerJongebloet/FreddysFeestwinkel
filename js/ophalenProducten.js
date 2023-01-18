@@ -4,6 +4,12 @@ import { Favicon } from '../model/favicon.js';
 var navbar = new NavBar();
 var favicon = new Favicon();
 
+let response = JSON.parse(localStorage.getItem("response"));
+if (response != null) {
+    navbar.showUsername();
+    navbar.showRole();
+}
+
 let winkelwagen = {};
 let winkelwagenProucten = [];
 

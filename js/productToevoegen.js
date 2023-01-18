@@ -1,18 +1,20 @@
 import { NavBar } from '../model/navBar.js'
 import { Favicon } from '../model/favicon.js';
 
+const navbar = new NavBar();
+const favicon = new Favicon();
+
 if (localStorage.getItem("response") != null) {
     let response = JSON.parse(localStorage.getItem("response"));
     if (response.role != "WINKELIER") {
         document.location.href = "/index.html";
     }
+    navbar.showUsername();
+    navbar.showRole();
 }
 else {
     document.location.href = "/index.html";
 }
-
-const navbar = new NavBar();
-const favicon = new Favicon();
 
 fetchCategorieen();
 
