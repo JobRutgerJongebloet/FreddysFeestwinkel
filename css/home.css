@@ -1,12 +1,12 @@
 /* Main Container */
-html {
+.main-container {
   background: rgba(37, 93, 0, 0.4);
   backdrop-filter: blur(7px);
 }
 
 /* Section 1: Main */
-body {
-  min-height: 90vh;
+.main {
+  min-height: 100vh;
   height: auto;
   background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
   border-radius: 0px;
