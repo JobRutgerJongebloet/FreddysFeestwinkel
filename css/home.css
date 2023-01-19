@@ -12,7 +12,6 @@
   border-radius: 0px;
 }
 
-
 /* Container Fluid */
 .container-fluid {
   overflow: hidden;
@@ -189,6 +188,7 @@
   justify-content: start;
   align-items: center;
 }
+
 .filter-card-box {
   width: 15em;
   justify-content: center;
@@ -197,11 +197,13 @@
   background: #fefefe;
   border-radius: 10px;
 }
+
 .card-icon {
   float: right;
   background: #ffffff;
   border-radius: 10px;
 }
+
 .filter-card-text {
   float: left;
 }
@@ -211,6 +213,7 @@
   display: flex;
   overflow-y: hidden;
 }
+
 .filter-card-item {
   width: 250px;
   height: 100%;
@@ -219,16 +222,19 @@
   align-items: start;
   flex-direction: column;
 }
+
 .filter-card-img {
   overflow: hidden;
   height: 225px;
   width: 200px;
 }
+
 .item-img {
   width: 100%;
   height: 100%;
   object-fit: fill;
 }
+
 .filter-card-heart {
   position: relative;
   top: -210px;
@@ -236,6 +242,7 @@
   height: 33px;
   width: 33px;
 }
+
 .filter-card-title {
   font-family: Inter;
   font-size: 20px;
@@ -244,6 +251,7 @@
   text-align: left;
   color: #1d1e20;
 }
+
 .filter-card-description {
   font-family: Inter;
   font-size: 16px;
@@ -252,6 +260,7 @@
   text-align: left;
   color: #1d1e20;
 }
+
 .filter-card-price {
   margin-left: 70%;
 }
@@ -264,9 +273,11 @@
   font-size: 22px;
   color: #ffeb3b;
 }
+
 .christmas-red {
   color: #f4511e;
 }
+
 .christmas-bg-red {
   background-color: #f4511e;
 }
@@ -276,4 +287,17 @@
   position: relative;
   height: auto;
   clear: both;
+}
+
+/* Bootstrap 5 Media Queries */
+@media (max-width: 990px) {
+  #search {
+    width: 230px !important;
+  }
+}
+
+@media (min-width: 990px) and (max-width: 1200px) {
+  .search-input {
+    width: 100px !important;
+  }
 }
