@@ -1,12 +1,8 @@
-'use strict'
-
 import { NavBar } from '../model/navBar.js'
-import { Email } from '../model/email.js';
-import { Favicon } from '../model/favicon.js';
+import { Favicon } from '../model/favicon.js'
 
-var navbar = new NavBar();
-var emailDTO = new Email();
-var favicon = new Favicon();
+const navbar = new NavBar();
+const favicon = new Favicon();
 
 let response = JSON.parse(localStorage.getItem("response"));
 if (response != null) {
@@ -14,10 +10,9 @@ if (response != null) {
     navbar.showRole();
 }
 
-const formElement = document.getElementById('form');
+const formElement = document.getElementById('registerForm');
 const inputElements = formElement.getElementsByTagName('input');
-const textAreaElements = formElement.getElementsByTagName('textarea');
-const formElements = [...inputElements, ...textAreaElements];
+const formElements = [...inputElements];
 
 let formIsValid = true;
 
@@ -29,14 +24,7 @@ formElement.addEventListener('submit', (evt) => {
     });
 
     if (formIsValid) {
-        const emailDTO = new Email();
-        emailDTO.firstname = document.getElementById('voornaam').value;
-        emailDTO.lastname = document.getElementById('achternaam').value;
-        emailDTO.to = document.getElementById('email').value;
-        emailDTO.phone = document.getElementById('telefoonnummer').value;
-        emailDTO.message = document.getElementById('message').value;
-        emailDTO.subject = document.getElementById('onderwerp').value;
-        sendEMail(emailDTO);
+        registerUser();
     }
 });
 
@@ -65,10 +53,14 @@ function checkValidity(element) {
             formIsValid = false;
         }
     }
-    if (element.name === "telefoonnummer") {
-        if (!element.value.match(/^\d+$/)) {
-            var text = "Telefoonnummer moet uit alleen cijfer bestaan";
+    // Validate if "invoerWachtwoord" & "invoerBevestigWachtwoord" are the same
+    if (element.name === "wachtwoord") {
+        var bevestigingswachtwoord = document.getElementById('bevestigWachtwoord').value
+        if (element.value == bevestigingswachtwoord.value) {
+            var text = "Wachtwoord gelijk zijn";
+            document.querySelector(`#${bevestigingswachtwoord.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
             document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+            bevestigingswachtwoord.classList.add('is-invalid');
             element.classList.add('is-invalid');
             formIsValid = false;
         }
@@ -84,29 +76,36 @@ function checkValidity(element) {
     }
 }
 
-async function sendEMail(EmailDTO) {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify(EmailDTO);
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-    try {
-        const response = await fetch(baseURL + "email/send", requestOptions);
-        const result = await response.json();
-        if (result.succes) {
-            document.getElementById('header').innerHTML = "Email verzonden!";
-            document.getElementById('formbutton').innerHTML = "Verstuur nog een email";
-        } else {
-            console.log(result.validaties);
-            alert("Email verzenden mislukt");
-        }
-    } catch (error) {
-        console.log('error', error);
+let register = document.getElementById("registerForm");
+
+function registerUser() {
+
+    // Getting the values from the inputs
+    let invoerNaam = document.getElementById('naam').value;
+    let invoerEmail = document.getElementById('email').value;
+    let invoerWachtwoord = document.getElementById('wachtwoord').value;
+    let invoerBevestigWachtwoord = document.getElementById('bevestigWachtwoord').value;
+
+    // New object
+    let nieuweKlant = {
+        naam: invoerNaam,
+        email: invoerEmail,
+        password: wachtwoordValideerd,
     }
+
+    // Converting an object to JSON
+    data = JSON.stringify(nieuweKlant);
+    params = {
+        method: 'POST',
+        headers: {
+            accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: data
+    }
+
+    // HTTP POST request
+    fetch("http://localhost:8080/klant/registreren", params)
+        .then((data) => console.log(data))
+
 }
-
-

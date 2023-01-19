@@ -1,0 +1,32 @@
+@media only screen and (max-width: 800px) {
+
+    #tables tbody,
+    #tables tr,
+    #tables td {
+        display: block;
+    }
+
+    #tables thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #tables td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    #tables td:before {
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+
+    #tables tr {
+        border-bottom: 1px solid #ccc;
+    }
+}

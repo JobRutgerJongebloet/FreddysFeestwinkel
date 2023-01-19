@@ -6,16 +6,12 @@
 
 /* Section 1: Main */
 .main {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
   border-radius: 0px;
 }
 
-.main {
-  height: 100vh;
-  background: linear-gradient(180deg, #f4511e 55%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 0px;
-}
 
 /* Container Fluid */
 .container-fluid {
