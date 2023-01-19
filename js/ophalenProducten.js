@@ -48,7 +48,7 @@ function updateWinkelmand() {
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/winkelwagen/klant", requestOptions)
+    fetch(baseURL + "winkelwagen/klant", requestOptions)
         .then(response => response.json())
         .then(result => {
             console.log(result);
