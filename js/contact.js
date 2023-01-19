@@ -95,7 +95,7 @@ async function sendEMail(EmailDTO) {
         redirect: 'follow'
     };
     try {
-        const response = await fetch("http://localhost:8080/email/send", requestOptions);
+        const response = await fetch(baseURL + "email/send", requestOptions);
         const result = await response.json();
         if (result.succes) {
             document.getElementById('header').innerHTML = "Email verzonden!";

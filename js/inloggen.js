@@ -53,7 +53,7 @@ function maakAccountAan() {
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/klanten/inloggen", requestOptions)
+    fetch(baseURL + "klanten/inloggen", requestOptions)
         .then(response => response.json())
         .then(r => {
 

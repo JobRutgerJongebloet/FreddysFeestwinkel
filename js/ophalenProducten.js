@@ -10,7 +10,7 @@ if (response != null) {
     navbar.showRole();
 }
 haalProductenOp();
-
+updateWinkelmand();
 
 let winkelwagen = {};
 let winkelwagenProucten = [];
@@ -31,7 +31,7 @@ function bestel() {
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/winkelwagen/bestellen", requestOptions)
+    fetch(baseURL + "winkelwagen/bestellen", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -197,12 +197,3 @@ function verwijderenUitWinkelwagen(productid) {
     //         }
     //     })
 }
-
-// function updateWinkelwagenInhoud() {
-// let inhoudww = document.getElementById("inhoudww");
-// let winkelwagenInhoud = '';
-// for (let key in winkelwagen) {
-//     winkelwagenInhoud += `${winkelwagen[key]} x ${key} <br>`
-// }
-// inhoudww.innerHTML = winkelwagenInhoud;
-// }
