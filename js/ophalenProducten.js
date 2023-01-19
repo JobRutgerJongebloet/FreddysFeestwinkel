@@ -77,13 +77,11 @@ async function haalProductenOp() {
     try {
         const response = await fetch(baseURL + 'producten');
         const lijst = await response.json();
-        let producten = document.getElementById("product");
+        let producten = document.getElementById("product")
+        let img = "";
         for (let d of lijst) {
-            let quantity = 0;
-            if (winkelwagen.hasOwnProperty(d.naam)) {
-                quantity = winkelwagen[d.naam];
-            }
-            let img = "https://www.feestkleding.nl/media/catalog/product/cache/c9804476f3bdaad700372bd35abce089/fk/g/r/grote-clownsneuzen-rood-12x-0.jpg";
+            let img = "https://random.imagecdn.app/500/600";
+            
             producten.innerHTML +=
                 `<div class="col-sm-3 mt-3">
                 <div class="card"> <img src=${img} class="card-img-top" translate-middle alt="...">
