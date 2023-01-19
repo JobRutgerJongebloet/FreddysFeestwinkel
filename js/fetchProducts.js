@@ -1,3 +1,6 @@
+import { NavBar } from '../model/navBar.js'
+var navbar = new NavBar();
+
 document.addEventListener('DOMContentLoaded', function () {
     let products = document.querySelector('#products');
 
@@ -7,13 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Product
         for (let i = 0; i < response.length; i++) {
-            // console.log(response);
+            console.log(response[i].afbeelding);
 
             if (response[i].afbeelding != null) {
-                afbeelding = response[i].afbeelding;
+                var afbeelding = response[i].afbeelding;
             } else {
-                afbeelding = "img/items/christmas-sweater.jpg";
+                var afbeelding = "img/items/christmas-sweater.jpg";
             }
+
             products.innerHTML += `
                 <div class="filter-card col mb-3 all ${response[i].categorie}">
                     <div class="filter-card-item p-4 bg-light rounded">
