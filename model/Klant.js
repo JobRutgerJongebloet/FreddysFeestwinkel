@@ -53,7 +53,7 @@ function registerUser(evt) {
             }
 
             // HTTP POST request
-            fetch("http://localhost:8080/klant/registreren", params)
+            fetch(baseURL + "klant/registreren", params)
                 .then((data) => console.log(data))
         }
     }
