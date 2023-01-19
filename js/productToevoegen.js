@@ -64,7 +64,7 @@ function maakProductAan(nieuwProduct) {
         body: raw,
         redirect: 'follow'
     };
-    fetch("http://localhost:8080/product/aanmaken", requestOptions)
+    fetch(baseURL + "product/aanmaken", requestOptions)
         .then(response => response.json())
         .then(r => {
 
@@ -89,7 +89,7 @@ async function fetchCategorieen() {
             redirect: 'follow'
         };
 
-        const response = await fetch("http://localhost:8080/product/categorieen", requestOptions);
+        const response = await fetch(baseURL + "product/categorieen", requestOptions);
         const result = await response.json();
         var select = document.getElementById("productcategorie");
         result.forEach(element => {
