@@ -1,6 +1,3 @@
-import { NavBar } from '../model/navBar.js'
-var navbar = new NavBar();
-
 document.addEventListener('DOMContentLoaded', function () {
     let products = document.querySelector('#products');
 
