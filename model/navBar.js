@@ -68,6 +68,9 @@ export class NavBar {
               <a class="nav-link title" href="/view/producttoevoegen.html">Product toevoegen</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link title" href="/view/klanten.html">Klanten pagina</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link title" href="/view/contact.html">Contact</a>
             </li>
           </ul>

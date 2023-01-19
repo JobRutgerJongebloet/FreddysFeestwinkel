@@ -41,6 +41,7 @@ function registerUser(evt) {
                 password: wachtwoordValideerd,
             }
 
+            console.log(nieuweKlant);
             // Converting an object to JSON
             data = JSON.stringify(nieuweKlant);
             params = {
@@ -53,7 +54,7 @@ function registerUser(evt) {
             }
 
             // HTTP POST request
-            fetch(baseURL + "klant/registreren", params)
+            fetch(baseURL + "klanten/aanmaken", params)
                 .then((data) => console.log(data))
         }
     }
