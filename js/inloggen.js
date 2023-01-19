@@ -60,8 +60,7 @@ function maakAccountAan() {
             if (r.validaties == null) {
                 alert("ingelogd!")
                 localStorage.setItem("response", JSON.stringify(r));
-                navbar.showUsername();
-                navbar.showRole();
+                document.location.href = "/view/inloggen.html";
             } else {
                 console.log("else");
                 r.validaties.forEach(validatie => {
