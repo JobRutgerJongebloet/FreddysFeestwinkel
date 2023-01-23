@@ -1,7 +1,7 @@
 export class NavBar {
   navElementHTML =
     `<nav class="navbar navbar-expand-lg bg-light">
-        <img src="/images/navbar-icons/icon.png" class="christmas-tree" alt="christmas-tree">
+        <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
         <b class="gold">Freddys</b>
         <b class="green">Feestwinkel</b>
         
@@ -42,7 +42,7 @@ export class NavBar {
 
   navElementHTMLWINKELIER =
     `<nav class="navbar navbar-expand-lg bg-light">
-        <img src="/images/navbar-icons/icon.png" class="christmas-tree" alt="christmas-tree">
+        <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
         <b class="gold">Freddys</b>
         <b class="green">Feestwinkel</b>
         
