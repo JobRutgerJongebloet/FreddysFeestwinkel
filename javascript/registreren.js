@@ -16,7 +16,7 @@ const formElement = document.getElementById('registerForm');
 const inputElements = formElement.getElementsByTagName('input');
 const formElements = [...inputElements];
 
-let formIsValid = true;
+let formIsValid = false;
 
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
