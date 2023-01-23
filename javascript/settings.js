@@ -1,1 +1,1 @@
-const baseURL = "freddysfeestwinkel.mysql.database.azure.com/";
+const baseURL = "https://freddysfeestwinkelbackend.azurewebsites.net/";
