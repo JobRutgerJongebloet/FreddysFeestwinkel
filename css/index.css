@@ -1,12 +1,12 @@
 /* Navbar: Components */
-.christmas-title {
+.kerstmis-title {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
   color: #00873e;
 }
 
-.christmas-tree {
+.kerstboom {
   float: left;
   height: 30px;
   width: 30px;
@@ -30,7 +30,7 @@
   font-size: 75px;
   line-height: 87px;
 
-  /* Christmas gold */
+  /* Kerstmis gold */
   color: #ffeb3b;
 }
 
@@ -151,7 +151,7 @@
   object-fit: fill;
 }
 
-.filter-card-heart {
+.filter-card-hart {
   position: relative;
   top: -210px;
   right: -150px;
@@ -182,7 +182,7 @@
 }
 
 /** Custom Fonts */
-.christmas-gold {
+.kerstmis-gold {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
@@ -190,7 +190,7 @@
   color: #ffeb3b;
 }
 
-.christmas-bg-red {
+.kerstmis-bg-red {
   background-color: #f4511e;
 }
 
@@ -203,19 +203,19 @@
   background-color: #9b59b6;
 }
 
-.active.christmas-theme {
+.active.kerstmis-theme {
   background-color: #218c74;
 }
 
-.christmas-theme-icon {
+.kerstmis-theme-icon {
   background-color: #e55039;
 }
 
-.active.kingsday-theme {
+.active.koningsdag-theme {
   background-color: #e67e22;
 }
 
-.kingsday-theme-icon {
+.koningsdag-theme-icon {
   background-image: linear-gradient(to bottom,
       red,
       red,
@@ -231,35 +231,35 @@
       mediumblue);
 }
 
-.active.motherday-theme {
+.active.moederdag-theme {
   background-color: #fd79a8;
 }
 
-.motherday-theme-icon {
+.moederdag-theme-icon {
   background-color: #a29bfe;
 }
 
-.active.newyear-theme {
+.active.nieuwjaarsdag-theme {
   background-color: #0fb9b1;
 }
 
-.newyear-theme-icon {
+.nieuwjaarsdag-theme-icon {
   background-color: #f7d794;
 }
 
-.active.easter-theme {
+.active.pasen-theme {
   background-color: #f8a5c2;
 }
 
-.easter-theme-icon {
+.pasen-theme-icon {
   background-color: #c4e538;
 }
 
-.active.saint-nicholas-theme {
+.active.sinterklaas-theme {
   background-color: #ff5e57;
 }
 
-.saint-nicholas-theme-icon {
+.sinterklaas-theme-icon {
   background-color: white;
 }
 
@@ -271,18 +271,18 @@
   background-color: #fda7df;
 }
 
-.active.sugar-feast-theme {
+.active.suikerfeest-theme {
   background-color: #9980fa;
 }
 
-.sugar-feast-theme-icon {
+.suikerfeest-theme-icon {
   background-color: #d980fa;
 }
 
-.active.valentine-theme {
+.active.valentijnsdag-theme {
   background-color: #f8a5c2;
 }
 
-.valentine-theme-icon {
+.valentijnsdag-theme-icon {
   background-color: #ef5777;
 }
