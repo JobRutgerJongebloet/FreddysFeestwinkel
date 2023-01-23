@@ -85,8 +85,8 @@ async function haalProductenOp() {
             if(d.categorie == "Schmink"){
                 img = "../images/products/schmink.jpg";
             }
-            if(d.categorie == "sinterklaas"){
-                img = "../images/filter-icons/santa-hat.png";
+            if(d.categorie == "Sintartikelen"){
+                img = "../images/products/sintstaf.jpg";
             }
             if(d.categorie == "Feestaccesoires"){
                 img = "../images/products/rodefeestneus.jpg";
