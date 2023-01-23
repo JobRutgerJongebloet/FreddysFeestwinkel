@@ -52,24 +52,31 @@ function updateWinkelmand() {
     fetch(baseURL + "winkelwagen/klant", requestOptions)
         .then(response => response.json())
         .then(result => {
-            let totaalElement = document.getElementById("totaalprijs");
-            let totaal = 0;
-            totaalElement.innerHTML = `Totale prijs: € ` + totaal;
-
+            
+            var subtotaal = 0;
+            var totaal = 0;
             let container = document.getElementById("inhoudww");
 
-            
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
+
             for (let i = 0; i < result.winkelwagen.length; i++) {
-                let product = document.createElement("div");
-                product.innerHTML = "Product Naam:&nbsp;" + result.winkelwagen[i][0].naam + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prijs: " + result.winkelwagen[i][0].kosten
-                    + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aantal: " + result.winkelwagen[i][1] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Totaal " + result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
-                document.getElementById("inhoudww").appendChild(product);
-                totaal = totaal + result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
+
+                let tr = document.createElement("tr");
+                container.appendChild(tr, container.firstChild);
+                totaal = result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
+                subtotaal += result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
+                tr.innerHTML =
+                    `
+                        <td data-title="Product">${result.winkelwagen[i][0].naam}</td>
+                        <td data-title="Prijs">€ ${result.winkelwagen[i][0].kosten}</td>
+                        <td data-title="Hoeveelheid">${result.winkelwagen[i][1]}</td>
+                        <td data-title="Totaal">€ ${totaal}</td>
+                    `;
             }
-            totaalElement.innerHTML = `Totale prijs: € ` + totaal;
+            let totaalElement = document.getElementById("totaalprijs");
+            totaalElement.innerHTML = `Totale prijs: € ` + subtotaal;
         })
         .catch(error => console.log('error', error));
 }
@@ -82,19 +89,19 @@ async function haalProductenOp() {
         let img = "";
         for (let d of lijst) {
             let img = "https://random.imagecdn.app/500/600";
-            if(d.categorie == "Schmink"){
+            if (d.categorie == "Schmink") {
                 img = "../images/products/schmink.jpg";
             }
-            if(d.categorie == "Sintartikelen"){
+            if (d.categorie == "Sintartikelen") {
                 img = "../images/products/sintstaf.jpg";
             }
-            if(d.categorie == "Feestaccesoires"){
+            if (d.categorie == "Feestaccesoires") {
                 img = "../images/products/rodefeestneus.jpg";
             }
-            if(d.categorie == "Feestkleding"){
+            if (d.categorie == "Feestkleding") {
                 img = "../images/products/halloweenghostcostume.jpg";
             }
-            
+
 
             producten.innerHTML +=
                 `<div class="col-sm-3 pt-3">
@@ -150,7 +157,7 @@ function toevoegenAanWinkelwagen(productId) {
     fetch(baseURL + "winkelwagen/product/toevoegen", requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result);
+            alert("Product toegevoegd");
             updateWinkelmand();
         })
         .catch(error => console.log('error', error));

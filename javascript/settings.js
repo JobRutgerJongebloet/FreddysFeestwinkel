@@ -1,1 +1,1 @@
-const baseURL = "freddysfeestwinkel.mysql.database.azure.com/";
+const baseURL = "http://localhost:8080/";
