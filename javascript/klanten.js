@@ -35,15 +35,12 @@ async function ophalenKlanten() {
         const response = await fetch(baseURL + "klanten/all", requestOptions);
         const result = await response.json();
 
-        console.log(result);
         let container = document.getElementById("klanten");
 
-        console.log(container);
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
         for (let i = 0; i < result.length; i++) {
-            console.log("test");
             const footer = document.createElement('tr');
             container.appendChild(footer, container.firstChild);
             footer.innerHTML = 
@@ -62,7 +59,7 @@ async function ophalenKlanten() {
                             Verwijderen
                         </button>
                     </td>
-                `;
+            `;
         }
 
     } catch (error) {

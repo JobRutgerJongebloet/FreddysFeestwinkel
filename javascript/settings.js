@@ -1,1 +1,1 @@
-const baseURL = "https://freddysfeestwinkelbackend.azurewebsites.net/";
+const baseURL = "http://localhost:8080/";

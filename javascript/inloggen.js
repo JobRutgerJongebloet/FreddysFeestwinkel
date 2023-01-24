@@ -6,8 +6,6 @@ const navbar = new NavBar();
 const favicon = new Favicon();
 const footer = new Footer();
 
-localStorage.clear();
-
 const formElement = document.getElementById('form');
 const inputElements = formElement.getElementsByTagName('input');
 const formElements = [...inputElements];
