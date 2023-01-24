@@ -1,5 +1,5 @@
 /* Navbar: Components */
-.kerstmis-title {
+.Kerstmis-title {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
@@ -182,7 +182,7 @@
 }
 
 /** Custom Fonts */
-.kerstmis-gold {
+.Kerstmis-gold {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
@@ -190,32 +190,32 @@
   color: #ffeb3b;
 }
 
-.kerstmis-bg-red {
+.Kerstmis-bg-red {
   background-color: #f4511e;
 }
 
 /* Holidays Themes */
-.active.halloween-theme {
+.active.Halloween-feestdag {
   background-color: #3c6382;
 }
 
-.halloween-theme-icon {
+.Halloween-feestdag-icon {
   background-color: #9b59b6;
 }
 
-.active.kerstmis-theme {
+.active.Kerstmis-feestdag {
   background-color: #218c74;
 }
 
-.kerstmis-theme-icon {
+.Kerstmis-feestdag-icon {
   background-color: #e55039;
 }
 
-.active.koningsdag-theme {
+.active.Koningsdag-feestdag {
   background-color: #e67e22;
 }
 
-.koningsdag-theme-icon {
+.Koningsdag-feestdag-icon {
   background-image: linear-gradient(to bottom,
       red,
       red,
@@ -231,58 +231,58 @@
       mediumblue);
 }
 
-.active.moederdag-theme {
+.active.Moederdag-feestdag {
   background-color: #fd79a8;
 }
 
-.moederdag-theme-icon {
+.Moederdag-feestdag-icon {
   background-color: #a29bfe;
 }
 
-.active.nieuwjaarsdag-theme {
+.active.OudEnNieuw-feestdag {
   background-color: #0fb9b1;
 }
 
-.nieuwjaarsdag-theme-icon {
+.OudEnNieuw-feestdag-icon {
   background-color: #f7d794;
 }
 
-.active.pasen-theme {
+.active.Pasen-feestdag {
   background-color: #f8a5c2;
 }
 
-.pasen-theme-icon {
+.Pasen-feestdag-icon {
   background-color: #c4e538;
 }
 
-.active.sinterklaas-theme {
+.active.Sinterklaas-feestdag {
   background-color: #ff5e57;
 }
 
-.sinterklaas-theme-icon {
+.Sinterklaas-feestdag-icon {
   background-color: white;
 }
 
-.active.sint-maarten-theme {
+.active.SintMaarten-feestdag {
   background-color: #00d8d6;
 }
 
-.sint-maarten-theme-icon {
+.SintMaarten-feestdag-icon {
   background-color: #fda7df;
 }
 
-.active.suikerfeest-theme {
+.active.Suikerfeest-feestdag {
   background-color: #9980fa;
 }
 
-.suikerfeest-theme-icon {
+.Suikerfeest-feestdag-icon {
   background-color: #d980fa;
 }
 
-.active.valentijnsdag-theme {
+.active.Valentijnsdag-feestdag {
   background-color: #f8a5c2;
 }
 
-.valentijnsdag-theme-icon {
+.Valentijnsdag-feestdag-icon {
   background-color: #ef5777;
 }
