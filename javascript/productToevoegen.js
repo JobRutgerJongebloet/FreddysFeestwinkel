@@ -62,6 +62,7 @@ formElements.forEach(element => {
 function maakProductAan(nieuwProduct) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authentication", JSON.parse(localStorage.getItem("response")).randomstring);
     var raw = JSON.stringify(nieuwProduct);
     var requestOptions = {
         method: 'POST',
@@ -78,7 +79,7 @@ function maakProductAan(nieuwProduct) {
                 document.location.href = "producten.html";
             } else {
                 console.log(r.validaties);
-                alert("Mislukt want " + r.validaties)
+                alert(r.validaties)
             }
         }
         )
