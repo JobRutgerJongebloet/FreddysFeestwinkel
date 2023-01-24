@@ -32,7 +32,7 @@ async function fetchProducts() {
         let products = document.querySelector('#products');
 
         products.innerHTML += `
-            <div class="filter-card col mb-3 all ${response[i].feestdag}">
+            <div class="filter-card col mb-3 all ${response[i].feestdag} ${response[i].categorie}">
                 <div class="filter-card-item p-4 bg-light rounded">
                     <div class="filter-card-img rounded">
                         <img src="${afbeelding}" class="item-img" alt="">
