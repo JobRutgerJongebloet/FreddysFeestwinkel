@@ -33,6 +33,9 @@ formElement.addEventListener('submit', (evt) => {
     }
 });
 
+
+
+
 formElements.forEach(element => {
     element.addEventListener("focus", () => removeValidity(element)); // wanneer het element gefocused wordt
     element.addEventListener("blur", () => checkValidity(element)); // wanneer het element uit focus gaat

@@ -8,3 +8,4 @@ switch (statusURL) {
         var baseURL = "https://freddysfeestwinkelbackend.azurewebsites.net/";
         break;
 }
+

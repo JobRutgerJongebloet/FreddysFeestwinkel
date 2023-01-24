@@ -15,11 +15,39 @@ if (response != null) {
     }
 }
 
+ophalenFavorieten();
 haalProductenOp();
 
 document.getElementById('bestelbutton').addEventListener('click', (evt) => {
     bestel();
 });
+
+async function ophalenFavorieten() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authentication", JSON.parse(localStorage.getItem("response")).randomstring);
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+    try {
+        const response = await fetch(baseURL + "klant/favorieten", requestOptions);
+        const result = await response.json();
+        console.log(result);
+        result.forEach(function (element) {
+            const cardElement = document.getElementById(element.id);
+            const faviconElement = cardElement.querySelector("#favoriteIcon");
+            if (faviconElement.classList.contains('fa-regular')) {
+                faviconElement.classList.remove('fa-regular');
+                faviconElement.classList.add('fa-solid');
+            }
+        })
+    } catch (error) {
+        console.log('error', error);
+    }
+}
 
 function bestel() {
     var myHeaders = new Headers();
@@ -52,7 +80,7 @@ function updateWinkelmand() {
     fetch(baseURL + "winkelwagen/klant", requestOptions)
         .then(response => response.json())
         .then(result => {
-            
+
             var subtotaal = 0;
             var totaal = 0;
             let container = document.getElementById("inhoudww");
@@ -104,39 +132,108 @@ async function haalProductenOp() {
 
 
             producten.innerHTML +=
-                `<div class="col-sm-3 pt-3">
-                <div class="card"> <img src=${img} class="card-img-top" style="height: 300px" translate-middle alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${d.naam}</h5>
-                        <p class="card-text">${d.beschrijving}</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Categorie: ${d.categorie}</li>
-                        <li class="list-group-item">Prijs per stuk €${d.kosten}</li>
-                    </ul> 
-                    <a data-param="${d.id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a> 
-                    <a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a> 
-                    <span class="cart-quantity" id="quantity-${d.id}"></span>
-                </div>
-            </div>`
+                `   
+                <div class="col-md-3 p-4">
+				<div class="card" id="${d.id}">
+					<img src=${img} class="card-img-top" style="height: 300px" translate-middle alt="...">
+					<i data-param="${d.id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+					<h5 class="card-title">${d.naam}</h5>
+					<p class="card-text">${d.beschrijving}</p>
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Categorie: ${d.categorie}</li>
+						<li class="list-group-item">Prijs per stuk €${d.kosten}</li>
+					</ul>
+					<a data-param="${d.id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
+					<a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+				</div>
+			</div>
+                `
         }
-        const addLinks = document.querySelectorAll("#addtocart");
-        addLinks.forEach(function (addLink) {
+        const cardElement = document.querySelectorAll(".card");
+        cardElement.forEach(function (element) {
+            const addLink = element.querySelector("#addtocart");
             addLink.addEventListener("click", function (e) {
                 const productid = this.getAttribute("data-param");
                 toevoegenAanWinkelwagen(productid);
             });
-        });
-        const removeLinks = document.querySelectorAll("#removefromcart");
-        removeLinks.forEach(function (removeLink) {
+            const removeLink = element.querySelector("#removefromcart");
             removeLink.addEventListener("click", function (e) {
                 const productid = this.getAttribute("data-param");
                 verwijderenUitWinkelwagen(productid);
+            });
+            const favoriteIcon = element.querySelector("#favoriteIcon");
+            favoriteIcon.addEventListener("click", function () {
+                const productid = this.getAttribute("data-param");
+                if (favoriteIcon.classList.contains('fa-regular')) {
+                    favoriteIcon.classList.remove('fa-regular');
+                    favoriteIcon.classList.add('fa-solid');
+                    addToFavorite(productid);
+                    return
+                }
+                if (favoriteIcon.classList.contains('fa-solid')) {
+                    favoriteIcon.classList.remove('fa-solid');
+                    favoriteIcon.classList.add('fa-regular');
+                    removeFromFavorite(productid);
+                }
             });
         });
     } catch (error) {
         console.error(error);
     }
+}
+
+function addToFavorite(productID) {
+    console.log(productID);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authentication", JSON.parse(localStorage.getItem("response")).randomstring);
+
+    var raw = JSON.stringify({
+        "productId": productID
+    });
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+    fetch(baseURL + "klant/favoriet/toevoegen", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            if (result.succes) {
+            } else {
+                console.log(result.validaties);
+                alert("Mislukt want " + result.validaties)
+            }
+        })
+        .catch(error => console.log('error', error));
+}
+
+function removeFromFavorite(productID) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authentication", JSON.parse(localStorage.getItem("response")).randomstring);
+
+    var raw = JSON.stringify({
+        "productId": productID
+    });
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+    fetch(baseURL + "klant/favoriet/verwijderen", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            if (result.succes) {
+            } else {
+                console.log(result.validaties);
+                alert("Mislukt want " + result.validaties)
+            }
+        })
+        .catch(error => console.log('error', error));
 }
 
 function toevoegenAanWinkelwagen(productId) {
