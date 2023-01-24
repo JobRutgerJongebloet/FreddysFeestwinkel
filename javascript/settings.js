@@ -1,4 +1,4 @@
-var statusURL = "LOCAL";
+var statusURL = "DEV";
 
 switch (statusURL) {
     case "LOCAL":
