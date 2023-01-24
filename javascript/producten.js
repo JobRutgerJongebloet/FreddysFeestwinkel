@@ -99,7 +99,7 @@ async function haalProductenOp() {
                 img = "../images/products/rodefeestneus.jpg";
             }
             if (d.categorie == "Feestkleding") {
-                img = "../images/products/halloween-spook-kostuum.jpg";
+                img = "../images/products/Halloween-spook-kostuum.jpg";
             }
 
 
