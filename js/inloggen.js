@@ -11,15 +11,11 @@ if(response != null){
 }
 
 const formElement = document.getElementById('form');
-<<<<<<< HEAD
-// console.log(formElement);
-=======
 const inputElements = formElement.getElementsByTagName('input');
 const formElements = [...inputElements];
 console.log(formElements);
 
 let formIsValid = false;
->>>>>>> main
 
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -62,11 +58,7 @@ function maakAccountAan() {
         .then(r => {
 
             if (r.validaties == null) {
-<<<<<<< HEAD
                 console.log("U bent ingelogd!")
-=======
-                alert("ingelogd!")
->>>>>>> main
                 localStorage.setItem("response", JSON.stringify(r));
                 document.location.href = "/view/inloggen.html";
             } else {
@@ -79,37 +71,4 @@ function maakAccountAan() {
         .catch(error => console.log('error', error));
 }
 
-<<<<<<< HEAD
-=======
-function removeValidity(element) {
-    if (element.classList.contains('is-invalid')) {
-        element.classList.remove('is-invalid');
-    }
-    if (element.classList.contains('is-valid')) {
-        element.classList.remove('is-valid');
-    }
-}
-
-function checkValidity(element) {
-    if (element.name === "email") {
-        if (element.value.trim().match(
-            /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/
-        ) == null) {
-            var text = "Email moet abc@abc.com zijn";
-            document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
-            element.classList.add('is-invalid');
-            formIsValid = false;
-        }
-    }
-    if (element.value.trim() === "") {
-        var text = element.name.replace(/^\w/, c => c.toUpperCase()) + " is een verplicht veld";
-        document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
-        element.classList.add('is-invalid');
-        formIsValid = false;
-    } else {
-        element.classList.add('is-valid');
-        formIsValid = true;
-    }
-}
->>>>>>> main
 
