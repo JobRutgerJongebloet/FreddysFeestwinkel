@@ -7,7 +7,7 @@ var footer = new Footer();
 var favicon = new Favicon();
 
 let response = JSON.parse(localStorage.getItem("response"));
-if(response != null){
+if (response != null) {
     navbar.showUsername();
     navbar.showRole();
 }
@@ -22,7 +22,7 @@ async function fetchProducts() {
 
     // Product
     for (let i = 0; i < response.length; i++) {
-        console.log(response[i].afbeelding);
+        // console.log(response[i].afbeelding);
 
         if (response[i].afbeelding != null) {
             var afbeelding = response[i].afbeelding;
@@ -32,12 +32,12 @@ async function fetchProducts() {
         let products = document.querySelector('#products');
 
         products.innerHTML += `
-            <div class="filter-card col mb-3 all ${response[i].categorie}">
+            <div class="filter-card col mb-3 all ${response[i].feestdag} ${response[i].categorie}">
                 <div class="filter-card-item p-4 bg-light rounded">
                     <div class="filter-card-img rounded">
                         <img src="${afbeelding}" class="item-img" alt="">
                         <div class="filter-card-heart">
-                            <img src="img/filter-icons/favourite.png" alt="favourite">
+                            <img src="images/filter-icons/favourite.png" alt="favourite">
                         </div>
                     </div>
                     <div class="filter-card-title">${response[i].naam}</div>
@@ -96,7 +96,7 @@ async function changeActivePosition(activeItem) {
 
     // Get selected theme from the input.class.attributes
     var validateTheme = words.filter(function (word) {
-        const selectedTheme = word.includes("-theme");
+        const selectedTheme = word.includes("-feestdag");
         return selectedTheme;
     });
 

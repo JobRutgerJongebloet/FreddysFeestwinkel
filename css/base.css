@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(to bottom, #f4511e, rgba(37, 93, 0, 0.4));
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: auto;
 }
 
 .form-control:focus {
