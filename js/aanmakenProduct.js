@@ -40,11 +40,3 @@ function maakProductAan(evt) {
         else {
           alert('Er is iets fout gegaan')
         }
-
-      });
-  }
-}
-//functie brengt gebruiker weer naar de productpagina
-function naarAnderePagina() {
-  document.location.href = "product.html";
-}

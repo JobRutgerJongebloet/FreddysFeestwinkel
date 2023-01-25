@@ -1,0 +1,10 @@
+#favoriteIcon {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    font-size: 25px;
+    cursor: pointer;
+    background: rgb(247, 244, 244);
+    color: black !important;
+    padding: 0.5rem;
+}

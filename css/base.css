@@ -1,10 +1,14 @@
 body {
     background: linear-gradient(to bottom, #f4511e, rgba(37, 93, 0, 0.4));
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: auto;
 }
 
 .form-control:focus {
   border-color: #198754 !important;
   box-shadow: inset 0 1px 1px #4ca57c, 0 0 8px #198754 !important;
+}
+
+alert {
+  background-color: green !important;
 }

@@ -2,7 +2,7 @@
   background-color: transparent !important;
 }
 
-.christmas-tree {
+.kerstboom {
   height: 2rem;
   width: 2rem;
   background-color: white;
@@ -29,9 +29,6 @@
 }
 
 .title {
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 700;
   color: #000000;
 }
 
@@ -57,7 +54,12 @@ a {
   padding-bottom: 0.5rem;
 }
 
-@media (max-width: 1230px) {
+.uitloggen {
+  margin-left: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 230px) {
   .fa-heart, .fa-shopping-cart, .inloggen, .account-aanmaken {
     display: none;
   }
