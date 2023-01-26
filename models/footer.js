@@ -39,7 +39,6 @@ export class Footer {
         if (existingFooter) {
             existingFooter.innerHTML = this.navElementHTML;
             const productenFooter = document.getElementById('productenFooter');
-            console.log(productenFooter);
             if (productenFooter != null) {
                 productenFooter.addEventListener('click', (evt) => {
                     localStorage.setItem("category", "leeg")
@@ -56,7 +55,6 @@ export class Footer {
             container.appendChild(footer, container.firstChild);
             footer.innerHTML = this.footerElementHTML;
             const productenFooter = document.getElementById('productenFooter');
-            console.log(productenFooter);
             if (productenFooter != null) {
                 productenFooter.addEventListener('click', (evt) => {
                     localStorage.setItem("category", "leeg")
@@ -70,7 +68,6 @@ export class Footer {
         document.body.appendChild(footer, firstChild);
         footer.innerHTML = this.footerElementHTML;
         const productenFooter = document.getElementById('productenFooter');
-        console.log(productenFooter);
         if (productenFooter != null) {
             productenFooter.addEventListener('click', (evt) => {
                 localStorage.setItem("category", "leeg")
