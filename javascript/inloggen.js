@@ -30,7 +30,7 @@ formElements.forEach(element => {
 });
 
 function maakAccountAan() {
-    var username = document.getElementById('gebruikersnaam').value;
+    var username = document.getElementById('email').value;
     var password = document.getElementById('wachtwoord').value;
 
     var myHeaders = new Headers();
@@ -52,7 +52,7 @@ function maakAccountAan() {
         .then(response => response.json())
         .then(r => {
             if (r.validaties == null) {
-                console.log("U bent ingelogd!")
+                alert("ingelogd!")
                 localStorage.setItem("response", JSON.stringify(r));
                 let response = JSON.parse(localStorage.getItem("response"));
                 if (response != null) {
@@ -60,7 +60,7 @@ function maakAccountAan() {
                     navbar.showRole();
                 }
             } else {
-                alert("Gebruikersnaam of password is incorrect!");
+                console.log("else");
                 r.validaties.forEach(validatie => {
                     alert(validatie);
                 });
@@ -69,4 +69,33 @@ function maakAccountAan() {
         .catch(error => console.log('error', error));
 }
 
+function removeValidity(element) {
+    if (element.classList.contains('is-invalid')) {
+        element.classList.remove('is-invalid');
+    }
+    if (element.classList.contains('is-valid')) {
+        element.classList.remove('is-valid');
+    }
+}
 
+function checkValidity(element) {
+    if (element.name === "email") {
+        if (element.value.trim().match(
+            /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/
+        ) == null) {
+            var text = "Email moet abc@abc.com zijn";
+            document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+            element.classList.add('is-invalid');
+            formIsValid = false;
+        }
+    }
+    if (element.value.trim() === "") {
+        var text = element.name.replace(/^\w/, c => c.toUpperCase()) + " is een verplicht veld";
+        document.querySelector(`#${element.getAttribute('id')} + .invalid-feedback`).innerHTML = text;
+        element.classList.add('is-invalid');
+        formIsValid = false;
+    } else {
+        element.classList.add('is-valid');
+        formIsValid = true;
+    }
+}
