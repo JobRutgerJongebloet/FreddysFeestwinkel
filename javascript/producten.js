@@ -195,13 +195,15 @@ async function haalProductenOp() {
         let response = await data.json();
 
         for (let i = 0; i < response.length; i++) {
-            console.log(response);
+
             if (response[i].afbeelding != null) {
                 var afbeelding = response[i].afbeelding;
             } else {
                 var afbeelding = "/images/products/rodefeestneus.jpg";
             }
+
             let producten = document.getElementById("product");
+
             producten.innerHTML += `   
                 <div class="col-md-3 p-4">
                     <div class="card" id="${response[i].id}">
@@ -219,6 +221,7 @@ async function haalProductenOp() {
                     </div>
                 </div>`;
         }
+
         const cardElement = document.querySelectorAll(".card");
         cardElement.forEach(function (element) {
             const addLink = element.querySelector("#addtocart");
