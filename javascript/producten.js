@@ -111,45 +111,35 @@ function updateWinkelmand() {
 
 async function haalProductenOp() {
     try {
-        const response = await fetch(baseURL + 'producten');
-        const lijst = await response.json();
-        let producten = document.getElementById("product")
-        let img = "";
-        for (let d of lijst) {
-            let img = "https://random.imagecdn.app/500/600";
-            if (d.categorie == "Schmink") {
-                img = "../images/products/schmink.jpg";
-            }
-            if (d.categorie == "Sintartikelen") {
-                img = "../images/products/sintstaf.jpg";
-            }
-            if (d.categorie == "Feestaccesoires") {
-                img = "../images/products/rodefeestneus.jpg";
-            }
-            if (d.categorie == "Feestkleding") {
-                img = "../images/products/Halloween-spook-kostuum.jpg";
-            }
+        let data = await fetch(baseURL + 'producten');
+        let response = await data.json();
 
+        for (let i = 0; i < response.length; i++) {
+            if (response[i].afbeelding != null) {
+                var afbeelding = response[i].afbeelding;
+            } else {
+                var afbeelding = "/images/products/rodefeestneus.jpg";
+            }
+            let producten = document.getElementById("product")
 
-            producten.innerHTML +=
-                `   
+            producten.innerHTML += `   
                 <div class="col-md-3 p-4">
-				<div class="card" id="${d.id}">
-					<img src=${img} class="card-img-top" style="height: 300px" translate-middle alt="...">
-					<i data-param="${d.id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
-					<h5 class="card-title">${d.naam}</h5>
-					<p class="card-text">${d.beschrijving}</p>
+                    <div class="card" id="${response[i].id}">
+                        <img src="../${afbeelding}" class="card-img-top" style="height: 300px" translate-middle alt="...">
+                        <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+                        <h5 class="card-title">${response[i].naam}</h5>
+                        <p class="card-text">${response[i].beschrijving}</p>
 
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Categorie: ${d.categorie}</li>
-						<li class="list-group-item">Prijs per stuk €${d.kosten}</li>
-					</ul>
-					<a data-param="${d.id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
-					<a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
-				</div>
-			</div>
-                `
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Categorie: ${response[i].categorie}</li>
+                            <li class="list-group-item">Prijs per stuk €${response[i].kosten}</li>
+                        </ul>
+                        <a data-param="${response[i].id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
+                        <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+                    </div>
+                </div>`;
         }
+
         const cardElement = document.querySelectorAll(".card");
         cardElement.forEach(function (element) {
             const addLink = element.querySelector("#addtocart");
