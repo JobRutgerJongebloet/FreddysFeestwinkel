@@ -18,6 +18,8 @@ if (localStorage.getItem("category") != null) {
     if (localStorage.getItem("category") == "leeg") {
         haalProductenOp();
     } else {
+        const headertext = document.getElementById('headertext');
+        headertext.innerHTML = localStorage.getItem("category")
         getProductByCategory();
     }
 
@@ -142,21 +144,23 @@ async function getProductByCategory() {
             let producten = document.getElementById("product");
 
             producten.innerHTML += `   
-                <div class="col-md-3 p-4">
-                    <div class="card" id="${response[i].id}">
-                        <img src="../${afbeelding}" class="card-img-top" style="height: 300px" translate-middle alt="...">
-                        <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
-                        <h5 class="card-title">${response[i].naam}</h5>
-                        <p class="card-text">${response[i].beschrijving}</p>
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Categorie: ${response[i].categorie}</li>
-                            <li class="list-group-item">Prijs per stuk €${response[i].kosten}</li>
-                        </ul>
-                        <a data-param="${response[i].id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
-                        <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
-                    </div>
-                </div>`;
+            <div class="card" id="${response[i].id}">
+            <img src="../${afbeelding}">
+            <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+            <h5 class="card-title text-center">${response[i].naam}</h5>
+            <p class="card-text text-center">${response[i].beschrijving}</p>
+            <p class="card-text text-center">Categorie: ${response[i].categorie}</li>
+            <p class="card-text text-center">Prijs per stuk €${response[i].kosten}</li>
+            <div class="d-flex" style="
+            justify-content: center;">
+            <button type="button" data-param="${response[i].id}" id="addtocart" style="white-space: nowrap;" class="btn btn-success">
+            <i class="align-self-center link__icon fa-solid white fa-shopping-cart"></i> in winkelwagen
+            </button>
+            </div>
+            <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+            
+            </div>
+            `;
         }
 
         const cardElement = document.querySelectorAll(".card");
@@ -208,21 +212,23 @@ async function haalProductenOp() {
             let producten = document.getElementById("product");
 
             producten.innerHTML += `   
-                <div class="col-md-3 p-4">
-                    <div class="card" id="${response[i].id}">
-                        <img src="../${afbeelding}" class="card-img-top" style="height: 300px" translate-middle alt="...">
-                        <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
-                        <h5 class="card-title">${response[i].naam}</h5>
-                        <p class="card-text">${response[i].beschrijving}</p>
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Categorie: ${response[i].categorie}</li>
-                            <li class="list-group-item">Prijs per stuk €${response[i].kosten}</li>
-                        </ul>
-                        <a data-param="${response[i].id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
-                        <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
-                    </div>
-                </div>`;
+            <div class="card" id="${response[i].id}">
+            <img src="../${afbeelding}">
+            <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+            <h5 class="card-title text-center">${response[i].naam}</h5>
+            <p class="card-text text-center">${response[i].beschrijving}</p>
+            <p class="card-text text-center">Categorie: ${response[i].categorie}</li>
+            <p class="card-text text-center">Prijs per stuk €${response[i].kosten}</li>
+            <div class="d-flex" style="
+            justify-content: center;">
+            <button type="button" data-param="${response[i].id}" id="addtocart" style="white-space: nowrap;" class="btn btn-success">
+            <i class="align-self-center link__icon fa-solid white fa-shopping-cart"></i> in winkelwagen
+            </button>
+            </div>
+            <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+            
+            </div>
+            `;
         }
 
         const cardElement = document.querySelectorAll(".card");
@@ -356,35 +362,5 @@ function verwijderenUitWinkelwagen(productid) {
             updateWinkelmand();
         })
         .catch(error => console.log('error', error));
-    // fetch(baseURL + 'product/' + productid)
-    //     .then(response => response.json())
-    //     .then(product => {
-    //         console.log(product.naam + " " + "is verwijderd uit winkelwagen");
-    //         if (winkelwagen.hasOwnProperty(product.naam)) {
-    //             if (winkelwagen[product.naam].aantal > 1) {
-    //                 winkelwagen[product.naam].aantal -= 1;
-    //                 winkelwagen[product.naam].subtotal -= product.subtotal;
-    //             } else {
-    //                 delete winkelwagen[product.naam];
-    //             }
-    //         }
-    //         console.log(winkelwagen);
-    //         let inhoudww = document.getElementById("inhoudww");
-    //         let winkelwagenInhoud = '';
-    //         let totaalprijs = 0;
-    //         for (let key in winkelwagen) {
-    //             winkelwagenInhoud += `${winkelwagen[key].aantal} x ${key} : € ${winkelwagen[key].subtotal} <br>`
-    //             totaalprijs += winkelwagen[key].subtotal;
-    //         }
-    //         inhoudww.innerHTML = winkelwagenInhoud;
-    //         let totaalElement = document.getElementById("totaalprijs");
-    //         totaalElement.innerHTML = `Totaalprijs: € ${totaalprijs}`;
-    //         let quantityElement = document.getElementById("quantity-" + productid);
-    //         if (winkelwagen.hasOwnProperty(product.naam)) {
-    //             quantityElement.innerHTML = winkelwagen[product.naam].aantal;
-    //         } else {
-    //             quantityElement.innerHTML = 0;
-    //         }
-    //     })
 }
 

@@ -56,25 +56,9 @@ h2.title {
 
 .button {
     grid-column: -1 / 1;
-    display: flex;
-    justify-content: center;
 }
 
-.button button {
-    border: 0;
-    outline: 0;
-    width: 50%;
-    height: 40px;
+#register{
     border-radius: 5px;
-    color: #FFF;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    background: #198754;
-}
-
-.button button:hover {
-    color: #fff;
-    background-color: #157347;
-    border-color: #146c43;
+    width: 200px;
 }

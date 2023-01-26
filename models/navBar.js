@@ -6,7 +6,7 @@ export class NavBar {
             <i class="link__icon icon fa-solid fa-bars white"></i>
         </a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header" style="background: red;">
+            <div class="offcanvas-header" style="background: darkgreen;">
                 <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -69,7 +69,7 @@ export class NavBar {
         
        <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <i class="link__icon fa-solid fa-shopping-cart">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" id="shoppingCartNumber">0</span>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" >0</span>
             </i>
         </a>
         <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -86,7 +86,7 @@ export class NavBar {
         <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
             <i class="link__icon icon fa-solid fa-bars white"></i></a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header" style="background: red;">
+            <div class="offcanvas-header" style="background: darkgreen;">
                 <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -111,8 +111,13 @@ export class NavBar {
                                 href="/views/producttoevoegen.html">product toevoegen</a>
                         </li>
                         <li>
+                        <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/klanten.html"
+                            id="role">Klanten page</a>
+                        <li>
+                        <li>
                             <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
                         </li>
+                        
                     </ul>
                     <div></div>
                     <a href="/views/contact.html" class="nounderline align-self-center green hover ps-5">
@@ -152,6 +157,10 @@ export class NavBar {
                         product toevoegen</a>
                 </li>
                 <li>
+                <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/klanten.html"
+                    id="role">Klanten page</a>
+                <li>
+                <li>
                     <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
                 </li>
             </ul>
@@ -178,7 +187,7 @@ export class NavBar {
             <i class="link__icon icon fa-solid fa-bars white"></i>
         </a>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header" style="background: red;">
+            <div class="offcanvas-header" style="background: darkgreen;">
                 <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h1>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -436,6 +445,7 @@ export class NavBar {
             const anchor = document.createElement("a");
             anchor.href = "/views/producten.html";
             anchor.style.paddingLeft = "10px";
+            anchor.style.paddingRight = "10px";
             anchor.style.paddingRight = "10px";
             anchor.classList.add("nounderline");
             anchor.classList.add("white");
