@@ -2,15 +2,15 @@ import { NavBar } from '../models/navBar.js'
 import { Favicon } from '../models/favicon.js'
 import { Footer } from '../models/footer.js'
 
-var navbar = new NavBar();
+// var navbar = new NavBar();
 var footer = new Footer();
 var favicon = new Favicon();
 
-let response = JSON.parse(localStorage.getItem("response"));
-if (response != null) {
-    navbar.showUsername();
-    navbar.showRole();
-}
+// let response = JSON.parse(localStorage.getItem("response"));
+// if (response != null) {
+//     navbar.showUsername();
+//     navbar.showRole();
+// }
 
 document.addEventListener('DOMContentLoaded', function () {
     fetchProducts();
