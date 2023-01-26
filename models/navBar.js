@@ -1,227 +1,257 @@
 export class NavBar {
-  navElementHTML =
-    `<nav class="d-flex">
-    <div>
-    </div>
-    <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas"
-        aria-controls="offcanvasExample">
-        <i class="link__icon icon fa-solid fa-bars white"></i></a>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header" style="background: red;">
-            <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div id="canvasHTML">
-            </div>
-            <div class="dropdown d-flex">
-                <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="align-self-center link__icon fa-solid white fa-user"></i>
-                    <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
-                </div>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html" id="username">Inloggen</a></li>
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html" id="role">Account aanmaken</a>
-                    </li>
-                </ul>
-                <div></div>
-                <a href="contact.html" class="nounderline align-self-center green hover ps-5"><i
-                        class="link__icon fa-solid fa-phone white hover"></i>
-                    <b class="align-self-center gold cursive fontsize1 ps-2">contact</b></a>
-            </div>
-
-        </div>
-    </div>
-    <div class="d-flex">
-        <a class="nav-link" href="/index.html">
-            <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
-            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
-            <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
-            <a  href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+  navElementHTML = `
+    <nav class="d-flex">
+        <div></div>
+        <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            <i class="link__icon icon fa-solid fa-bars white"></i>
         </a>
-    </div>
-    <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
-        <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
-        <i class="align-self-center link__icon fa-solid fa-search"></i>
-    </form>
-    <div class="dropdown d-flex">
-        <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="align-self-center link__icon fa-solid fa-user"></i>
-            <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
-        </div>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html" id="username2">Inloggen</a></li>
-            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html" id="role2">Account aanmaken</a>
-            </li>
-        </ul>
-    </div>
-    <a href="favorieten.html" class="align-self-center hover ps-5"><i
-            class="link__icon fa-regular fa-heart"></i></a>
-    <div class="d-flex hover ps-5"> <a href="winkelwagen.html"
-            class="nounderline align-self-center position-relative hover"><i
-                class="link__icon fa-solid fa-shopping-cart"><span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span></i></a>
-        <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover"><b
-                class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b></a>
-    </div>
-    </div>
-</nav>
-
-<header class="d-flex" id="header">
-</header>`;
-
-  navElementHTMLWINKELIER =
-    `<nav class="d-flex">
-    <div>
-    </div>
-    <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas"
-        aria-controls="offcanvasExample">
-        <i class="link__icon icon fa-solid fa-bars white"></i></a>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header" style="background: red;">
-            <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div id="canvasHTML">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header" style="background: red;">
+                <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h1>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="dropdown d-flex">
-                <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="align-self-center link__icon fa-solid white fa-user"></i>
-                    <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+            <div class="offcanvas-body">
+                <div id="canvasHTML">
                 </div>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html" id="username">Inloggen</a></li>
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html" id="role">Account aanmaken</a>
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/producttoevoegen.html">product toevoegen</a></li>
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a></li>
-                </ul>
-                <div></div>
-                <a href="contact.html" class="nounderline align-self-center green hover ps-5"><i
-                        class="link__icon fa-solid fa-phone white hover"></i>
-                    <b class="align-self-center gold cursive fontsize1 ps-2">contact</b></a>
-            </div>
-
-        </div>
-    </div>
-    <div class="d-flex">
-        <a class="nav-link" href="/index.html">
-            <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
-            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
-            <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
-            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
-        </a>
-    </div>
-    <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
-        <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
-        <i class="align-self-center link__icon fa-solid fa-search"></i>
-    </form>
-    <div class="dropdown d-flex">
-        <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="align-self-center link__icon fa-solid fa-user"></i>
-            <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
-        </div>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html" id="username2">Inloggen</a></li>
-            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html" id="role2">Account aanmaken</a>
-            <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/producttoevoegen.html">product toevoegen</a></li>
-            <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
-            </li>
-        </ul>
-    </div>
-    <a href="favorieten.html" class="align-self-center hover ps-5"><i
-            class="link__icon fa-regular fa-heart"></i></a>
-    <div class="d-flex hover ps-5"> <a href="winkelwagen.html"
-            class="nounderline align-self-center position-relative hover"><i
-                class="link__icon fa-solid fa-shopping-cart"><span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span></i></a>
-        <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover"><b
-                class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b></a>
-    </div>
-    </div>
-</nav>
-
-<header class="d-flex" id="header">
-</header>`;
-
-  navElementHTMLKLANT =
-    `<nav class="d-flex">
-    <div>
-    </div>
-    <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas"
-        aria-controls="offcanvasExample">
-        <i class="link__icon icon fa-solid fa-bars white"></i></a>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header" style="background: red;">
-            <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div id="canvasHTML">
-            </div>
-            <div class="dropdown d-flex">
-                <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="align-self-center link__icon fa-solid white fa-user"></i>
-                    <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                <div class="dropdown d-flex">
+                    <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="align-self-center link__icon fa-solid white fa-user"></i>
+                        <b class="align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html"
+                                id="username">Inloggen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html"
+                                id="role">Account aanmaken</a>
+                        </li>
+                    </ul>
+                    <div></div>
+                    <a href="contact.html" class="nounderline align-self-center green hover ps-5">
+                        <i class="link__icon fa-solid fa-phone white hover"></i>
+                        <b class="align-self-center gold cursive fontsize1 ps-2">contact</b>
+                    </a>
                 </div>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html" id="username">Inloggen</a></li>
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html" id="role">Account aanmaken</a>
-                    <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
-                    </li>
-                </ul>
-                <div></div>
-                <a href="contact.html" class="nounderline align-self-center green hover ps-5"><i
-                        class="link__icon fa-solid fa-phone white hover"></i>
-                    <b class="align-self-center gold cursive fontsize1 ps-2">contact</b></a>
             </div>
-
         </div>
-    </div>
-    <div class="d-flex">
-        <a class="nav-link" href="/index.html">
-            <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
-            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
-            <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
-            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+        <div class="d-flex">
+            <a class="nav-link" href="/index.html">
+                <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
+                <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
+                <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
+                <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+            </a>
+        </div>
+        <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
+            <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+            <i class="align-self-center link__icon fa-solid fa-search"></i>
+        </form>
+        <div class="dropdown d-flex">
+            <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="align-self-center link__icon fa-solid fa-user"></i>
+                <b class="align-self-center white cursive fontsize1 ps-2">account</b>
+            </div>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html"
+                        id="username2">Inloggen</a>
+                </li>
+                <li>
+                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html"
+                        id="role2">Account aanmaken</a>
+                </li>
+            </ul>
+        </div>
+        <a href="favorieten.html" class="align-self-center hover ps-5"><i class="link__icon fa-regular fa-heart"></i></a>
+        <div class="d-flex hover ps-5">
+            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
+                <i class="link__icon fa-solid fa-shopping-cart">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+                </i>
+            </a>
+            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
+                <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
+            </a>
+        </div>
+    </nav>
+
+    <header class="d-flex" id="header"></header>`;
+
+  navElementHTMLWINKELIER = `
+    <nav class="d-flex">
+        <div></div>
+        <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            <i class="link__icon icon fa-solid fa-bars white"></i></a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header" style="background: red;">
+                <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h1>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="canvasHTML">
+                </div>
+                <div class="dropdown d-flex">
+                    <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="align-self-center link__icon fa-solid white fa-user"></i>
+                        <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html"
+                                id="username">Inloggen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html"
+                                id="role">Account aanmaken</a>
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center"
+                                href="/views/producttoevoegen.html">product toevoegen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
+                        </li>
+                    </ul>
+                    <div></div>
+                    <a href="contact.html" class="nounderline align-self-center green hover ps-5">
+                        <i class="link__icon fa-solid fa-phone white hover"></i>
+                        <b class="align-self-center gold cursive fontsize1 ps-2">contact</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <a class="nav-link" href="/index.html">
+                <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
+                <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
+                <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
+                <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+            </a>
+        </div>
+        <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
+            <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+            <i class="align-self-center link__icon fa-solid fa-search"></i>
+        </form>
+        <div class="dropdown d-flex">
+            <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="align-self-center link__icon fa-solid fa-user"></i>
+                <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
+            </div>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html"
+                        id="username2">Inloggen</a>
+                </li>
+                <li>
+                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html"
+                        id="role2">Account aanmaken</a>
+                <li>
+                    <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/producttoevoegen.html">
+                        product toevoegen</a>
+                </li>
+                <li>
+                    <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
+                </li>
+            </ul>
+        </div>
+        <a href="favorieten.html" class="align-self-center hover ps-5"><i class="link__icon fa-regular fa-heart"></i></a>
+        <div class="d-flex hover ps-5">
+            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
+                <i class="link__icon fa-solid fa-shopping-cart">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+                </i>
+            </a>
+            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
+                <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
+            </a>
+        </div>
+    </nav>
+
+    <header class="d-flex" id="header"></header>`;
+
+  navElementHTMLKLANT = `
+    <nav class="d-flex">
+        <div></div>
+        <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+            <i class="link__icon icon fa-solid fa-bars white"></i>
         </a>
-    </div>
-    <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
-        <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
-        <i class="align-self-center link__icon fa-solid fa-search"></i>
-    </form>
-    <div class="dropdown d-flex">
-        <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="align-self-center link__icon fa-solid fa-user"></i>
-            <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header" style="background: red;">
+                <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h1>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div id="canvasHTML"></div>
+                <div class="dropdown d-flex">
+                    <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="align-self-center link__icon fa-solid white fa-user"></i>
+                        <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html"
+                                id="username">Inloggen</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html"
+                                id="role">Account aanmaken</a>
+                        <li>
+                            <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
+                        </li>
+                    </ul>
+                    <div></div>
+                    <a href="contact.html" class="nounderline align-self-center green hover ps-5">
+                        <i class="link__icon fa-solid fa-phone white hover"></i>
+                        <b class="align-self-center gold cursive fontsize1 ps-2">contact</b>
+                    </a>
+                </div>
+            </div>
         </div>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html" id="username2">Inloggen</a></li>
-            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html" id="role2">Account aanmaken</a>
-            <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
-            </li>
-        </ul>
-    </div>
-    <a href="favorieten.html" class="align-self-center hover ps-5"><i
-            class="link__icon fa-regular fa-heart"></i></a>
-    <div class="d-flex hover ps-5"> <a href="winkelwagen.html"
-            class="nounderline align-self-center position-relative hover"><i
-                class="link__icon fa-solid fa-shopping-cart"><span
-                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span></i></a>
-        <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover"><b
-                class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b></a>
-    </div>
-    </div>
-</nav>
+        <div class="d-flex">
+            <a class="nav-link" href="/index.html">
+                <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
+                <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
+                <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
+                <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+            </a>
+        </div>
+        <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
+            <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+            <i class="align-self-center link__icon fa-solid fa-search"></i>
+        </form>
+        <div class="dropdown d-flex">
+            <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="align-self-center link__icon fa-solid fa-user"></i>
+                <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
+            </div>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html"
+                        id="username2">Inloggen</a>
+                </li>
+                <li>
+                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html"
+                        id="role2">Account aanmaken</a>
+                <li>
+                    <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
+                </li>
+            </ul>
+        </div>
+        <a href="favorieten.html" class="align-self-center hover ps-5"><i class="link__icon fa-regular fa-heart"></i></a>
+        <div class="d-flex hover ps-5"> 
+            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
+                <i class="link__icon fa-solid fa-shopping-cart">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
+                </i>
+            </a>
+            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
+                <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
+            </a>
+        </div>
+    </nav>
 
-<header class="d-flex" id="header">
-</header>`;
+    <header class="d-flex" id="header"></header>`;
 
   updateNavBar() {
 
@@ -426,7 +456,8 @@ export class NavBar {
     }
 
     async function addSearchBar(header) {
-      header.innerHTML = `<form role="search" class="d-flex form-search-header">
+      header.innerHTML = `
+        <form role="search" class="d-flex form-search-header">
             <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
             <i class="align-self-center link__icon icon fa-solid fa-search"></i>
         </form>`;
@@ -443,8 +474,9 @@ export class NavBar {
 
         addSearchBar(header);
       } else {
-        searchNavBar.innerHTML = `<input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
-            <i class="align-self-center link__icon icon fa-solid fa-search"></i>`;
+        searchNavBar.innerHTML = `
+          <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+          <i class="align-self-center link__icon icon fa-solid fa-search"></i>`;
         searchNavBar.style.paddingLeft = "1rem"
 
         header.innerHTML = "";
