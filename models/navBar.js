@@ -1,165 +1,244 @@
 export class NavBar {
   navElementHTML =
-    `<nav class="navbar navbar-expand-lg bg-light">
-        <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
-        <b class="gold">Freddys</b>
-        <b class="green">Feestwinkel</b>
-        
-        <form class="d-flex search" role="search">
-        <input class="form-control me-2 search-input" type="search" placeholder="Search"
-          aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link title" href="/index.html">Home</a>
+    `<nav class="d-flex">
+    <div>
+    </div>
+    <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas"
+        aria-controls="offcanvasExample">
+        <i class="link__icon icon fa-solid fa-bars white"></i></a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header" style="background: red;">
+            <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="canvasHTML">
+            </div>
+            <div class="dropdown d-flex">
+                <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="align-self-center link__icon fa-solid white fa-user"></i>
+                    <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html" id="username">Inloggen</a></li>
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html" id="role">Account aanmaken</a>
+                    </li>
+                </ul>
+                <div></div>
+                <a href="contact.html" class="nounderline align-self-center green hover ps-5"><i
+                        class="link__icon fa-solid fa-phone white hover"></i>
+                    <b class="align-self-center gold cursive fontsize1 ps-2">contact</b></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" href="/index.html">
+            <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
+            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
+            <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
+            <a  href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+        </a>
+    </div>
+    <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
+        <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+        <i class="align-self-center link__icon fa-solid fa-search"></i>
+    </form>
+    <div class="dropdown d-flex">
+        <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="align-self-center link__icon fa-solid fa-user"></i>
+            <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
+        </div>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html" id="username2">Inloggen</a></li>
+            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html" id="role2">Account aanmaken</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/producten.html">Producten</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/contact.html">Contact</a>
-            </li>
-          </ul>
-         
-          <a href="/views/favorieten.html"><i class="link__icon icon fa-regular fa-heart"></i></a>
-          <a href="/views/winkelwagen.html"><i class="link__icon icon fa-solid fa-shopping-cart"></i></a>
-          <a href="/views/inloggen.html"><b class="title inloggen">Inloggen</b></a>
-          <a href="/views/registreren.html">
-            <button type="button" class="btn btn-success account-aanmaken">
-              Account aanmaken
-            </button>
-          </a>
-        
-      </div>
-    </nav>`;
+        </ul>
+    </div>
+    <a href="favorieten.html" class="align-self-center hover ps-5"><i
+            class="link__icon fa-regular fa-heart"></i></a>
+    <div class="d-flex hover ps-5"> <a href="winkelwagen.html"
+            class="nounderline align-self-center position-relative hover"><i
+                class="link__icon fa-solid fa-shopping-cart"><span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span></i></a>
+        <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover"><b
+                class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b></a>
+    </div>
+    </div>
+</nav>
+
+<header class="d-flex" id="header">
+</header>`;
 
   navElementHTMLWINKELIER =
-    `<nav class="navbar navbar-expand-lg bg-light">
-        <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
-        <b class="gold">Freddys</b>
-        <b class="green">Feestwinkel</b>
-        
-        <form class="d-flex search" role="search">
-        <input class="form-control me-2 search-input" type="search" placeholder="Search"
-          aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link title" href="/index.html">Home</a>
+    `<nav class="d-flex">
+    <div>
+    </div>
+    <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas"
+        aria-controls="offcanvasExample">
+        <i class="link__icon icon fa-solid fa-bars white"></i></a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header" style="background: red;">
+            <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="canvasHTML">
+            </div>
+            <div class="dropdown d-flex">
+                <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="align-self-center link__icon fa-solid white fa-user"></i>
+                    <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html" id="username">Inloggen</a></li>
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html" id="role">Account aanmaken</a>
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/producttoevoegen.html">product toevoegen</a></li>
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a></li>
+                </ul>
+                <div></div>
+                <a href="contact.html" class="nounderline align-self-center green hover ps-5"><i
+                        class="link__icon fa-solid fa-phone white hover"></i>
+                    <b class="align-self-center gold cursive fontsize1 ps-2">contact</b></a>
+            </div>
+
+        </div>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" href="/index.html">
+            <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
+            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
+            <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
+            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+        </a>
+    </div>
+    <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
+        <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+        <i class="align-self-center link__icon fa-solid fa-search"></i>
+    </form>
+    <div class="dropdown d-flex">
+        <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="align-self-center link__icon fa-solid fa-user"></i>
+            <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
+        </div>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html" id="username2">Inloggen</a></li>
+            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html" id="role2">Account aanmaken</a>
+            <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/producttoevoegen.html">product toevoegen</a></li>
+            <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/producten.html">Producten</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/producttoevoegen.html">Product toevoegen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/klanten.html">Klanten pagina</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/contact.html">Contact</a>
-            </li>
-          </ul>
-         
-          <a href="/views/favorieten.html"><i class="link__icon icon fa-regular fa-heart"></i></a>
-          <a href="/views/winkelwagen.html"><i class="link__icon icon fa-solid fa-shopping-cart"></i></a>
-          <a href="/views/inloggen.html"><b class="title inloggen">Inloggen</b></a>
-          <a href="/views/registreren.html">
-            <button type="button" class="btn btn-success account-aanmaken">
-              Account aanmaken
-            </button>
-          </a>
-        
-      </div>
-    </nav>`;
+        </ul>
+    </div>
+    <a href="favorieten.html" class="align-self-center hover ps-5"><i
+            class="link__icon fa-regular fa-heart"></i></a>
+    <div class="d-flex hover ps-5"> <a href="winkelwagen.html"
+            class="nounderline align-self-center position-relative hover"><i
+                class="link__icon fa-solid fa-shopping-cart"><span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span></i></a>
+        <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover"><b
+                class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b></a>
+    </div>
+    </div>
+</nav>
+
+<header class="d-flex" id="header">
+</header>`;
 
   navElementHTMLKLANT =
-    `<nav class="navbar navbar-expand-lg bg-light">
-        <img src="/images/navbar-icons/icon.png" class="christmas-tree" alt="christmas-tree">
-        <b class="gold">Freddys</b>
-        <b class="green">Feestwinkel</b>
-        
-        <form class="d-flex search" role="search">
-        <input class="form-control me-2 search-input" type="search" placeholder="Search"
-          aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link title" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/producten.html">Producten</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/producttoevoegen.html">Product toevoegen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/klanten.html">Klanten pagina</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link title" href="/views/contact.html">Contact</a>
-            </li>
-          </ul>
-         
-          <a href="/views/favorieten.html"><i class="link__icon icon fa-regular fa-heart"></i></a>
-          <a href="/views/winkelwagen.html"><i class="link__icon icon fa-solid fa-shopping-cart"></i></a>
-          <a href="javascript:void(0)"><b class="title uitloggen" id="uitloggen">Uitloggen</b></a>
-          <a href="/views/inloggen.html"><b class="title inloggen">Inloggen</b></a>
-          <a href="/views/registreren.html">
-            <button type="button" class="btn btn-success account-aanmaken">
-              Account aanmaken
-            </button>
-          </a>
-        
-      </div>
-    </nav>`;
+    `<nav class="d-flex">
+    <div>
+    </div>
+    <a class="align-self-center" href="#offcanvasExample" data-bs-toggle="offcanvas"
+        aria-controls="offcanvasExample">
+        <i class="link__icon icon fa-solid fa-bars white"></i></a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header" style="background: red;">
+            <h1 class="offcanvas-title white ps-4 white" id="offcanvasExampleLabel">categorieen</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="canvasHTML">
+            </div>
+            <div class="dropdown d-flex">
+                <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="align-self-center link__icon fa-solid white fa-user"></i>
+                    <b class=" align-self-center cursive gold fontsize1" style="padding-left: 0.5rem;">account</b>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html" id="username">Inloggen</a></li>
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html" id="role">Account aanmaken</a>
+                    <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
+                    </li>
+                </ul>
+                <div></div>
+                <a href="contact.html" class="nounderline align-self-center green hover ps-5"><i
+                        class="link__icon fa-solid fa-phone white hover"></i>
+                    <b class="align-self-center gold cursive fontsize1 ps-2">contact</b></a>
+            </div>
 
-  showUsername() {
+        </div>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" href="/index.html">
+            <img src="/images/navbar-icons/icon.png" class="kerstboom" alt="kerstboom">
+            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">freddys</a>
+            <a href="/index.html" class="align-self-center nav-link gold cursive title-nav hover">feestwinkel</a>
+            <a href="/index.html" class="align-self-center nav-link red cursive title-nav hover">.nl</a>
+        </a>
+    </div>
+    <form role="search" id="searchNavBar" class="d-flex form-search-navbar">
+        <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+        <i class="align-self-center link__icon fa-solid fa-search"></i>
+    </form>
+    <div class="dropdown d-flex">
+        <div class="dropdown d-flex hover" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="align-self-center link__icon fa-solid fa-user"></i>
+            <b class=" align-self-center white cursive fontsize1 ps-2">account</b>
+        </div>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html" id="username2">Inloggen</a></li>
+            <li><a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html" id="role2">Account aanmaken</a>
+            <li><a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
+            </li>
+        </ul>
+    </div>
+    <a href="favorieten.html" class="align-self-center hover ps-5"><i
+            class="link__icon fa-regular fa-heart"></i></a>
+    <div class="d-flex hover ps-5"> <a href="winkelwagen.html"
+            class="nounderline align-self-center position-relative hover"><i
+                class="link__icon fa-solid fa-shopping-cart"><span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span></i></a>
+        <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover"><b
+                class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b></a>
+    </div>
+    </div>
+</nav>
+
+<header class="d-flex" id="header">
+</header>`;
+
+  updateNavBar() {
 
     let response = JSON.parse(localStorage.getItem("response"));
 
-    const usernameElement = document.querySelector('.navbar-username');
-    if (!usernameElement) {
-      // Update the text of the "Inloggen" link to the passed in username
-      var inloggenHTML = document.querySelector('.inloggen');
-      inloggenHTML.innerHTML = response.naam;
-    }
-  }
-
-  showRole() {
-
-    let response = JSON.parse(localStorage.getItem("response"));
-
-    const roleElement = document.querySelector('.navbar-role');
-    if (!roleElement) {
-      // Update the text of the "Inloggen" link to the passed in username
-      var inloggenHTML = document.querySelector('.account-aanmaken');
-      inloggenHTML.innerHTML = response.role;
-    }
+    const nameElement = document.getElementById('username');
+    const nameElement2 = document.getElementById('username2');
+    const roleElement = document.getElementById('role');
+    const roleElement2 = document.getElementById('role2');
+    nameElement.innerHTML = response.naam;
+    nameElement2.innerHTML = response.naam;
+    roleElement.innerHTML = response.role;
+    roleElement2.innerHTML = response.role;
   }
 
   constructor() {
+
     var link = document.createElement("link");
     link.href = "/css/navbar.css";
     link.type = "text/css";
@@ -175,12 +254,223 @@ export class NavBar {
     const firstChild = document.body.firstChild;
     document.body.insertBefore(navbar, firstChild);
 
+
     const uitloggen = document.getElementById('uitloggen');
     if (uitloggen != null) {
       uitloggen.addEventListener('click', (evt) => {
+        console.log("uitloggen")
         localStorage.clear();
         location.reload();
       });
+    }
+    const uitloggen2 = document.getElementById('uitloggen2');
+    if (uitloggen2 != null) {
+      uitloggen2.addEventListener('click', (evt) => {
+        console.log("uitloggen")
+        localStorage.clear();
+        location.reload();
+      });
+    }
+
+    var heart = document.getElementsByClassName("fa-heart")[0];
+    heart.addEventListener("mouseover", function () {
+      heart.classList.remove("fa-regular");
+      heart.classList.add("fa-solid");
+    });
+    heart.addEventListener("mouseout", function () {
+      heart.classList.remove("fa-solid");
+      heart.classList.add("fa-regular");
+    });
+
+    var user = document.getElementsByClassName("fa-user")[0];
+    user.addEventListener("mouseover", function () {
+      user.classList.remove("fa-solid");
+      user.classList.add("fa-regular");
+    });
+    user.addEventListener("mouseout", function () {
+      user.classList.remove("fa-regular");
+      user.classList.add("fa-solid");
+    });
+
+    var user = document.getElementsByClassName("fa-user")[1];
+    user.addEventListener("mouseover", function () {
+      user.classList.remove("fa-solid");
+      user.classList.add("fa-regular");
+    });
+    user.addEventListener("mouseout", function () {
+      user.classList.remove("fa-regular");
+      user.classList.add("fa-solid");
+    });
+
+    updateCanvas();
+    async function updateCanvas() {
+      try {
+        var requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+        };
+
+        const response = await fetch(baseURL + "product/categorieen", requestOptions);
+        const result = await response.json();
+        const header = document.getElementById("canvasHTML");
+
+        result.forEach(category => {
+          const node = document.createElement("div");
+          node.classList.add("dropdown");
+          node.classList.add("padding");
+
+          const button = document.createElement("button");
+          button.classList.add("btn");
+          button.classList.add("btn-danger");
+          button.classList.add("btn-header");
+          button.classList.add("dropdown");
+          button.setAttribute("type", "button");
+          button.setAttribute("data-bs-toggle", "dropdown");
+          button.setAttribute("aria-expanded", "false");
+          button.style.zIndex = "9";
+          button.innerHTML = category;
+          node.appendChild(button);
+
+          const ul = document.createElement("ul");
+          ul.classList.add("dropdown-menu");
+          node.appendChild(ul);
+
+          header.appendChild(node);
+
+          const fakeSubCategories = ["subcategory1", "subcategory2", "subcategory3"];
+          fakeSubCategories.forEach(subcategory => {
+            const li = document.createElement("li");
+
+            const anchor = document.createElement("a");
+            anchor.href = "/views/producten.html";
+            anchor.style.paddingLeft = "10px";
+            anchor.style.paddingRight = "10px";
+            anchor.classList.add("nounderline");
+            anchor.classList.add("white");
+            anchor.classList.add("cursive");
+            anchor.innerHTML = subcategory;
+            li.appendChild(anchor);
+
+            ul.appendChild(li);
+          });
+
+          button.addEventListener("click", function () {
+            localStorage.setItem("category", category);
+          });
+        });
+
+      } catch (error) {
+        console.log('error', error);
+      }
+    }
+
+    async function fetchCategories() {
+      try {
+        var requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+        };
+
+        const response = await fetch(baseURL + "product/categorieen", requestOptions);
+        const result = await response.json();
+        const header = document.getElementsByTagName("header")[0];
+
+        result.forEach(category => {
+          const node = document.createElement("div");
+          node.classList.add("dropdown");
+          node.classList.add("padding");
+
+          const button = document.createElement("button");
+          button.classList.add("btn");
+          button.classList.add("btn-danger");
+          button.classList.add("btn-header");
+          button.classList.add("dropdown");
+          button.setAttribute("type", "button");
+          button.setAttribute("data-bs-toggle", "dropdown");
+          button.setAttribute("aria-expanded", "false");
+          button.style.zIndex = "9";
+          button.innerHTML = category;
+          node.appendChild(button);
+
+          const ul = document.createElement("ul");
+          ul.classList.add("dropdown-menu");
+          node.appendChild(ul);
+
+          header.appendChild(node);
+
+          const fakeSubCategories = ["subcategory1", "subcategory2", "subcategory3"];
+          fakeSubCategories.forEach(subcategory => {
+            const li = document.createElement("li");
+
+            const anchor = document.createElement("a");
+            anchor.href = "/views/producten.html";
+            anchor.style.paddingLeft = "10px";
+            anchor.style.paddingRight = "10px";
+            anchor.classList.add("nounderline");
+            anchor.classList.add("white");
+            anchor.classList.add("cursive");
+            anchor.innerHTML = subcategory;
+            li.appendChild(anchor);
+
+            ul.appendChild(li);
+          });
+
+          button.addEventListener("click", function () {
+            localStorage.setItem("category", category);
+          });
+        });
+
+      } catch (error) {
+        console.log('error', error);
+      }
+    }
+
+    async function addSearchBar(header) {
+      header.innerHTML = `<form role="search" class="d-flex form-search-header">
+            <input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+            <i class="align-self-center link__icon icon fa-solid fa-search"></i>
+        </form>`;
+      header.style.paddingLeft = "0px";
+      header.style.paddingRight = "20px";
+    }
+
+    function updateInnerHTML(e) {
+      const searchNavBar = document.getElementById("searchNavBar");
+      const header = document.getElementById("header");
+      if (e.matches) {
+        searchNavBar.innerHTML = "";
+        searchNavBar.style.padding = "0px";
+
+        addSearchBar(header);
+      } else {
+        searchNavBar.innerHTML = `<input class="form-control search" type="search" placeholder="Vind hier je product..." aria-label="Search">
+            <i class="align-self-center link__icon icon fa-solid fa-search"></i>`;
+        searchNavBar.style.paddingLeft = "1rem"
+
+        header.innerHTML = "";
+        header.style.paddingLeft = "160px";
+        header.style.paddingRight = "160px";
+        fetchCategories();
+      }
+    }
+
+    function debounce(func, wait) {
+      let timeout;
+      return function () {
+        const context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          timeout = null;
+          func.apply(context, args);
+        }, wait);
+      };
+    }
+
+    if (window.matchMedia) {
+      let debouncedUpdate = debounce((e) => updateInnerHTML(e), 200);
+      let mq = window.matchMedia("(max-width: 1200px)");
+      mq.addListener(debouncedUpdate);
+      debouncedUpdate(mq);
     }
   }
 

@@ -1,5 +1,4 @@
 .content {
-  margin-top: 5rem !important;
   justify-content: center;
 }
 
@@ -34,6 +33,11 @@
 
 .dagenWeek{
   padding-right: 4rem;
+}
+
+.fa-phone {
+  color: white !important;
+  font-size: 18px !important;
 }
 
 

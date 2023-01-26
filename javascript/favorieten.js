@@ -8,11 +8,11 @@ const footer = - new Footer();
 
 let response = JSON.parse(localStorage.getItem("response"));
 if (response != null) {
-    navbar.showUsername();
-    navbar.showRole();
+    navbar.updateNavBar(); 
+    if (response.role == "KLANT") {
+        ophalenFavorieten();
+    }
 }
-
-ophalenFavorieten();
 
 async function ophalenFavorieten() {
     var myHeaders = new Headers();
@@ -42,7 +42,7 @@ async function ophalenFavorieten() {
                 img = "../images/products/rodefeestneus.jpg";
             }
             if (d.categorie == "Feestkleding") {
-                img = "../images/products/halloweenghostcostume.jpg";
+                img = "../images/products/halloween-spook-kostuum.jpg";
             }
 
             favorieten.innerHTML +=

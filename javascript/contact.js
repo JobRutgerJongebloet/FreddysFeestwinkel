@@ -3,15 +3,16 @@
 import { NavBar } from '../models/navBar.js'
 import { Email } from '../models/email.js';
 import { Favicon } from '../models/favicon.js';
+import { Footer } from '../models/footer.js'
 
 var navbar = new NavBar();
 var emailDTO = new Email();
 var favicon = new Favicon();
+var footer = new Footer();
 
 let response = JSON.parse(localStorage.getItem("response"));
 if (response != null) {
-    navbar.showUsername();
-    navbar.showRole();
+    navbar.updateNavBar();
 }
 
 const formElement = document.getElementById('form');
@@ -32,9 +33,6 @@ formElement.addEventListener('submit', (evt) => {
         sendEMail();
     }
 });
-
-
-
 
 formElements.forEach(element => {
     element.addEventListener("focus", () => removeValidity(element)); // wanneer het element gefocused wordt
@@ -102,7 +100,7 @@ async function sendEMail() {
         const response = await fetch(baseURL + "email/send", requestOptions);
         const result = await response.json();
         if (result.succes) {
-            document.getElementById('header').innerHTML = "Email verzonden!";
+            document.getElementById('header2').innerHTML = "Email verzonden!";
             document.getElementById('formbutton').innerHTML = "Verstuur nog een email";
         } else {
             console.log(result.validaties);
@@ -112,5 +110,3 @@ async function sendEMail() {
         console.log('error', error);
     }
 }
-
-
