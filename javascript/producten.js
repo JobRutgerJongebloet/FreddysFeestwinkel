@@ -96,12 +96,37 @@ function updateWinkelmand() {
                 totaal = result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
                 subtotaal += result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
                 tr.innerHTML =
-                    `
-                        <td data-title="Product">${result.winkelwagen[i][0].naam}</td>
-                        <td data-title="Prijs">€ ${result.winkelwagen[i][0].kosten}</td>
-                        <td data-title="Hoeveelheid">${result.winkelwagen[i][1]}</td>
-                        <td data-title="Totaal">€ ${totaal}</td>
-                    `;
+                tr.innerHTML =
+                `
+                
+                <td data-title="Product">${result.winkelwagen[i][0].naam}</td>
+                <td data-title="Prijs">€ ${result.winkelwagen[i][0].kosten}</td>
+                <td data-title="Hoeveelheid">${result.winkelwagen[i][1]}</td>
+                <td data-title="Totaal">€ ${totaal}</td>
+                <td data-title="Verwijder">
+                <div class="btn-group">
+                   <button class="btn btn-success add-btn">+</button>
+                   <button class="btn btn-danger delete-btn">-</button>
+                </div>
+             </td>
+             
+                `
+                let addButtons = document.querySelectorAll('.add-btn');
+
+for (let i = 0; i < addButtons.length; i++) {
+    addButtons[i].addEventListener('click', toevoegenAanWinkelwagen);
+}
+let removeButtons = document.querySelectorAll('.delete-btn');
+
+for (let i = 0; i < removeButtons.length; i++) {
+    removeButtons[i].addEventListener('click', verwijderenUitWinkelwagen);
+}
+
+            
+;
+
+
+
             }
             let totaalElement = document.getElementById("totaalprijs");
             totaalElement.innerHTML = `Totale prijs: € ` + subtotaal;
@@ -129,23 +154,21 @@ async function haalProductenOp() {
             if (d.categorie == "Feestkleding") {
                 img = "../images/products/halloweenghostcostume.jpg";
             }
-
-
             producten.innerHTML +=
                 `   
                 <div class="col-md-3 p-4">
-				<div class="card" id="${d.id}">
+				<div class="card" style="background-color: inherit; id="${d.id}">
 					<img src=${img} class="card-img-top" style="height: 300px" translate-middle alt="...">
 					<i data-param="${d.id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
-					<h5 class="card-title">${d.naam}</h5>
-					<p class="card-text">${d.beschrijving}</p>
+					<h5 class="card-title text-center fst-bolder fs-4">${d.naam}</h5>
+					
 
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Categorie: ${d.categorie}</li>
-						<li class="list-group-item">Prijs per stuk €${d.kosten}</li>
+						
+						<li class="list-group-item text-center text-success fw-bolder " >€${d.kosten}</li>
 					</ul>
-					<a data-param="${d.id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
-					<a data-param="${d.id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+					<a data-param="${d.id}" id="addtocart" class="btn btn-success btn-sm rounded-pill">In winkelwagen</a>
+					<a data-param="${d.id}" id="removefromcart" class="btn btn-danger btn-sm rounded-pill">Uit winkelwagen</a>
 				</div>
 			</div>
                 `
