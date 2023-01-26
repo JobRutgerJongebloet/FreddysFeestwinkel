@@ -87,18 +87,21 @@ function updateWinkelmand() {
 
             var subtotaal = 0;
             var totaal = 0;
+            var totaalhoeveelheid = 0;
             let container = document.getElementById("inhoudww");
 
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
 
+            console.log(result);
             for (let i = 0; i < result.winkelwagen.length; i++) {
 
                 let tr = document.createElement("tr");
                 container.appendChild(tr, container.firstChild);
                 totaal = result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
                 subtotaal += result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
+                totaalhoeveelheid += result.winkelwagen[i][1];
                 tr.innerHTML =
                     `
                         <td data-title="Product">${result.winkelwagen[i][0].naam}</td>
@@ -109,6 +112,8 @@ function updateWinkelmand() {
             }
             let totaalElement = document.getElementById("totaalprijs");
             totaalElement.innerHTML = `Totale prijs: € ` + subtotaal;
+            const shoppingCartNumber = document.getElementById("shoppingCartNumber");
+            shoppingCartNumber.innerHTML = totaalhoeveelheid;
         })
         .catch(error => console.log('error', error));
 }
@@ -129,8 +134,6 @@ async function getProductByCategory() {
         const response = await data.json();
 
         for (let i = 0; i < response.length; i++) {
-            console.log(response);
-
             if (response[i].afbeelding != null) {
                 var afbeelding = response[i].afbeelding;
             } else {
@@ -256,7 +259,6 @@ async function haalProductenOp() {
 }
 
 function addToFavorite(productID) {
-    console.log(productID);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authentication", JSON.parse(localStorage.getItem("response")).randomstring);
@@ -385,3 +387,4 @@ function verwijderenUitWinkelwagen(productid) {
     //         }
     //     })
 }
+

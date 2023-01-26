@@ -29,7 +29,7 @@ export class NavBar {
                         </li>
                     </ul>
                     <div></div>
-                    <a href="contact.html" class="nounderline align-self-center green hover ps-5">
+                    <a href="/views/contact.html" class="nounderline align-self-center green hover ps-5">
                         <i class="link__icon fa-solid fa-phone white hover"></i>
                         <b class="align-self-center gold cursive fontsize1 ps-2">contact</b>
                     </a>
@@ -66,14 +66,15 @@ export class NavBar {
         </div>
         <a href="favorieten.html" class="align-self-center hover ps-5"><i class="link__icon fa-regular fa-heart"></i></a>
         <div class="d-flex hover ps-5">
-            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
-                <i class="link__icon fa-solid fa-shopping-cart">
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
-                </i>
-            </a>
-            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
-                <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
-            </a>
+        
+       <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="link__icon fa-solid fa-shopping-cart">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" id="shoppingCartNumber">0</span>
+            </i>
+        </a>
+        <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
+        </a>
         </div>
     </nav>
 
@@ -114,7 +115,7 @@ export class NavBar {
                         </li>
                     </ul>
                     <div></div>
-                    <a href="contact.html" class="nounderline align-self-center green hover ps-5">
+                    <a href="/views/contact.html" class="nounderline align-self-center green hover ps-5">
                         <i class="link__icon fa-solid fa-phone white hover"></i>
                         <b class="align-self-center gold cursive fontsize1 ps-2">contact</b>
                     </a>
@@ -157,14 +158,14 @@ export class NavBar {
         </div>
         <a href="favorieten.html" class="align-self-center hover ps-5"><i class="link__icon fa-regular fa-heart"></i></a>
         <div class="d-flex hover ps-5">
-            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
-                <i class="link__icon fa-solid fa-shopping-cart">
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
-                </i>
-            </a>
-            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
-                <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
-            </a>
+        <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="link__icon fa-solid fa-shopping-cart">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" id="shoppingCartNumber">0</span>
+            </i>
+        </a>
+        <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
+        </a>
         </div>
     </nav>
 
@@ -201,7 +202,7 @@ export class NavBar {
                         </li>
                     </ul>
                     <div></div>
-                    <a href="contact.html" class="nounderline align-self-center green hover ps-5">
+                    <a href="/views/contact.html" class="nounderline align-self-center green hover ps-5">
                         <i class="link__icon fa-solid fa-phone white hover"></i>
                         <b class="align-self-center gold cursive fontsize1 ps-2">contact</b>
                     </a>
@@ -240,14 +241,14 @@ export class NavBar {
         </div>
         <a href="favorieten.html" class="align-self-center hover ps-5"><i class="link__icon fa-regular fa-heart"></i></a>
         <div class="d-flex hover ps-5"> 
-            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
-                <i class="link__icon fa-solid fa-shopping-cart">
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">0</span>
-                </i>
-            </a>
-            <a href="winkelwagen.html" class="nounderline align-self-center position-relative hover">
-                <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
-            </a>
+        <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="link__icon fa-solid fa-shopping-cart">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success" id="shoppingCartNumber">0</span>
+            </i>
+        </a>
+        <a class="nounderline align-self-center position-relative hover" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <b class="align-self-center white cursive fontsize1 ps-2">winkelwagen</b>
+        </a>
         </div>
     </nav>
 

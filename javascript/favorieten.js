@@ -85,7 +85,7 @@ async function ophalenFavorieten() {
             });
         });
 
-        result.forEach(function (element) {
+        response.forEach(function (element) {
             const cardElement = document.getElementById(element.id);
             const faviconElement = cardElement.querySelector("#favoriteIcon");
             if (faviconElement.classList.contains('fa-regular')) {
