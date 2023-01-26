@@ -1,16 +1,16 @@
 export class Footer {
     footerElementHTML =
-        `<footer class=" footer py-1 my-0">
+        `<footer class=" footer py-1 my-0" style="padding-top: 300px !important">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="index.html" 
+        <li class="nav-item"><a href="/index.html" 
         class="nav-link title">Home</a></li>
-        <li class="nav-item"><a href="views/product.html"
-        class="nav-link title">Producten</a></li>
-        <li class="nav-item"><a href="views/contact.html"
+        <li class="nav-item"><a href="/views/producten.html"
+        class="nav-link title" id="productenFooter">Producten</a></li>
+        <li class="nav-item"><a href="/views/contact.html"
         class="nav-link title">Contact</a></li>
-        <li class="nav-item"><a href="views/inloggen.html"
+        <li class="nav-item"><a href="/views/inloggen.html"
         class="nav-link title">Login</a></li>
-        <li class="nav-item"><a href="views/registreren.html"
+        <li class="nav-item"><a href="/views/registreren.html"
         class="nav-link title" px-2">Account aanmaken</a></li>
     </ul>
     <p class="text-center">&copy; 2023 Freddys Feestwinkel</p>
@@ -21,6 +21,7 @@ export class Footer {
         link.href = "/css/footer.css";
         link.type = "text/css";
         link.rel = "stylesheet";
+        
 
         // Check if the stylesheet is already added
         var links = document.getElementsByTagName("link");
@@ -42,6 +43,13 @@ export class Footer {
         const existingFooter = document.querySelector('.footer');
         if (existingFooter) {
             existingFooter.innerHTML = this.navElementHTML;
+            const productenFooter = document.getElementById('productenFooter');
+            console.log(productenFooter);
+            if (productenFooter != null) {
+                productenFooter.addEventListener('click', (evt) => {
+                    localStorage.setItem("category", "leeg")
+              });
+            }  
             return;
         }
 
@@ -52,6 +60,13 @@ export class Footer {
         if (container) {
             container.appendChild(footer, container.firstChild);
             footer.innerHTML = this.footerElementHTML;
+            const productenFooter = document.getElementById('productenFooter');
+            console.log(productenFooter);
+            if (productenFooter != null) {
+                productenFooter.addEventListener('click', (evt) => {
+                    localStorage.setItem("category", "leeg")
+              });
+            }  
             return
         }
 
@@ -59,5 +74,14 @@ export class Footer {
         const firstChild = document.body.firstChild;
         document.body.appendChild(footer, firstChild);
         footer.innerHTML = this.footerElementHTML;
+        const productenFooter = document.getElementById('productenFooter');
+        console.log(productenFooter);
+        if (productenFooter != null) {
+            productenFooter.addEventListener('click', (evt) => {
+                localStorage.setItem("category", "leeg")
+          });
+        }  
+      
+      
     }
 }

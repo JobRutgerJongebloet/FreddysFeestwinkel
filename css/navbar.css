@@ -1,71 +1,172 @@
-.navbar {
-  background-color: transparent !important;
-}
 
-.kerstboom {
-  height: 2rem;
-  width: 2rem;
-  background-color: white;
-  border-radius: 50%;
-  margin-right: 0.5em;
-}
-
-.search-input {
-  border-radius: 4px;
-  width: 300px;
-  margin-left: 1rem;
-}
-
-.navbar-toggler{
-  margin-left: 1rem;
-}
-
-.gold {
-  color: #ffeb3b !important;
-}
-
-.green {
-  color: #198754;
-}
-
-.title {
-  color: #000000;
-}
-
-.title:hover {
-  color: #ffeb3b;
-  box-shadow: inset 0 -2px 0px 0px #198754;
-}
-
-/* Remove underline from links */
-a {
-  text-decoration: none;
-}
-
-/* Make icons white */
-.icon {
-  color: white !important;
-  margin-left: 1rem;
-}
-
-.inloggen {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-.uitloggen {
-  margin-left: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-@media (max-width: 230px) {
-  .fa-heart, .fa-shopping-cart, .inloggen, .account-aanmaken {
-    display: none;
+    .form-control:focus {
+      border-color: #198754 !important;
+      box-shadow: inset 0 1px 1px #4ca57c, 0 0 8px #198754 !important;
   }
-}
 
+  body {
+      background: linear-gradient(to bottom, green, rgba(37, 93, 0, 0.4));
+  min-height: 100vh;
+  min-width: auto;
+  }
 
+  a.nounderline {
+      text-decoration: none !important;
+  }
 
+  nav {
+      padding-left: 0rem;
+      padding-right: 1rem;
+      width: 100%;
+      background: green;
+      position: fixed;
+      z-index: 10;
+  }
 
+  .offcanvas {
+      width: 400px !important;
+      background: green;
+  }
 
+  .fa-shopping-cart,
+  .fa-heart,
+  .fa-user,
+  .fa-search,
+  .fa-bars,
+  .fa-phone {
+      color: white;
+      font-size: 25px;
+  }
+
+  .fa-heart {
+      color: gold;
+  }
+
+  .fa-phone {
+      color: green;
+  }
+
+  .fa-search {
+      color: grey;
+      margin-left: -42px;
+  }
+
+  .fa-bars {
+      padding: 1rem;
+  }
+
+  .fa-user {
+      padding-left: 3rem;
+  }
+
+  .rounded-pill {
+      background: #EA4630 !important;
+      color: white;
+      font-size: 12px;
+  }
+
+  .kerstboom {
+      height: 5rem;
+      width: 6rem;
+      background-color: green;
+      border-radius: 50%;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: -20px;
+  }
+
+  .red {
+      color: rgb(221, 51, 51) !important;
+  }
+
+  .white {
+      color: #fff !important;
+  }
+
+  .black {
+      color: rgb(0, 0, 0) !important;
+  }
+
+  .gold {
+      color: gold !important;
+  }
+
+  .green {
+      color: #165b33 !important;
+  }
+
+  .title-nav {
+      font-size: 30px;
+      font-weight: 700;
+      padding-bottom: 5px;
+  }
+
+  .hover {
+      cursor: pointer;
+  }
+
+  .fontsize1 {
+      font-size: 20px !important;
+  }
+
+  .search {
+      margin: 9px;
+  }
+
+  .form-search-navbar {
+      flex: 1;
+      padding-left: 1rem;
+  }
+
+  .form-search-header {
+      flex: 1;
+      padding-left: 0px;
+  }
+
+  header {
+      padding-top: 58px;
+      padding-left: 160px;
+      padding-right: 160px;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: rgb(221, 51, 51);
+  }
+
+  .padding {
+      padding: 1rem;
+  }
+
+  .btn-header {
+      border-radius: 30px;
+      color: white;
+      background-color: rgb(221, 51, 51);
+      border-color: rgb(221, 51, 51);
+      font-family: cursive;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 6px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  .btn-header:hover {
+      border-radius: 30px;
+      color: rgb(221, 51, 51);
+      background-color: white;
+      border-color: white;
+      font-family: cursive;
+  }
+
+  .cursive {
+      font-family: cursive;
+  }
+
+  .dropdown-menu {
+      background: white !important;
+  }
+
+  .dropdown-menu {
+      background: green !important;
+  }

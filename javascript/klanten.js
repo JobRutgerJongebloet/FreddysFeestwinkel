@@ -6,6 +6,7 @@ if (localStorage.getItem("response") != null) {
     let response = JSON.parse(localStorage.getItem("response"));
     if (response.role != "WINKELIER") {
         document.location.href = "/index.html";
+        navbar.updateNavBar();
     }
 }
 else {
@@ -15,9 +16,6 @@ else {
 const navbar = new NavBar();
 const favicon = new Favicon();
 const footer = - new Footer();
-
-navbar.showUsername();
-navbar.showRole();
 
 ophalenKlanten();
 

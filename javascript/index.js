@@ -8,8 +8,7 @@ var favicon = new Favicon();
 
 let response = JSON.parse(localStorage.getItem("response"));
 if (response != null) {
-    navbar.showUsername();
-    navbar.showRole();
+    navbar.updateNavBar();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

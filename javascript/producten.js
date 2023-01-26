@@ -8,15 +8,20 @@ var footer = new Footer();
 
 let response = JSON.parse(localStorage.getItem("response"));
 if (response != null) {
-    navbar.showUsername();
-    navbar.showRole();
+    navbar.updateNavBar();
     if (response.role == "KLANT") {
         updateWinkelmand();
+        ophalenFavorieten();
     }
 }
+if (localStorage.getItem("category") != null) {
+    if (localStorage.getItem("category") == "leeg") {
+        haalProductenOp();
+    } else {
+        getProductByCategory();
+    }
 
-ophalenFavorieten();
-haalProductenOp();
+}
 
 document.getElementById('bestelbutton').addEventListener('click', (evt) => {
     bestel();
@@ -35,7 +40,6 @@ async function ophalenFavorieten() {
     try {
         const response = await fetch(baseURL + "klant/favorieten", requestOptions);
         const result = await response.json();
-        console.log(result);
         result.forEach(function (element) {
             const cardElement = document.getElementById(element.id);
             const faviconElement = cardElement.querySelector("#favoriteIcon");
@@ -109,18 +113,96 @@ function updateWinkelmand() {
         .catch(error => console.log('error', error));
 }
 
+async function getProductByCategory() {
+    try {
+        let category = localStorage.getItem("category");
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+
+        const data = await fetch(baseURL + 'producten/' + category, requestOptions);
+        const response = await data.json();
+
+
+
+
+        for (let i = 0; i < response.length; i++) {
+            console.log(response);
+            if (response[i].afbeelding != null) {
+                var afbeelding = response[i].afbeelding;
+            } else {
+                var afbeelding = "/images/products/rodefeestneus.jpg";
+            }
+            let producten = document.getElementById("product");
+            producten.innerHTML += `   
+                <div class="col-md-3 p-4">
+                    <div class="card" id="${response[i].id}">
+                        <img src="../${afbeelding}" class="card-img-top" style="height: 300px" translate-middle alt="...">
+                        <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+                        <h5 class="card-title">${response[i].naam}</h5>
+                        <p class="card-text">${response[i].beschrijving}</p>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Categorie: ${response[i].categorie}</li>
+                            <li class="list-group-item">Prijs per stuk €${response[i].kosten}</li>
+                        </ul>
+                        <a data-param="${response[i].id}" id="addtocart" class="btn btn-success">Toevoegen aan winkelwagen</a>
+                        <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+                    </div>
+                </div>`;
+        }
+        const cardElement = document.querySelectorAll(".card");
+        cardElement.forEach(function (element) {
+            const addLink = element.querySelector("#addtocart");
+            addLink.addEventListener("click", function (e) {
+                const productid = this.getAttribute("data-param");
+                toevoegenAanWinkelwagen(productid);
+            });
+            const removeLink = element.querySelector("#removefromcart");
+            removeLink.addEventListener("click", function (e) {
+                const productid = this.getAttribute("data-param");
+                verwijderenUitWinkelwagen(productid);
+            });
+            const favoriteIcon = element.querySelector("#favoriteIcon");
+            favoriteIcon.addEventListener("click", function () {
+                const productid = this.getAttribute("data-param");
+                if (favoriteIcon.classList.contains('fa-regular')) {
+                    favoriteIcon.classList.remove('fa-regular');
+                    favoriteIcon.classList.add('fa-solid');
+                    addToFavorite(productid);
+                    return
+                }
+                if (favoriteIcon.classList.contains('fa-solid')) {
+                    favoriteIcon.classList.remove('fa-solid');
+                    favoriteIcon.classList.add('fa-regular');
+                    removeFromFavorite(productid);
+                }
+            });
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 async function haalProductenOp() {
     try {
         let data = await fetch(baseURL + 'producten');
         let response = await data.json();
 
         for (let i = 0; i < response.length; i++) {
+
             if (response[i].afbeelding != null) {
                 var afbeelding = response[i].afbeelding;
             } else {
                 var afbeelding = "/images/products/rodefeestneus.jpg";
             }
-            let producten = document.getElementById("product")
+
+            let producten = document.getElementById("product");
 
             producten.innerHTML += `   
                 <div class="col-md-3 p-4">

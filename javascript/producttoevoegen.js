@@ -9,8 +9,7 @@ if (localStorage.getItem("response") != null) {
     if (response.role != "WINKELIER") {
         document.location.href = "/index.html";
     }
-    navbar.showUsername();
-    navbar.showRole();
+    navbar.updateNavBar();
 }
 else {
     document.location.href = "/index.html";

@@ -8,8 +8,7 @@ const footer = new  Footer();
 
 let response = JSON.parse(localStorage.getItem("response"));
 if (response != null) {
-    navbar.showUsername();
-    navbar.showRole();
+    navbar.updateNavBar();        
 }
 
 const formElement = document.getElementById('registerForm');

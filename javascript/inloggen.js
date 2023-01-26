@@ -10,6 +10,10 @@ const formElement = document.getElementById('form');
 const inputElements = formElement.getElementsByTagName('input');
 const formElements = [...inputElements];
 
+let response = JSON.parse(localStorage.getItem("response"));
+if (response != null) {
+    navbar.updateNavBar();        
+}
 let formIsValid = false;
 
 formElement.addEventListener('submit', (evt) => {
@@ -56,8 +60,7 @@ function maakAccountAan() {
                 localStorage.setItem("response", JSON.stringify(r));
                 let response = JSON.parse(localStorage.getItem("response"));
                 if (response != null) {
-                    navbar.showUsername();
-                    navbar.showRole();
+                    location.reload();
                 }
             } else {
                 console.log("else");
@@ -99,3 +102,5 @@ function checkValidity(element) {
         formIsValid = true;
     }
 }
+
+
