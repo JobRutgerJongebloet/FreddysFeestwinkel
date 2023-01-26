@@ -40,3 +40,6 @@ function maakProductAan(evt) {
         else {
           alert('Er is iets fout gegaan')
         }
+      })
+  }
+}
