@@ -384,6 +384,7 @@ export class NavBar {
             const anchor = document.createElement("a");
             anchor.href = "/views/producten.html";
             anchor.style.paddingLeft = "20px";
+            anchor.style.paddingRight = "20px";
             anchor.classList.add("nounderline");
             anchor.classList.add("white");
             anchor.innerHTML = subcategory;
@@ -435,7 +436,6 @@ export class NavBar {
           node.appendChild(ul);
 
           header.appendChild(node);
-
           const fakeSubCategories = ["subcategory1", "subcategory2", "subcategory3"];
           fakeSubCategories.forEach(subcategory => {
             const li = document.createElement("li");
@@ -443,6 +443,7 @@ export class NavBar {
             const anchor = document.createElement("a");
             anchor.href = "/views/producten.html";
             anchor.style.paddingLeft = "20px";
+            anchor.style.paddingRight = "20px";
             anchor.classList.add("nounderline");
             anchor.classList.add("white");
             anchor.innerHTML = subcategory;
