@@ -368,6 +368,11 @@ export class NavBar {
           button.setAttribute("data-bs-toggle", "dropdown");
           button.setAttribute("aria-expanded", "false");
           button.style.zIndex = "9";
+          button.style.background = "blue";
+          button.style.border = "green"
+          button.style.width = "100%"
+          button.style.borderRadius = "0px";
+
           button.innerHTML = category;
           node.appendChild(button);
 
@@ -377,21 +382,34 @@ export class NavBar {
 
           header.appendChild(node);
 
-          const fakeSubCategories = ["subcategory1", "subcategory2", "subcategory3"];
-          fakeSubCategories.forEach(subcategory => {
-            const li = document.createElement("li");
-            li.style.padding = "8px";
-            const anchor = document.createElement("a");
-            anchor.href = "/views/producten.html";
-            anchor.style.paddingLeft = "20px";
-            anchor.style.paddingRight = "20px";
-            anchor.classList.add("nounderline");
-            anchor.classList.add("white");
-            anchor.innerHTML = subcategory;
-            li.appendChild(anchor);
+          let categories = ['category1'];
 
-            ul.appendChild(li);
-          });
+          for (let i = 0; i < categories.length; i++) {
+            let category = categories[i];
+            let numSubCategories = Math.floor(Math.random() * 6) + 1; // generates a random number between 1 and 6
+            let fakeSubCategories = [];
+            for (let i = 0; i < numSubCategories; i++) {
+              fakeSubCategories.push(`subcategory${i}`);
+            }
+            console.log(`${category} has ${numSubCategories} subcategories`);
+
+            fakeSubCategories.forEach(subcategory => {
+              const li = document.createElement("li");
+              li.style.padding = "8px";
+              li.style.width = "335px";
+              const anchor = document.createElement("a");
+              anchor.href = "/views/producten.html";
+              anchor.style.paddingLeft = "20px";
+              anchor.style.paddingRight = "20px";
+              anchor.classList.add("nounderline");
+              anchor.classList.add("white");
+              anchor.innerHTML = subcategory;
+              li.appendChild(anchor);
+
+              ul.appendChild(li);
+            });
+          }
+
 
           button.addEventListener("click", function () {
             localStorage.setItem("category", category);
@@ -436,21 +454,33 @@ export class NavBar {
           node.appendChild(ul);
 
           header.appendChild(node);
-          const fakeSubCategories = ["subcategory1", "subcategory2", "subcategory3"];
-          fakeSubCategories.forEach(subcategory => {
-            const li = document.createElement("li");
-            li.style.padding = "8px";
-            const anchor = document.createElement("a");
-            anchor.href = "/views/producten.html";
-            anchor.style.paddingLeft = "20px";
-            anchor.style.paddingRight = "20px";
-            anchor.classList.add("nounderline");
-            anchor.classList.add("white");
-            anchor.innerHTML = subcategory;
-            li.appendChild(anchor);
 
-            ul.appendChild(li);
-          });
+          let categories = ['category1'];
+
+          for (let i = 0; i < categories.length; i++) {
+            let category = categories[i];
+            let numSubCategories = Math.floor(Math.random() * 6) + 1; // generates a random number between 1 and 6
+            let fakeSubCategories = [];
+            for (let i = 0; i < numSubCategories; i++) {
+              fakeSubCategories.push(`subcategory${i}`);
+            }
+            console.log(`${category} has ${numSubCategories} subcategories`);
+
+            fakeSubCategories.forEach(subcategory => {
+              const li = document.createElement("li");
+              li.style.padding = "8px";
+              const anchor = document.createElement("a");
+              anchor.href = "/views/producten.html";
+              anchor.style.paddingLeft = "20px";
+              anchor.style.paddingRight = "20px";
+              anchor.classList.add("nounderline");
+              anchor.classList.add("white");
+              anchor.innerHTML = subcategory;
+              li.appendChild(anchor);
+
+              ul.appendChild(li);
+            });
+          }
 
           button.addEventListener("click", function () {
             localStorage.setItem("category", category);
