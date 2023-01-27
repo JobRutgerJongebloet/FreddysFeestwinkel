@@ -103,13 +103,12 @@ function updateWinkelmand() {
                 totaal = result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
                 subtotaal += result.winkelwagen[i][1] * result.winkelwagen[i][0].kosten;
                 totaalhoeveelheid += result.winkelwagen[i][1];
-                tr.innerHTML =
-                    `
-                        <td data-title="Product">${result.winkelwagen[i][0].naam}</td>
-                        <td data-title="Prijs">€ ${result.winkelwagen[i][0].kosten}</td>
-                        <td data-title="Hoeveelheid">${result.winkelwagen[i][1]}</td>
-                        <td data-title="Totaal">€ ${totaal}</td>
-                    `;
+                tr.innerHTML = `
+                    <td data-title="Product">${result.winkelwagen[i][0].naam}</td>
+                    <td data-title="Prijs">€ ${result.winkelwagen[i][0].kosten}</td>
+                    <td data-title="Hoeveelheid">${result.winkelwagen[i][1]}</td>
+                    <td data-title="Totaal">€ ${totaal}</td>
+                `;
             }
             let totaalElement = document.getElementById("totaalprijs");
             totaalElement.innerHTML = `Totale prijs: € ` + subtotaal;
@@ -143,23 +142,22 @@ async function getProductByCategory() {
             let producten = document.getElementById("product");
 
             producten.innerHTML += `   
-            <div class="card" id="${response[i].id}">
-            <img src="../${afbeelding}">
-            <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
-            <h5 class="card-title text-center">${response[i].naam}</h5>
-            <p class="card-text text-center">${response[i].beschrijving}</p>
-            <p class="card-text text-center">Categorie: ${response[i].categorie}</li>
-            <p class="card-text text-center">Prijs per stuk €${response[i].kosten}</li>
-            <div class="d-flex" style="
-            justify-content: center;">
-            <button type="button" data-param="${response[i].id}" id="addtocart" style="white-space: nowrap;" class="btn btn-success">
-            <i class="align-self-center link__icon fa-solid white fa-shopping-cart"></i> in winkelwagen
-            </button>
-            </div>
-            <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
-            
-            </div>
-            `;
+                <div class="card" id="${response[i].id}">
+                    <img src="../${afbeelding}">
+                    <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+                    <h5 class="card-title text-center">${response[i].naam}</h5>
+                    <p class="card-text text-center">${response[i].beschrijving}</p>
+                    <p class="card-text text-center">Categorie: ${response[i].categorie}</li>
+                    <p class="card-text text-center">Prijs per stuk €${response[i].kosten}</li>
+                    <div class="d-flex" style="
+                            justify-content: center;">
+                        <button type="button" data-param="${response[i].id}" id="addtocart" style="white-space: nowrap;"
+                            class="btn btn-success">
+                            <i class="align-self-center link__icon fa-solid white fa-shopping-cart"></i> in winkelwagen
+                        </button>
+                    </div>
+                    <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+                </div>`;
         }
 
         const cardElement = document.querySelectorAll(".card");
@@ -210,24 +208,23 @@ async function haalProductenOp() {
 
             let producten = document.getElementById("product");
 
-            producten.innerHTML += `   
-            <div class="card" id="${response[i].id}">
-            <img src="../${afbeelding}">
-            <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
-            <h5 class="card-title text-center">${response[i].naam}</h5>
-            <p class="card-text text-center">${response[i].beschrijving}</p>
-            <p class="card-text text-center">Categorie: ${response[i].categorie}</li>
-            <p class="card-text text-center">Prijs per stuk €${response[i].kosten}</li>
-            <div class="d-flex" style="
-            justify-content: center;">
-            <button type="button" data-param="${response[i].id}" id="addtocart" style="white-space: nowrap;" class="btn btn-success">
-            <i class="align-self-center link__icon fa-solid white fa-shopping-cart"></i> in winkelwagen
-            </button>
-            </div>
-            <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
-            
-            </div>
-            `;
+            producten.innerHTML += `
+                <div class="card" id="${response[i].id}">
+                    <img src="../${afbeelding}">
+                    <i data-param="${response[i].id}" id="favoriteIcon" class="link__icon icon fa-regular fa-heart"></i>
+                    <h5 class="card-title text-center">${response[i].naam}</h5>
+                    <p class="card-text text-center">${response[i].beschrijving}</p>
+                    <p class="card-text text-center">Categorie: ${response[i].categorie}</li>
+                    <p class="card-text text-center">Prijs per stuk €${response[i].kosten}</li>
+                    <div class="d-flex" style="
+                            justify-content: center;">
+                        <button type="button" data-param="${response[i].id}" id="addtocart" style="white-space: nowrap;"
+                            class="btn btn-success">
+                            <i class="align-self-center link__icon fa-solid white fa-shopping-cart"></i> in winkelwagen
+                        </button>
+                    </div>
+                    <a data-param="${response[i].id}" id="removefromcart" class="btn btn-danger">Verwijder uit winkelwagen</a>
+                </div>`;
         }
 
         const cardElement = document.querySelectorAll(".card");
