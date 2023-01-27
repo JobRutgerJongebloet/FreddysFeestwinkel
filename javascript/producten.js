@@ -22,7 +22,6 @@ if (localStorage.getItem("category") != null) {
         headertext.innerHTML = localStorage.getItem("category")
         getProductByCategory();
     }
-
 }
 
 document.getElementById('bestelbutton').addEventListener('click', (evt) => {

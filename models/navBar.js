@@ -20,11 +20,11 @@ export class NavBar {
                     </div>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html"
+                            <a class="dropdown-item fontsize1 align-self-center" href="/views/inloggen.html"
                                 id="username">Inloggen</a>
                         </li>
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html"
+                            <a class="dropdown-item fontsize1 align-self-center" href="/views/registreren.html"
                                 id="role">Account aanmaken</a>
                         </li>
                     </ul>
@@ -55,11 +55,11 @@ export class NavBar {
             </div>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html"
+                    <a class="dropdown-item fontsize1 black align-self-center" href="/views/inloggen.html"
                         id="username2">Inloggen</a>
                 </li>
                 <li>
-                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html"
+                    <a class="dropdown-item fontsize1 black align-self-center" href="/views/registreren.html"
                         id="role2">Account aanmaken</a>
                 </li>
             </ul>
@@ -100,22 +100,22 @@ export class NavBar {
                     </div>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html"
+                            <a class="dropdown-item fontsize1 align-self-center" href="/views/inloggen.html"
                                 id="username">Inloggen</a>
                         </li>
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html"
+                            <a class="dropdown-item fontsize1 align-self-center" href="/views/registreren.html"
                                 id="role">Account aanmaken</a>
                         <li>
                             <a class="dropdown-item cursive fontsize1 align-self-center"
                                 href="/views/producttoevoegen.html">product toevoegen</a>
                         </li>
                         <li>
-                        <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/klanten.html"
+                        <a class="dropdown-item fontsize1 align-self-center" href="/views/klanten.html"
                             id="role">Klanten page</a>
                         <li>
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
+                            <a class="dropdown-item fontsize1 align-self-center" id="uitloggen">uitloggen</a>
                         </li>
                         
                     </ul>
@@ -146,22 +146,22 @@ export class NavBar {
             </div>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html"
+                    <a class="dropdown-item fontsize1 black align-self-center" href="/views/inloggen.html"
                         id="username2">Inloggen</a>
                 </li>
                 <li>
-                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html"
+                    <a class="dropdown-item fontsize1 black align-self-center" href="/views/registreren.html"
                         id="role2">Account aanmaken</a>
                 <li>
-                    <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/producttoevoegen.html">
+                    <a class="dropdown-item fontsize1 align-self-center" href="/views/producttoevoegen.html">
                         product toevoegen</a>
                 </li>
                 <li>
-                <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/klanten.html"
+                <a class="dropdown-item fontsize1 align-self-center" href="/views/klanten.html"
                     id="role">Klanten page</a>
                 <li>
                 <li>
-                    <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
+                    <a class="dropdown-item fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
                 </li>
             </ul>
         </div>
@@ -200,14 +200,14 @@ export class NavBar {
                     </div>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/inloggen.html"
+                            <a class="dropdown-item fontsize1 align-self-center" href="/views/inloggen.html"
                                 id="username">Inloggen</a>
                         </li>
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" href="/views/registreren.html"
+                            <a class="dropdown-item fontsize1 align-self-center" href="/views/registreren.html"
                                 id="role">Account aanmaken</a>
                         <li>
-                            <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen">uitloggen</a>
+                            <a class="dropdown-item fontsize1 align-self-center" id="uitloggen">uitloggen</a>
                         </li>
                     </ul>
                     <div></div>
@@ -237,14 +237,14 @@ export class NavBar {
             </div>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/inloggen.html"
+                    <a class="dropdown-item fontsize1 black align-self-center" href="/views/inloggen.html"
                         id="username2">Inloggen</a>
                 </li>
                 <li>
-                    <a class="dropdown-item cursive fontsize1 black align-self-center" href="/views/registreren.html"
+                    <a class="dropdown-item fontsize1 black align-self-center" href="/views/registreren.html"
                         id="role2">Account aanmaken</a>
                 <li>
-                    <a class="dropdown-item cursive fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
+                    <a class="dropdown-it fontsize1 align-self-center" id="uitloggen2">uitloggen</a>
                 </li>
             </ul>
         </div>
